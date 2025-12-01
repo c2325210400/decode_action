@@ -1,17 +1,17 @@
-//Sat Nov 29 2025 10:44:39 GMT+0000 (Coordinated Universal Time)
+//Mon Dec 01 2025 23:02:32 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
 (function () {
   "use strict";
-  const _0x28f203 = "7.5.1";
-  const _0x5071ce = document.createElement("style");
-  _0x5071ce.textContent = "\n        :root {\n            --panel-bg: rgba(247, 250, 252, 0.98);\n            --glass-border: rgba(0, 0, 0, 0.1);\n            --highlight: #3182ce; --text-primary: #2d3748; --text-secondary: #718096;\n            --item-bg: #ffffff; --item-border: #e2e8f0;\n            --success: #38a169; --error: #e53e3e;\n        }\n\n        /* 主面板 */\n        .xianxia-panel {\n            color-scheme: light !important;\n            background: transparent !important;\n            color: var(--text-primary) !important;\n            position:fixed;top:10px;backdrop-filter:blur(10px);border:1px solid var(--glass-border);border-radius:12px;z-index:10000;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.1);transition:all .3s ease;overflow:hidden;\n        }\n        .xianxia-panel::before {\n            content: '';\n            position: absolute;\n            top: 0; left: 0;\n            width: 100%; height: 100%;\n            background: var(--panel-bg) !important;\n            z-index: -1;\n            border-radius: 12px;\n        }\n\n        .xianxia-panel.collapse{width:44px;height:44px;right:10px;min-height:auto;display:flex;align-items:center;justify-content:center;border-radius:50%;}\n        .xianxia-panel.expanded{width:90vw;max-width:520px;right:5vw;max-height:85vh;display:flex;flex-direction:column;}\n        \n        .panel-header{background:rgba(0,0,0,0.02) !important;cursor:pointer;display:flex !important;align-items:center !important;padding:10px 15px !important;flex-shrink:0;width:100%;box-sizing:border-box !important;transition:background .2s ease; position: relative; z-index: 1;}\n        .xianxia-panel.expanded .panel-header { justify-content:flex-start !important; }\n        .xianxia-panel.collapse .panel-header { \n            justify-content: center !important; \n            align-items: center !important;\n            padding: 0 !important; /* 移除折叠状态下的内边距 */\n            height: 100%; /* 确保头部占满整个折叠面板 */\n        }\n\n        .panel-title{flex-grow: 1; font-weight:600;font-size:16px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:15px !important; color: var(--text-primary) !important;}\n        .panel-icon{font-size:22px;line-height:1;width:100%;text-align:center;display:flex;align-items:center;justify-content:center;}\n        .xianxia-panel.expanded .panel-icon { display: none; }\n        .xianxia-panel.collapse .panel-title, .xianxia-panel.collapse .opacity-control { display: none; }\n        .opacity-control{display:flex;align-items:center;gap:8px;flex-shrink:0;}\n        .opacity-control label{font-size:12px;color:var(--text-secondary) !important;white-space:nowrap;}\n        .opacity-control input{width:90px;height:4px;-webkit-appearance:none;background:rgba(0,0,0,.1);border-radius:2px;outline:none;transition:background .2s;}\n        .opacity-control input:hover{background:rgba(0,0,0,.2);}\n        .opacity-control input::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--text-primary);cursor:pointer;}\n        .opacity-value{font-size:12px;color:var(--text-primary) !important;min-width:40px;text-align:left;}\n        \n        .panel-content{padding:10px 0 0 0;display:none;overflow-y:auto;max-height:calc(85vh - 74px); position: relative; z-index: 1;}.expanded .panel-content{display:block}\n        .tab-nav{display:flex;padding:0 5px;margin-bottom:8px;border-bottom:1px solid var(--item-border) !important;}\n        .tab-btn{flex:1;padding:7px 4px;border:none;background:transparent;color:var(--text-secondary) !important;cursor:pointer;font-size:12px;font-weight:600;transition: color .2s ease, border-color .2s ease;border-bottom:3px solid transparent; text-align:center;}\n        .tab-btn:hover{color:var(--text-primary) !important;}\n        .tab-btn.active{color:var(--highlight) !important;border-bottom-color:var(--highlight) !important;}\n        .tab-pane{display:none; padding:0 10px 10px 10px;}\n        .tab-pane.active{display:block;animation:fadeIn .3s;}\n        @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}\n        .sub-nav{display:flex;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--item-border) !important; flex-wrap: wrap;}\n        .sub-tab-btn{font-size:11px;padding:2px 0;color:var(--text-secondary) !important;background:transparent;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s ease;}\n        .sub-tab-btn:hover{color:var(--text-primary) !important;}\n        .sub-tab-btn.active{color:var(--highlight) !important;border-bottom-color:var(--highlight) !important;font-weight:500;}\n.module-content{display:none;}\n.module-content.active{display:block;}\n        .sub-pane{display:none;}\n        .sub-pane.active{display:block;}\n\n        .task-section{background:var(--item-bg) !important;border:1px solid var(--item-border) !important; margin:0;padding:10px;border-radius:7px;}\n        .task-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}\n        .task-header h4{margin:0;color:var(--highlight) !important;font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px;}\n        .status{font-size:10px;color:var(--highlight) !important;background:rgba(49,130,206,.1) !important;padding:3px 5px;border-radius:3px;}\n        .task-row {display:flex;align-items:center;gap:7px;margin-bottom:7px;}\n        .task-row:last-child {margin-bottom:0;}\n        .task-row .task-label {width:55px;font-size:12px;color:var(--text-secondary) !important;flex-shrink:0; text-align:right; padding-right:4px;}\n        .task-row input {width:70px;flex-grow:0;}\n        .task-row .task-btn {flex:1;}\n        .task-btn{display:block;width:100%;margin:0;padding:8px 10px;background:rgba(49,130,206,0.1) !important;border:1px solid rgba(49,130,206,0.2) !important;border-radius:6px;color:var(--highlight) !important;font-weight:600;cursor:pointer;font-size:12px;transition: all .2s ease;}\n        .task-btn:hover{background:rgba(49,130,206,0.15) !important;}\n        .task-btn:disabled{background:rgba(0,0,0,0.05) !important;border-color:transparent !important;color:#ccc !important;cursor:not-allowed;transform:none;box-shadow:none;}\n        .task-btn.stop{background:rgba(229, 62, 62, 0.1) !important;border:1px solid rgba(229, 62, 62, 0.2) !important;color:var(--error) !important;}\n        .task-btn.stop:hover{background:rgba(229, 62, 62, 0.15) !important;}\n        .task-row input{border:1px solid var(--item-border) !important;background:rgba(0,0,0,.02) !important;color:var(--text-primary) !important;padding:8px 10px;border-radius:6px;font-size:12px;min-width:0; text-align:center;}\n        .other-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}.other-btn{padding:8px;font-size:12px}\n        \n        .count-selector{display:flex;align-items:center;justify-content:center;gap:10px;}\n        .count-selector .task-btn{flex:0 0 30px; padding: 5px; font-size: 16px; line-height: 1;}\n        .count-selector .count-display{font-size:14px;font-weight:600;color:var(--text-primary) !important;width:40px;text-align:center;}\n\n        .daily-task-list{border-top: 1px solid var(--item-border) !important; padding-top: 10px;}\n        .main-action-buttons{margin-top:8px !important; display:flex !important; flex-wrap:nowrap !important; gap:4px !important; width:100% !important;}\n        .main-action-buttons > button{flex:1 !important; flex-basis:33.333% !important; padding:6px 4px !important; font-size:12px !important; margin:0 !important; height:34px !important; min-height:34px !important; box-sizing:border-box !important; border-radius:4px !important; display:flex !important; align-items:center !important; justify-content:center !important; white-space:nowrap !important; overflow:hidden !important; text-overflow:ellipsis !important;}\n        .main-action-buttons > button[data-task=\"one-key-100\"]{color:#ff6b6b !important; font-weight:bold !important;}\n        .daily-task-item{display:flex;align-items:center;margin-bottom:4px;}\n        .daily-task-item:last-child{margin-bottom:0;}\n        .daily-task-info{display:flex; align-items:center; flex-grow:1;}\n        .daily-task-item input[type=\"checkbox\"]{margin-right:7px;width:15px;height:15px;accent-color:var(--highlight);}\n        .daily-task-item label{font-size:11px;color:var(--text-secondary) !important;}\n        .daily-task-item .task-btn{flex-shrink:0;width:65px;padding:3px 5px;font-size:10px;}\n        \n        .car-data-container, .ws-log-container{margin:0;border:none;background:transparent;}\n        .car-data-table{width:100%;border-collapse:collapse;font-size:10px;}\n        .car-data-table th{background:rgba(0,0,0,.02) !important;border:1px solid var(--item-border) !important; padding: 5px 3px; font-size:11px; color: var(--text-secondary) !important;}\n        .car-data-table td{border:1px solid var(--item-border) !important;color:var(--text-secondary) !important;padding:5px 3px;vertical-align:middle; text-align:center;}\n        .car-rewards{color: var(--text-primary) !important;line-height:1.4em; text-align:left; padding-left:5px !important;}\n        .car-action-btn{font-size:10px;margin:2px auto;width:50px;border-radius:4px; padding:3px 0; background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); color: var(--text-secondary); }\n        .car-action-btn:hover{background:rgba(0,0,0,0.1);}\n        .car-action-btn.send{background:rgba(76, 175, 80, .1);border-color:rgba(76, 175, 80, .2); color: #2f6f44;}\n        .car-action-btn.claim{background:rgba(255, 152, 0, .1);border-color:rgba(255, 152, 0, .2); color: #b95f00;}\n        .car-action-btn.is-disabled{background:rgba(0,0,0,0.04) !important; border-color:transparent !important; color:#ccc !important; transform: none; box-shadow: none;}\n        .pity-counter.mythic-guaranteed{color:#e53e3e;font-weight:bold;}\n        \n        /* 胜率测试相关样式 */\n        .winrate-result-item { margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px dotted var(--item-border); line-height: 1.3; }\n        .winrate-result-item:last-child { border-bottom: none; }\n        .winrate-win { color: var(--success); font-weight: bold; }\n        .winrate-loss { color: var(--error); font-weight: bold; }\n        .winrate-opponent-placeholder { color: var(--text-secondary); }\n\n        #ws-monitor-module .other-buttons { margin-top: 10px; }\n        .ws-log-container { max-height: 55vh; overflow-y: auto; background: rgba(0,0,0,0.02) !important; border-radius: 8px; padding: 10px; border: 1px solid var(--item-border) !important; margin-top: 10px; }\n        .ws-log-entry { position: relative; font-family: 'Courier New', Courier, monospace; font-size: 11px; margin-bottom: 8px; padding: 8px; border-radius: 4px; border: 1px solid transparent; word-break: break-all; }\n        .ws-log-entry .log-header { font-weight: bold; margin-bottom: 4px; color: inherit !important; }\n        .ws-log-entry .log-header.send { color: var(--success) !important; }\n        .ws-log-entry.send { border-color: rgba(56, 161, 105, 0.2) !important; background: rgba(56, 161, 105, 0.05) !important; }\n        .ws-log-entry .log-header.receive { color: var(--highlight) !important; }\n        .ws-log-entry.receive { border-color: rgba(49, 130, 206, 0.2) !important; background: rgba(49, 130, 206, 0.05) !important; }\n        .ws-log-entry .log-time { font-size: 10px; color: var(--text-secondary) !important; margin-left: 8px; }\n        .ws-log-content { white-space: pre-wrap; color: var(--text-primary) !important; }\n        .ws-log-content.collapsed { max-height: 2.5em; overflow: hidden; text-overflow: ellipsis; position: relative; padding-right: 50px; }\n        .log-actions { position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; }\n        .log-actions button { font-size: 10px; padding: 2px 5px; border-radius: 4px; background: rgba(0,0,0,0.08) !important; border: none !important; color: var(--text-secondary) !important; cursor: pointer; }\n        .log-actions button:hover { background: rgba(0,0,0,0.15) !important; color: var(--text-primary) !important; }\n        \n        .gvh-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--item-bg);backdrop-filter:blur(5px);border:1px solid var(--item-border);color:var(--text-primary);padding:10px 20px;border-radius:8px;font-size:13px;z-index:10001;box-shadow:0 4px 20px rgba(0,0,0,.1);animation:gvh-slideIn .3s,gvh-fadeOut .3s 2.7s}\n        .gvh-toast.success{border-color:var(--success);color:var(--success);}\n        .gvh-toast.error{border-color:var(--highlight);color:var(--error);}\n        .gvh-toast.info{border-color:var(--highlight);color:var(--highlight);}\n    ";
-  document.head.appendChild(_0x5071ce);
-  const _0x347846 = document.createElement("div");
-  _0x347846.className = "xianxia-panel collapse";
-  _0x347846.innerHTML = "\n        <div class=\"panel-header\">\n            <span class=\"panel-icon\">🎮</span>\n            <div class=\"panel-title\">鲸鱼 v" + _0x28f203 + "</div>\n            <div class=\"opacity-control\">\n                <label for=\"opacity-slider\">透明度：</label>\n                <input type=\"range\" id=\"opacity-slider\" min=\"0\" max=\"100\" value=\"100\">\n                <span class=\"opacity-value\">100%</span>\n            </div>\n        </div>\n        <div class=\"panel-content\">\n            <!-- 垂直排布的功能菜单 -->\n            <div style=\"padding: 0 10px 10px 10px;\">\n                <!-- 功能模块选择器 - 垂直排布 -->\n                <div style=\"margin-bottom: 10px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;\">\n                    <button class=\"task-btn\" data-module=\"quick-tasks-sub\" style=\"font-size: 10px; padding: 4px 2px;\">🚀 日常</button>\n                    <button class=\"task-btn\" data-module=\"car-sub\" style=\"font-size: 10px; padding: 4px 2px;\">🏎️ 赛车</button>\n                    <button class=\"task-btn\" data-module=\"tower-sub\" style=\"font-size: 10px; padding: 4px 2px;\">🧗 爬塔</button>\n                    <button class=\"task-btn\" data-module=\"arena-sub\" style=\"font-size: 10px; padding: 4px 2px;\">⚔️ 竞技场</button>\n                    <button class=\"task-btn\" data-module=\"club-sub\" style=\"font-size: 10px; padding: 4px 2px;\">⚔️ 俱乐部Boss</button>\n                    <button class=\"task-btn\" data-module=\"upgrade-sub\" style=\"font-size: 10px; padding: 4px 2px;\">⚡ 升级</button>\n                    <button class=\"task-btn\" data-module=\"treasure-assist-sub\" style=\"font-size: 10px; padding: 4px 2px;\">🏆 宝库助战</button>\n                    <button class=\"task-btn\" data-module=\"salt-field-sub\" style=\"font-size: 10px; padding: 4px 2px;\">🏆 盐场战报</button>\n                    <button class=\"task-btn\" data-module=\"fishing-sub\" style=\"font-size: 10px; padding: 4px 2px;\">🎣 钓鱼</button>\n                    <button class=\"task-btn\" data-module=\"recruit-sub\" style=\"font-size: 10px; padding: 4px 2px;\">👥 招募</button>\n                    <button class=\"task-btn\" data-module=\"box-sub\" style=\"font-size: 10px; padding: 4px 2px;\">📦 宝箱</button>\n                </div>\n                \n                <!-- 所有功能模块内容 -->\n                <div id=\"quick-tasks-sub\" class=\"module-content active\">\n                    <div class=\"task-section\" id=\"quick-tasks-module\">\n                        <div class=\"task-header\"><h4>🚀 日常</h4><div class=\"status\">✅ 就绪</div></div>\n                        <div class=\"daily-task-list\"></div>\n                        <div class=\"main-action-buttons\">\n                            <button class=\"task-btn other-btn\" data-task=\"execute-daily-checked\">一键执行勾选</button>\n                            <button class=\"task-btn other-btn\" data-task=\"claim-activity\">领取活跃奖励</button>\n                            <button class=\"task-btn\" data-task=\"one-key-100\">一键100活跃度</button>\n                        </div>\n                    </div>\n                </div>\n                \n                <div id=\"salt-field-sub\" class=\"module-content\">\n                    <div class=\"task-section\" id=\"salt-field-module\">\n                        <div class=\"task-header\"><h4>🏆 盐场战报</h4><div class=\"status\" id=\"salt-field-status\">📊 就绪</div></div>\n                        <div class=\"task-row\">\n                            <label class=\"task-label\" style=\"white-space: nowrap;\">查询日期：</label>\n                            <input type=\"date\" id=\"salt-field-date\" style=\"width: auto;\">\n                            <button class=\"task-btn\" id=\"salt-field-query\">查询战报</button>\n                        </div>\n                        <div id=\"salt-field-results\" style=\"margin-top: 10px; max-height: 60vh; overflow-y: auto;\">\n                            <p style=\"text-align: center; color: var(--text-secondary); font-size: 12px;\">请选择日期并点击查询按钮</p>\n                        </div>\n                        <div style=\"margin-top: 10px; display: none; grid-template-columns: 1fr 1fr; gap: 8px;\" id=\"salt-field-actions\">\n                            <button class=\"task-btn other-btn\" id=\"salt-field-export\">导出战报</button>\n                            <button class=\"task-btn other-btn\" id=\"salt-field-summary\">查看汇总</button>\n                        </div>\n                    </div>\n                </div>\n                \n                <div id=\"car-sub\" class=\"module-content\"><div class=\"task-section\" id=\"car-module\">\n                    <div class=\"task-header\"><h4>🏎️ 赛车</h4><div class=\"status\">✅ 就绪</div></div>\n                    <button class=\"task-btn\" data-task=\"car-query\">查询赛车</button>\n                    <div class=\"car-data-container\"><table class=\"car-data-table\" style=\"display:none;\"><thead><tr><th>车位</th><th>品质</th><th>主要奖励</th><th>状态</th><th>操作</th></tr></thead><tbody></tbody></table></div>\n                </div></div>\n                \n                <style>\n                    /* 调小所有相关按钮字体，确保与一键刷新按钮样式一致 */\n                    button[data-action=\"sendAll\"], button[data-action=\"claimAll\"], #send-all-cars-panel,\n                    button[data-action=\"refresh\"], button[data-action=\"send\"], button[data-action=\"refresh-car\"],\n                    button[data-action=\"openMembers\"], button[data-action=\"toggleRefreshFilter\"], button[data-action=\"startBatchRefresh\"],\n                    button[id=\"start-batch-refresh\"] {\n                        font-size: 10px !important;\n                    }\n                    /* 调小玩家名字字体 */\n                    #members-content span, #helper-selected-name, .__name {\n                        font-size: 11px !important;\n                    }\n                </style>\n                \n                <div id=\"tower-sub\" class=\"module-content\">\n                    <div class=\"task-section\" id=\"tower-module\">\n                        <div class=\"task-header\"><h4>🧗 爬塔</h4><div class=\"status\">✅ 就绪</div></div>\n                        <button class=\"task-btn\" data-task=\"tower\">开始爬塔</button>\n                    </div>\n                </div>\n                \n                <div id=\"arena-sub\" class=\"module-content\">\n                    <div class=\"task-section\" id=\"arena-module\">\n                        <div class=\"task-header\"><h4>⚔️ 竞技场</h4><div class=\"status\" id=\"arena-status\">✅ 就绪</div></div>\n                        <div class=\"task-row\"><span class=\"task-label\">次数:</span><input type=\"number\" id=\"arena-count\" value=\"3\" min=\"1\" max=\"99\">\n                            <button class=\"task-btn\" data-task=\"arena-start\">随机战斗</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"task-section\" style=\"margin-top: 10px;\" id=\"arena-winrate-module\">\n                        <div class=\"task-header\"><h4>📊 胜率测试</h4><div class=\"status\" id=\"winrate-status\">✅ 准备就绪</div></div>\n                        <div class=\"task-row\"><span class=\"task-label\">次数:</span><input type=\"number\" id=\"winrate-fight-count\" value=\"10\" min=\"1\"><button class=\"task-btn\" id=\"start-winrate-btn\" data-task=\"arena-winrate\">获取对手</button></div>\n                        <div id=\"winrate-results\" style=\"margin-top: 10px; padding: 8px; border: 1px solid var(--item-border); border-radius: 6px; background: rgba(0,0,0,0.01); font-size: 12px; line-height: 1.4;\"></div>\n                    </div>\n                </div>\n                 \n                <div id=\"club-sub\" class=\"module-content\"><div class=\"task-section\" id=\"club-module\">\n                    <div class=\"task-header\"><h4>⚔️ 俱乐部Boss</h4><div class=\"status\">✅ 就绪</div></div>\n                    <div class=\"task-row\">\n                        <span class=\"task-label\">挑战次数:</span>\n                        <div class=\"count-selector\">\n                            <button class=\"task-btn\" data-action=\"decrement\">-</button>\n                            <span class=\"count-display\" id=\"club-boss-count\">2</span>\n                            <button class=\"task-btn\" data-action=\"increment\">+</button>\n                        </div>\n                        <button class=\"task-btn\" data-task=\"club-boss\">开始挑战</button>\n                    </div>\n                </div></div>\n                \n                <div id=\"upgrade-sub\" class=\"module-content\"><div class=\"task-section\" id=\"upgrade-module\">\n                    <div class=\"task-header\"><h4>⚡ 升级</h4><div class=\"status\">✅ 就绪</div></div>\n                    <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 8px;\">\n                        <button class=\"task-btn other-btn\" data-task=\"starUp\">武将升星</button>\n                        <button class=\"task-btn other-btn\" data-task=\"bookUpgrade\">升级图鉴</button>\n                        <button class=\"task-btn other-btn\" data-task=\"collectionUpgrade\">藏品图鉴升级</button>\n                        <!-- 留空右侧位置，等待添加新功能 -->\n                    </div>\n                </div></div>\n                \n                <div id=\"treasure-assist-sub\" class=\"module-content\">\n                    <div class=\"task-section\" id=\"treasure-assist-module\">\n                        <div class=\"task-header\"><h4>🏆 宝库助战</h4><div class=\"status\" style=\"color: #e53e3e; background: rgba(229, 62, 62, 0.1);\">❌ 已禁用</div></div>\n                    <button class=\"task-btn\" id=\"treasure-start-assist-btn\" data-task=\"treasure-assist\">开始助战</button>\n                </div></div>\n                \n                <div id=\"fishing-sub\" class=\"module-content\"><div class=\"task-section\" id=\"fishing-module\">\n                     <div class=\"task-header\"><h4>🎣 钓鱼</h4><div class=\"status\">✅ 就绪</div></div>\n                     <div class=\"task-row\"><span class=\"task-label\">普通钓鱼</span><input type=\"number\" id=\"fishing-count-1\" value=\"10\" min=\"1\"><button class=\"task-btn\" data-task=\"start-fishing-1\">开始</button></div>\n                     <div class=\"task-row\"><span class=\"task-label\">高级钓鱼</span><input type=\"number\" id=\"fishing-count-2\" value=\"10\" min=\"1\"><button class=\"task-btn\" data-task=\"start-fishing-2\">开始</button></div>\n                </div></div>\n                \n                <div id=\"recruit-sub\" class=\"module-content\"><div class=\"task-section\" id=\"recruit-module\">\n                    <div class=\"task-header\"><h4>👥 招募</h4><div class=\"status\">✅ 就绪</div></div>\n                    <div class=\"task-row\"><span class=\"task-label\">次数:</span><input type=\"number\" id=\"recruit-count\" value=\"10\" min=\"1\"><button class=\"task-btn\" data-task=\"recruit\">开始招募</button></div>\n                </div></div>\n                \n                <div id=\"box-sub\" class=\"module-content\"><div class=\"task-section\" id=\"box-module\">\n                    <div class=\"task-header\"><h4>📦 宝箱</h4><div class=\"status\">✅ 就绪</div></div>\n                    <div class=\"task-row\"><span class=\"task-label\">木质宝箱</span><input type=\"number\" id=\"box-count-2001\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2001\">开启宝箱</button></div>\n                    <div class=\"task-row\"><span class=\"task-label\">青铜宝箱</span><input type=\"number\" id=\"box-count-2002\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2002\">开启宝箱</button></div>\n                    <div class=\"task-row\"><span class=\"task-label\">黄金宝箱</span><input type=\"number\" id=\"box-count-2003\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2003\">开启宝箱</button></div>\n                    <div class=\"task-row\"><span class=\"task-label\">铂金宝箱</span><input type=\"number\" id=\"box-count-2004\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2004\">开启宝箱</button></div>\n                </div></div>\n            </div>\n        </div>\n    ";
-  document.body.appendChild(_0x347846);
-  const _0x4b9636 = {
+  const _0x4ceeb = "7.3.0";
+  const _0x23ad6b = document.createElement("style");
+  _0x23ad6b.textContent = "\n        :root {\n            --panel-bg: rgba(247, 250, 252, 0.98);\n            --glass-border: rgba(0, 0, 0, 0.1);\n            --highlight: #3182ce; --text-primary: #2d3748; --text-secondary: #718096;\n            --item-bg: #ffffff; --item-border: #e2e8f0;\n            --success: #38a169; --error: #e53e3e;\n        }\n\n        /* 主面板 */\n        .xianxia-panel {\n            color-scheme: light !important;\n            background: transparent !important;\n            color: var(--text-primary) !important;\n            position:fixed;top:10px;backdrop-filter:blur(10px);border:1px solid var(--glass-border);border-radius:12px;z-index:10000;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.1);transition:all .3s ease;overflow:hidden;\n        }\n        .xianxia-panel::before {\n            content: '';\n            position: absolute;\n            top: 0; left: 0;\n            width: 100%; height: 100%;\n            background: var(--panel-bg) !important;\n            z-index: -1;\n            border-radius: 12px;\n        }\n\n        .xianxia-panel.collapse{width:44px;height:44px;right:10px;min-height:auto;display:flex;align-items:center;justify-content:center;border-radius:50%;}\n        .xianxia-panel.expanded{width:90vw;max-width:520px;right:5vw;max-height:85vh;display:flex;flex-direction:column;}\n        \n        .panel-header{background:rgba(0,0,0,0.02) !important;cursor:pointer;display:flex !important;align-items:center !important;padding:10px 15px !important;flex-shrink:0;width:100%;box-sizing:border-box !important;transition:background .2s ease; position: relative; z-index: 1;}\n        .xianxia-panel.expanded .panel-header { justify-content:flex-start !important; }\n        .xianxia-panel.collapse .panel-header { \n            justify-content: center !important; \n            align-items: center !important;\n            padding: 0 !important; /* 移除折叠状态下的内边距 */\n            height: 100%; /* 确保头部占满整个折叠面板 */\n        }\n\n        .panel-title{flex-grow: 1; font-weight:600;font-size:16px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:15px !important; color: var(--text-primary) !important;}\n        .panel-icon{font-size:22px;line-height:1;width:100%;text-align:center;display:flex;align-items:center;justify-content:center;}\n        .xianxia-panel.expanded .panel-icon { display: none; }\n        .xianxia-panel.collapse .panel-title, .xianxia-panel.collapse .opacity-control { display: none; }\n        .opacity-control{display:flex;align-items:center;gap:8px;flex-shrink:0;}\n        .opacity-control label{font-size:12px;color:var(--text-secondary) !important;white-space:nowrap;}\n        .opacity-control input{width:90px;height:4px;-webkit-appearance:none;background:rgba(0,0,0,.1);border-radius:2px;outline:none;transition:background .2s;}\n        .opacity-control input:hover{background:rgba(0,0,0,.2);}\n        .opacity-control input::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--text-primary);cursor:pointer;}\n        .opacity-value{font-size:12px;color:var(--text-primary) !important;min-width:40px;text-align:left;}\n        \n        .panel-content{padding:10px 0 0 0;display:none;overflow-y:auto;max-height:calc(85vh - 74px); position: relative; z-index: 1;}.expanded .panel-content{display:block}\n        .tab-nav{display:flex;padding:0 5px;margin-bottom:8px;border-bottom:1px solid var(--item-border) !important;}\n        .tab-btn{flex:1;padding:7px 4px;border:none;background:transparent;color:var(--text-secondary) !important;cursor:pointer;font-size:12px;font-weight:600;transition: color .2s ease, border-color .2s ease;border-bottom:3px solid transparent; text-align:center;}\n        .tab-btn:hover{color:var(--text-primary) !important;}\n        .tab-btn.active{color:var(--highlight) !important;border-bottom-color:var(--highlight) !important;}\n        .tab-pane{display:none; padding:0 10px 10px 10px;}\n        .tab-pane.active{display:block;animation:fadeIn .3s;}\n        @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}\n        .sub-nav{display:flex;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--item-border) !important; flex-wrap: wrap;}\n        .sub-tab-btn{font-size:11px;padding:2px 0;color:var(--text-secondary) !important;background:transparent;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s ease;}\n        .sub-tab-btn:hover{color:var(--text-primary) !important;}\n        .sub-tab-btn.active{color:var(--highlight) !important;border-bottom-color:var(--highlight) !important;font-weight:500;}\n        .sub-pane{display:none;}\n        .sub-pane.active{display:block;}\n\n        .task-section{background:var(--item-bg) !important;border:1px solid var(--item-border) !important; margin:0;padding:10px;border-radius:7px;}\n        .task-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}\n        .task-header h4{margin:0;color:var(--highlight) !important;font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px;}\n        .status{font-size:10px;color:var(--highlight) !important;background:rgba(49,130,206,.1) !important;padding:3px 5px;border-radius:3px;}\n        .task-row {display:flex;align-items:center;gap:7px;margin-bottom:7px;}\n        .task-row:last-child {margin-bottom:0;}\n        .task-row .task-label {width:55px;font-size:12px;color:var(--text-secondary) !important;flex-shrink:0; text-align:right; padding-right:4px;}\n        .task-row input {width:70px;flex-grow:0;}\n        .task-row .task-btn {flex:1;}\n        .task-btn{display:block;width:100%;margin:0;padding:8px 10px;background:rgba(49,130,206,0.1) !important;border:1px solid rgba(49,130,206,0.2) !important;border-radius:6px;color:var(--highlight) !important;font-weight:600;cursor:pointer;font-size:12px;transition: all .2s ease;}\n        .task-btn:hover{background:rgba(49,130,206,0.15) !important;}\n        .task-btn:disabled{background:rgba(0,0,0,0.05) !important;border-color:transparent !important;color:#ccc !important;cursor:not-allowed;transform:none;box-shadow:none;}\n        .task-row input{border:1px solid var(--item-border) !important;background:rgba(0,0,0,.02) !important;color:var(--text-primary) !important;padding:8px 10px;border-radius:6px;font-size:12px;min-width:0; text-align:center;}\n        .other-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}.other-btn{padding:8px;font-size:12px}\n        \n        .count-selector{display:flex;align-items:center;justify-content:center;gap:10px;}\n        .count-selector .task-btn{flex:0 0 30px; padding: 5px; font-size: 16px; line-height: 1;}\n        .count-selector .count-display{font-size:14px;font-weight:600;color:var(--text-primary) !important;width:40px;text-align:center;}\n\n        .daily-task-list{border-top: 1px solid var(--item-border) !important; padding-top: 10px;}\n        .main-action-buttons{margin-top:8px !important; display:flex !important; flex-wrap:nowrap !important; gap:4px !important; width:100% !important;}\n        .main-action-buttons > button{flex:1 !important; flex-basis:33.333% !important; padding:6px 4px !important; font-size:12px !important; margin:0 !important; height:34px !important; min-height:34px !important; box-sizing:border-box !important; border-radius:4px !important; display:flex !important; align-items:center !important; justify-content:center !important; white-space:nowrap !important; overflow:hidden !important; text-overflow:ellipsis !important;}\n        .main-action-buttons > button[data-task=\"one-key-100\"]{color:#ff6b6b !important; font-weight:bold !important;}\n        .daily-task-item{display:flex;align-items:center;margin-bottom:4px;}\n        .daily-task-item:last-child{margin-bottom:0;}\n        .daily-task-info{display:flex; align-items:center; flex-grow:1;}\n        .daily-task-item input[type=\"checkbox\"]{margin-right:7px;width:15px;height:15px;accent-color:var(--highlight);}\n        .daily-task-item label{font-size:11px;color:var(--text-secondary) !important;}\n        .daily-task-item .task-btn{flex-shrink:0;width:65px;padding:3px 5px;font-size:10px;}\n        \n        .car-data-container, .ws-log-container{margin:0;border:none;background:transparent;}\n        .car-data-table{width:100%;border-collapse:collapse;font-size:10px;}\n        .car-data-table th{background:rgba(0,0,0,.02) !important;border:1px solid var(--item-border) !important; padding: 5px 3px; font-size:11px; color: var(--text-secondary) !important;}\n        .car-data-table td{border:1px solid var(--item-border) !important;color:var(--text-secondary) !important;padding:5px 3px;vertical-align:middle; text-align:center;}\n        .car-rewards{color: var(--text-primary) !important;line-height:1.4em; text-align:left; padding-left:5px !important;}\n        .car-action-btn{font-size:10px;margin:2px auto;width:50px;border-radius:4px; padding:3px 0; background:rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.1); color: var(--text-secondary); }\n        .car-action-btn:hover{background:rgba(0,0,0,0.1);}\n        .car-action-btn.send{background:rgba(76, 175, 80, .1);border-color:rgba(76, 175, 80, .2); color: #2f6f44;}\n        .car-action-btn.claim{background:rgba(255, 152, 0, .1);border-color:rgba(255, 152, 0, .2); color: #b95f00;}\n        .car-action-btn.is-disabled{background:rgba(0,0,0,0.04) !important; border-color:transparent !important; color:#ccc !important; transform: none; box-shadow: none;}\n        .pity-counter.mythic-guaranteed{color:#e53e3e;font-weight:bold;}\n\n        #ws-monitor-module .other-buttons { margin-top: 10px; }\n        .ws-log-container { max-height: 55vh; overflow-y: auto; background: rgba(0,0,0,0.02) !important; border-radius: 8px; padding: 10px; border: 1px solid var(--item-border) !important; margin-top: 10px; }\n        .ws-log-entry { position: relative; font-family: 'Courier New', Courier, monospace; font-size: 11px; margin-bottom: 8px; padding: 8px; border-radius: 4px; border: 1px solid transparent; word-break: break-all; }\n        .ws-log-entry .log-header { font-weight: bold; margin-bottom: 4px; color: inherit !important; }\n        .ws-log-entry .log-header.send { color: var(--success) !important; }\n        .ws-log-entry.send { border-color: rgba(56, 161, 105, 0.2) !important; background: rgba(56, 161, 105, 0.05) !important; }\n        .ws-log-entry .log-header.receive { color: var(--highlight) !important; }\n        .ws-log-entry.receive { border-color: rgba(49, 130, 206, 0.2) !important; background: rgba(49, 130, 206, 0.05) !important; }\n        .ws-log-entry .log-time { font-size: 10px; color: var(--text-secondary) !important; margin-left: 8px; }\n        .ws-log-content { white-space: pre-wrap; color: var(--text-primary) !important; }\n        .ws-log-content.collapsed { max-height: 2.5em; overflow: hidden; text-overflow: ellipsis; position: relative; padding-right: 50px; }\n        .log-actions { position: absolute; top: 5px; right: 5px; display: flex; gap: 5px; }\n        .log-actions button { font-size: 10px; padding: 2px 5px; border-radius: 4px; background: rgba(0,0,0,0.08) !important; border: none !important; color: var(--text-secondary) !important; cursor: pointer; }\n        .log-actions button:hover { background: rgba(0,0,0,0.15) !important; color: var(--text-primary) !important; }\n        \n        .gvh-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--item-bg);backdrop-filter:blur(5px);border:1px solid var(--item-border);color:var(--text-primary);padding:10px 20px;border-radius:8px;font-size:13px;z-index:10001;box-shadow:0 4px 20px rgba(0,0,0,.1);animation:gvh-slideIn .3s,gvh-fadeOut .3s 2.7s}\n        .gvh-toast.success{border-color:var(--success);color:var(--success);}\n        .gvh-toast.error{border-color:var(--highlight);color:var(--error);}\n        .gvh-toast.info{border-color:var(--highlight);color:var(--highlight);}\n    ";
+  document.head.appendChild(_0x23ad6b);
+  const _0x4e3ca8 = document.createElement("div");
+  _0x4e3ca8.className = "xianxia-panel collapse";
+  _0x4e3ca8.innerHTML = "\n        <div class=\"panel-header\">\n            <span class=\"panel-icon\">☠️</span>\n            <div class=\"panel-title\">骨头助手 v" + _0x4ceeb + "</div>\n            <div class=\"opacity-control\">\n                <label for=\"opacity-slider\">透明度：</label>\n                <input type=\"range\" id=\"opacity-slider\" min=\"0\" max=\"100\" value=\"100\">\n                <span class=\"opacity-value\">100%</span>\n            </div>\n        </div>\n        <div class=\"panel-content\">\n            <div class=\"tab-nav\">\n                <button class=\"tab-btn active\" data-tab=\"daily\">日常任务</button>\n                <button class=\"tab-btn\" data-tab=\"consumable\">消耗任务</button>\n                <button class=\"tab-btn\" data-tab=\"salt-field\">盐场</button>\n            </div>\n            <div class=\"tab-content\">\n                <div id=\"daily\" class=\"tab-pane active\">\n                    <div class=\"sub-nav\">\n                        <button class=\"sub-tab-btn active\" data-sub-tab=\"quick-tasks-sub\">日常</button>\n                        <button class=\"sub-tab-btn\" data-sub-tab=\"car-sub\">赛车</button>\n                        <button class=\"sub-tab-btn\" data-sub-tab=\"tower-sub\">爬塔</button>\n                        <button class=\"sub-tab-btn\" data-sub-tab=\"arena-sub\">竞技场</button>\n                        <button class=\"sub-tab-btn\" data-sub-tab=\"club-sub\">俱乐部Boss</button>\n                        <button class=\"sub-tab-btn\" data-sub-tab=\"upgrade-sub\">升级</button>\n                    </div>\n                    <div class=\"sub-content\">\n                        <div id=\"quick-tasks-sub\" class=\"sub-pane active\">\n                            <div class=\"task-section\" id=\"quick-tasks-module\">\n                                <div class=\"task-header\"><h4>🚀 日常</h4><div class=\"status\">✅ 就绪</div></div>\n                                <div class=\"daily-task-list\"></div>\n                                <div class=\"main-action-buttons\">\n                                    <button class=\"task-btn other-btn\" data-task=\"execute-daily-checked\">一键执行勾选</button>\n                                    <button class=\"task-btn other-btn\" data-task=\"claim-activity\">领取活跃奖励</button>\n                                    <button class=\"task-btn\" data-task=\"one-key-100\">一键100活跃度</button>\n                                </div>\n                            </div>\n                        </div>\n                        <div id=\"car-sub\" class=\"sub-pane\"><div class=\"task-section\" id=\"car-module\">\n                            <div class=\"task-header\"><h4>🏎️ 赛车</h4><div class=\"status\">✅ 就绪</div></div>\n                            <button class=\"task-btn\" data-task=\"car-query\">查询赛车</button>\n                            <div class=\"car-data-container\"><table class=\"car-data-table\" style=\"display:none;\"><thead><tr><th>车位</th><th>品质</th><th>主要奖励</th><th>状态</th><th>操作</th></tr></thead><tbody></tbody></table></div>\n                        </div></div>\n                        <div id=\"tower-sub\" class=\"sub-pane\">\n                            <div class=\"task-section\" id=\"tower-module\">\n                                <div class=\"task-header\"><h4>🧗 爬塔</h4><div class=\"status\">✅ 就绪</div></div>\n                                <button class=\"task-btn\" data-task=\"tower\">开始爬塔</button>\n                            </div>\n                        </div>\n                        <div id=\"arena-sub\" class=\"sub-pane\">\n                            <div class=\"task-section\" id=\"arena-module\">\n                                <div class=\"task-header\"><h4>⚔️ 竞技场</h4><div class=\"status\">✅ 就绪</div></div>\n                                <div class=\"task-row\"><span class=\"task-label\">次数:</span><input type=\"number\" id=\"arena-count\" value=\"3\" min=\"1\" max=\"99\"><button class=\"task-btn\" data-task=\"arena-start\">开始战斗</button></div>\n                            </div>\n                        </div>\n                         <div id=\"club-sub\" class=\"sub-pane\"><div class=\"task-section\" id=\"club-module\">\n                            <div class=\"task-header\"><h4>⚔️ 俱乐部Boss</h4><div class=\"status\">✅ 就绪</div></div>\n                            <div class=\"task-row\">\n                                <span class=\"task-label\">挑战次数:</span>\n                                <div class=\"count-selector\">\n                                    <button class=\"task-btn\" data-action=\"decrement\">-</button>\n                                    <span class=\"count-display\" id=\"club-boss-count\">2</span>\n                                    <button class=\"task-btn\" data-action=\"increment\">+</button>\n                                </div>\n                                <button class=\"task-btn\" data-task=\"club-boss\">开始挑战</button>\n                            </div>\n                        </div></div>\n                        <div id=\"upgrade-sub\" class=\"sub-pane\"><div class=\"task-section\" id=\"upgrade-module\">\n                            <div class=\"task-header\"><h4>⚡ 升级</h4><div class=\"status\">✅ 就绪</div></div>\n                            <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 8px;\">\n                                <button class=\"task-btn other-btn\" data-task=\"starUp\">武将升星</button>\n                                <button class=\"task-btn other-btn\" data-task=\"bookUpgrade\">升级图鉴</button>\n                                <button class=\"task-btn other-btn\" data-task=\"collectionUpgrade\">藏品图鉴升级</button>\n                                <button class=\"task-btn other-btn\" data-task=\"assist-battle\">助战</button>\n                            </div>\n                        </div></div>\n                    </div>\n                </div>\n                <div id=\"consumable\" class=\"tab-pane\">\n                    <div class=\"sub-nav\"><button class=\"sub-tab-btn active\" data-sub-tab=\"fishing-sub\">钓鱼</button><button class=\"sub-tab-btn\" data-sub-tab=\"recruit-sub\">招募</button><button class=\"sub-tab-btn\" data-sub-tab=\"box-sub\">宝箱</button></div>\n                    <div class=\"sub-content\">\n                        <div id=\"fishing-sub\" class=\"sub-pane active\"><div class=\"task-section\" id=\"fishing-module\">\n                             <div class=\"task-header\"><h4>🎣 钓鱼</h4><div class=\"status\">✅ 就绪</div></div>\n                             <div class=\"task-row\"><span class=\"task-label\">普通钓鱼</span><input type=\"number\" id=\"fishing-count-1\" value=\"10\" min=\"1\"><button class=\"task-btn\" data-task=\"start-fishing-1\">开始</button></div>\n                             <div class=\"task-row\"><span class=\"task-label\">高级钓鱼</span><input type=\"number\" id=\"fishing-count-2\" value=\"10\" min=\"1\"><button class=\"task-btn\" data-task=\"start-fishing-2\">开始</button></div>\n                        </div></div>\n                        <div id=\"recruit-sub\" class=\"sub-pane\"><div class=\"task-section\" id=\"recruit-module\">\n                            <div class=\"task-header\"><h4>👥 招募</h4><div class=\"status\">✅ 就绪</div></div>\n                            <div class=\"task-row\"><span class=\"task-label\">次数:</span><input type=\"number\" id=\"recruit-count\" value=\"10\" min=\"1\"><button class=\"task-btn\" data-task=\"recruit\">开始招募</button></div>\n                        </div></div>\n                        <div id=\"box-sub\" class=\"sub-pane\"><div class=\"task-section\" id=\"box-module\">\n                            <div class=\"task-header\"><h4>📦 宝箱</h4><div class=\"status\">✅ 就绪</div></div>\n                            <div class=\"task-row\"><span class=\"task-label\">木质宝箱</span><input type=\"number\" id=\"box-count-2001\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2001\">开启宝箱</button></div>\n                            <div class=\"task-row\"><span class=\"task-label\">青铜宝箱</span><input type=\"number\" id=\"box-count-2002\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2002\">开启宝箱</button></div>\n                            <div class=\"task-row\"><span class=\"task-label\">黄金宝箱</span><input type=\"number\" id=\"box-count-2003\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2003\">开启宝箱</button></div>\n                            <div class=\"task-row\"><span class=\"task-label\">铂金宝箱</span><input type=\"number\" id=\"box-count-2004\" value=\"10\" min=\"10\" step=\"10\"><button class=\"task-btn\" data-task=\"open-box-2004\">开启宝箱</button></div>\n                        </div></div>\n                    </div>\n                </div>\n                <div id=\"salt-field\" class=\"tab-pane\">\n                    <div class=\"sub-nav\"><button class=\"sub-tab-btn active\" data-sub-tab=\"salt-battle-sub\">盐场战报</button><button class=\"sub-tab-btn\" data-sub-tab=\"salt-map-sub\">盐场地图</button></div>\n                    <div class=\"sub-content\">\n                        <div id=\"salt-battle-sub\" class=\"sub-pane active\"><div class=\"task-section\" id=\"salt-battle-module\">\n                            <div class=\"task-header\"><h4>📊 盐场战报</h4><div class=\"status\">✅ 就绪</div></div>\n                            <div class=\"task-row\"><button class=\"task-btn\" data-task=\"salt-battle-report\">查看盐场战报</button></div>\n                            <div id=\"salt-battle-list\" style=\"margin-top: 10px; max-height: 400px; overflow-y: auto;\"></div>\n                        </div></div>\n                        <div id=\"salt-map-sub\" class=\"sub-pane\"><div class=\"task-section\" id=\"salt-map-module\">\n                            <div class=\"task-header\"><h4>🗺️ 盐场地图</h4><div class=\"status\">✅ 就绪</div></div>\n                            <div class=\"task-row\"><button class=\"task-btn\" data-task=\"salt-map\">查看盐场地图</button></div>\n                            <div id=\"salt-map-container\" style=\"margin-top: 10px; height: 400px; overflow: auto;\"></div>\n                        </div></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    ";
+  document.body.appendChild(_0x4e3ca8);
+  const _0x5ed60d = {
     "《三国演义》中，「大意失街亭」的是马谩？": 1,
     "《三国演义》中，「挥泪斩马谩」的是孙权？": 2,
     "《三国演义》中，「火烧博望坡」的是庞统？": 2,
@@ -415,670 +415,191 @@
     "《咸鱼之王》中，「梦魇水晶」的属性需要佩戴咸将达到701级才会生效。": 1,
     "《咸鱼之王》中，咸将达到700级并进阶后可以激活自身全部基础技能。": 1
   };
-  const _0x37bc18 = {
-    showtip(_0x1fd625, _0x3cfdbc = "info") {
-      {
-        const _0x3294e4 = document.createElement("div");
-        _0x3294e4.className = "gvh-toast " + _0x3cfdbc;
-        _0x3294e4.innerText = _0x1fd625;
-        document.body.appendChild(_0x3294e4);
-        setTimeout(() => _0x3294e4.remove(), 3000);
-      }
+  const _0x259832 = {
+    showtip(_0x44883a, _0xdd5ff = "info") {
+      const _0x2997c9 = document.createElement("div");
+      _0x2997c9.className = "gvh-toast " + _0xdd5ff;
+      _0x2997c9.innerText = _0x44883a;
+      document.body.appendChild(_0x2997c9);
+      setTimeout(() => _0x2997c9.remove(), 3000);
     },
-    async sendCommand(_0x1c708a, _0x3963ea = {}) {
-      {
-        if (!window.ws?.["sendAsync"]) {
-          {
-            this.showtip("错误：WebSocket连接不可用", "error");
-            throw new Error("WebSocket connection not available");
-          }
-        }
-        try {
-          {
-            return await window.ws.sendAsync({
-              ack: 0,
-              cmd: _0x1c708a,
-              params: _0x3963ea,
-              seq: Date.now(),
-              time: Date.now()
-            });
-          }
-        } catch (_0x24788c) {
-          {
-            this.showtip("命令发送失败: " + _0x24788c.message, "error");
-            throw _0x24788c;
-          }
-        }
+    async sendCommand(_0x30092f, _0x217b3d = {}) {
+      if (!window.ws?.["sendAsync"]) {
+        this.showtip("错误：WebSocket连接不可用", "error");
+        throw new Error("WebSocket connection not available");
       }
-    },
-    delay: _0x30a788 => new Promise(_0x12624a => setTimeout(_0x12624a, _0x30a788 * 1000)),
-    getFormatDate: _0x2a4e7c => {
-      {
-        const _0x16ef22 = new Date(_0x2a4e7c);
-        _0x16ef22.setHours(_0x16ef22.getHours() + 8);
-        return _0x16ef22;
-      }
-    }
-  };
-  const _0x2e4691 = {
-    currentData: null,
-    currentDate: "",
-    init() {
-      {
-        const _0x32bf38 = document.getElementById("salt-field-date");
-        _0x32bf38 && (_0x32bf38.value = this.getLastSaturdayString());
-        const _0x45fea7 = document.getElementById("salt-field-query");
-        if (_0x45fea7) {
-          {
-            _0x45fea7.addEventListener("click", () => this.queryWarRecords());
-          }
-        }
-        const _0x295aec = document.getElementById("salt-field-export");
-        _0x295aec && _0x295aec.addEventListener("click", () => this.exportWarRecords());
-        const _0x40edab = document.getElementById("salt-field-summary");
-        if (_0x40edab) {
-          {
-            _0x40edab.addEventListener("click", () => this.showSummary());
-          }
-        }
-      }
-    },
-    getLastSaturdayString() {
-      {
-        const _0x3b701c = new Date();
-        const _0xd2ce6 = _0x3b701c.getDay();
-        let _0x23cb71 = 0;
-        if (_0xd2ce6 === 6) {
-          _0x23cb71 = 0;
-        } else {
-          if (_0xd2ce6 === 0) {
-            _0x23cb71 = 1;
-          } else {
-            _0x23cb71 = _0xd2ce6 + 1;
-          }
-        }
-        const _0x556e8c = new Date(_0x3b701c);
-        _0x556e8c.setDate(_0x3b701c.getDate() - _0x23cb71);
-        const _0x45ba2a = _0x556e8c.getFullYear();
-        const _0x3bb927 = String(_0x556e8c.getMonth() + 1).padStart(2, "0");
-        const _0x2bbba2 = String(_0x556e8c.getDate()).padStart(2, "0");
-        return _0x45ba2a + "-" + _0x3bb927 + "-" + _0x2bbba2;
-      }
-    },
-    formatDateForAPI(_0x46b9bf) {
-      {
-        return _0x46b9bf.replace(/-/g, "/");
-      }
-    },
-    async queryWarRecords() {
-      {
-        const _0xc3fb2f = document.getElementById("salt-field-status");
-        const _0x2824c4 = document.getElementById("salt-field-results");
-        const _0x24e459 = document.getElementById("salt-field-actions");
-        if (!_0xc3fb2f || !_0x2824c4 || !_0x24e459) {
-          return;
-        }
-        _0xc3fb2f.textContent = "🔍 查询中...";
-        _0x2824c4.innerHTML = "<p style=\"text-align: center; color: var(--text-secondary); font-size: 12px;\">正在查询战绩...</p>";
-        _0x24e459.style.display = "none";
-        try {
-          {
-            const _0x30da89 = document.getElementById("salt-field-date");
-            if (!_0x30da89) {
-              throw new Error("日期输入框未找到");
-            }
-            this.currentDate = _0x30da89.value;
-            const _0x39049b = this.formatDateForAPI(this.currentDate);
-            const _0x22b344 = {
-              date: _0x39049b
-            };
-            const _0x357d40 = await _0x37bc18.sendCommand("legionwar_getdetails", _0x22b344);
-            const _0x4a7ab9 = _0x357d40?.["roleDetailsList"] || _0x357d40?.["_rawData"]?.["roleDetailsList"] || _0x357d40?.["body"]?.["roleDetailsList"] || _0x357d40?.["data"]?.["roleDetailsList"] || [];
-            this.currentData = _0x4a7ab9;
-            if (!_0x4a7ab9 || _0x4a7ab9.length === 0) {
-              _0x2824c4.innerHTML = "<p style=\"text-align: center; color: var(--text-secondary); font-size: 12px;\">暂无战绩数据</p>";
-            } else {
-              {
-                const _0x4b242d = [..._0x4a7ab9].sort((_0x141c8e, _0x5c78ff) => Number(_0x5c78ff?.["winCnt"] || 0) - Number(_0x141c8e?.["winCnt"] || 0));
-                const _0x5473a8 = _0x4b242d.map((_0x4e2bd4, _0x21368b) => {
-                  {
-                    const _0x3bcfc9 = _0x4e2bd4?.["name"] || _0x4e2bd4?.["roleName"] || _0x4e2bd4?.["nickname"] || "-";
-                    const _0x229e0a = Number(_0x4e2bd4?.["winCnt"] || 0);
-                    const _0x1202f5 = Number(_0x4e2bd4?.["loseCnt"] || 0);
-                    const _0x328f21 = Number(_0x4e2bd4?.["buildingCnt"] || 0);
-                    return "\n                        <div style=\"display:flex; align-items:center; justify-content:space-between; padding:8px; margin:4px 0; background: var(--item-bg); border:1px solid var(--item-border); border-radius:6px;\">\n                            <div style=\"display:flex; gap:10px; align-items:center;\">\n                                <span style=\"color:var(--text-secondary); font-size:12px;\">" + (_0x21368b + 1) + ".</span>\n                                <span style=\"color:var(--text-primary); font-weight:500;\">" + _0x3bcfc9 + "</span>\n                            </div>\n                            <div style=\"display:flex; gap:15px; color:var(--text-secondary); font-size:12px;\">\n                                <span>击杀 <span style=\"color:var(--success); font-weight:500;\">" + _0x229e0a + "</span></span>\n                                <span>死亡 <span style=\"color:var(--error); font-weight:500;\">" + _0x1202f5 + "</span></span>\n                                <span>攻城 <span style=\"color:var(--highlight); font-weight:500;\">" + _0x328f21 + "</span></span>\n                            </div>\n                        </div>";
-                  }
-                }).join("");
-                const _0x35e11f = "\n                    <div style=\"margin-bottom:8px; padding:8px; background: rgba(0,0,0,0.02); border-radius:6px; color:var(--text-secondary); font-size:12px;\">\n                        查询日期：" + this.currentDate + "｜参战人数：" + _0x4a7ab9.length + "\n                    </div>";
-                _0x2824c4.innerHTML = _0x35e11f + _0x5473a8;
-                _0x24e459.style.display = "grid";
-              }
-            }
-            _0xc3fb2f.textContent = "📊 就绪";
-            _0x37bc18.showtip("盐场战报加载完成", "success");
-          }
-        } catch (_0xf2bee4) {
-          _0x2824c4.innerHTML = "<p style=\"text-align: center; color: var(--error); font-size: 12px;\">查询失败：" + _0xf2bee4.message + "</p>";
-          _0xc3fb2f.textContent = "❌ 查询出错";
-          console.error("查询盐场战报失败:", _0xf2bee4);
-        }
-      }
-    },
-    exportWarRecords() {
-      {
-        if (!this.currentData || !this.currentDate) {
-          {
-            _0x37bc18.showtip("请先查询战报数据", "error");
-            return;
-          }
-        }
-        try {
-          {
-            let _0x2c3c35 = "序号,玩家名称,击杀数,死亡数,攻城数\n";
-            this.currentData.sort((_0x588c6, _0x2bf1a9) => Number(_0x2bf1a9?.["winCnt"] || 0) - Number(_0x588c6?.["winCnt"] || 0)).forEach((_0x588129, _0x538979) => {
-              {
-                const _0x1f2310 = _0x588129?.["name"] || _0x588129?.["roleName"] || _0x588129?.["nickname"] || "-";
-                const _0x1b2fcc = Number(_0x588129?.["winCnt"] || 0);
-                const _0x22df75 = Number(_0x588129?.["loseCnt"] || 0);
-                const _0x2a7f36 = Number(_0x588129?.["buildingCnt"] || 0);
-                _0x2c3c35 += _0x538979 + 1 + ",\"" + _0x1f2310 + "\"," + _0x1b2fcc + "," + _0x22df75 + "," + _0x2a7f36 + "\n";
-              }
-            });
-            const _0x1ed66a = {
-              type: "text/csv;charset=utf-8;"
-            };
-            const _0x3b275d = new Blob([_0x2c3c35], _0x1ed66a);
-            const _0x7a77d5 = document.createElement("a");
-            const _0x452468 = URL.createObjectURL(_0x3b275d);
-            _0x7a77d5.setAttribute("href", _0x452468);
-            _0x7a77d5.setAttribute("download", "盐场战报_" + this.currentDate.replace(/-/g, "") + ".csv");
-            _0x7a77d5.style.visibility = "hidden";
-            document.body.appendChild(_0x7a77d5);
-            _0x7a77d5.click();
-            document.body.removeChild(_0x7a77d5);
-            _0x37bc18.showtip("战报导出成功", "success");
-          }
-        } catch (_0x35d4ff) {
-          {
-            _0x37bc18.showtip("导出失败: " + _0x35d4ff.message, "error");
-            console.error("导出盐场战报失败:", _0x35d4ff);
-          }
-        }
-      }
-    },
-    showSummary() {
-      {
-        if (!this.currentData) {
-          {
-            _0x37bc18.showtip("请先查询战报数据", "error");
-            return;
-          }
-        }
-        try {
-          {
-            let _0x43dcf5 = 0;
-            let _0x37915c = 0;
-            let _0x49cb36 = 0;
-            let _0x201960 = 0;
-            this.currentData.forEach(_0x50bb26 => {
-              {
-                const _0x5a7151 = Number(_0x50bb26?.["winCnt"] || 0);
-                const _0x222e48 = Number(_0x50bb26?.["loseCnt"] || 0);
-                const _0x5e82c3 = Number(_0x50bb26?.["buildingCnt"] || 0);
-                _0x43dcf5 += _0x5a7151;
-                _0x37915c += _0x222e48;
-                _0x49cb36 += _0x5e82c3;
-                (_0x5a7151 > 0 || _0x222e48 > 0 || _0x5e82c3 > 0) && _0x201960++;
-              }
-            });
-            const _0x2e6f7e = document.getElementById("salt-field-results");
-            if (_0x2e6f7e) {
-              {
-                const _0x2d72d2 = "\n                    <div style=\"padding:15px; background: rgba(0,0,0,0.02); border-radius:8px; margin-bottom:10px;\">\n                        <h4 style=\"margin:0 0 10px 0; color:var(--highlight); font-size:14px;\">盐场战报汇总</h4>\n                        <div style=\"display:grid; grid-template-columns: 1fr 1fr; gap:10px;\">\n                            <div style=\"padding:8px; background:var(--item-bg); border:1px solid var(--item-border); border-radius:6px;\">\n                                <div style=\"color:var(--text-secondary); font-size:12px;\">参战总人数</div>\n                                <div style=\"color:var(--text-primary); font-size:16px; font-weight:600;\">" + this.currentData.length + "</div>\n                            </div>\n                            <div style=\"padding:8px; background:var(--item-bg); border:1px solid var(--item-border); border-radius:6px;\">\n                                <div style=\"color:var(--text-secondary); font-size:12px;\">活跃成员数</div>\n                                <div style=\"color:var(--success); font-size:16px; font-weight:600;\">" + _0x201960 + "</div>\n                            </div>\n                            <div style=\"padding:8px; background:var(--item-bg); border:1px solid var(--item-border); border-radius:6px;\">\n                                <div style=\"color:var(--text-secondary); font-size:12px;\">总击杀数</div>\n                                <div style=\"color:var(--success); font-size:16px; font-weight:600;\">" + _0x43dcf5 + "</div>\n                            </div>\n                            <div style=\"padding:8px; background:var(--item-bg); border:1px solid var(--item-border); border-radius:6px;\">\n                                <div style=\"color:var(--text-secondary); font-size:12px;\">总死亡数</div>\n                                <div style=\"color:var(--error); font-size:16px; font-weight:600;\">" + _0x37915c + "</div>\n                            </div>\n                            <div style=\"padding:8px; background:var(--item-bg); border:1px solid var(--item-border); border-radius:6px;\">\n                                <div style=\"color:var(--text-secondary); font-size:12px;\">总攻城数</div>\n                                <div style=\"color:var(--highlight); font-size:16px; font-weight:600;\">" + _0x49cb36 + "</div>\n                            </div>\n                            <div style=\"padding:8px; background:var(--item-bg); border:1px solid var(--item-border); border-radius:6px;\">\n                                <div style=\"color:var(--text-secondary); font-size:12px;\">击杀/死亡比</div>\n                                <div style=\"color:var(--text-primary); font-size:16px; font-weight:600;\">\n                                    " + (_0x37915c > 0 ? (_0x43dcf5 / _0x37915c).toFixed(2) : "∞") + "\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div style=\"text-align:center;\">\n                        <button class=\"task-btn\" onclick=\"document.getElementById('salt-field-query').click();\">\n                            查看详细数据\n                        </button>\n                    </div>";
-                _0x2e6f7e.innerHTML = _0x2d72d2;
-              }
-            }
-          }
-        } catch (_0x53a1df) {
-          {
-            _0x37bc18.showtip("生成汇总失败: " + _0x53a1df.message, "error");
-            console.error("生成盐场战报汇总失败:", _0x53a1df);
-          }
-        }
-      }
-    }
-  };
-  const _0x5b020c = {
-    isRunning: false,
-    isStopping: false,
-    dom: {},
-    delayBetweenFights: 1,
-    init() {
-      {
-        this.dom.startButton = document.querySelector("#start-winrate-btn");
-        this.dom.fightCountInput = document.querySelector("#winrate-fight-count");
-        this.dom.statusEl = document.querySelector("#winrate-status");
-        this.dom.resultsEl = document.querySelector("#winrate-results");
-        if (this.dom.startButton) {
-          {
-            this.dom.startButton.addEventListener("click", this.handleMainButtonClick.bind(this));
-          }
-        }
-      }
-    },
-    updateStatus(_0x2476e8) {
-      {
-        if (this.dom.statusEl) {
-          {
-            this.dom.statusEl.textContent = _0x2476e8;
-          }
-        }
-      }
-    },
-    clearResults() {
-      {
-        if (this.dom.resultsEl) {
-          {
-            this.dom.resultsEl.innerHTML = "";
-          }
-        }
-      }
-    },
-    displayOpponentResult(_0x4444b4, _0x39ccd0) {
-      {
-        if (!this.dom.resultsEl) {
-          return;
-        }
-        let _0x474961 = this.dom.resultsEl.querySelector("[data-opponent-id=\"" + _0x4444b4.id + "\"]");
-        const _0x1f87a2 = _0x39ccd0.wins + _0x39ccd0.losses + _0x39ccd0.draws;
-        const _0x4cedee = _0x1f87a2 > 0 ? (_0x39ccd0.wins / _0x1f87a2 * 100).toFixed(1) : 0;
-        if (_0x474961) {
-          {
-            _0x474961.innerHTML = "\n                    <div><strong>" + _0x4444b4.name + "</strong> (ID: " + _0x4444b4.id + ")</div>\n                    <div>战绩: <span class=\"winrate-win\">" + _0x39ccd0.wins + "胜</span> / <span class=\"winrate-loss\">" + _0x39ccd0.losses + "负</span> / " + _0x39ccd0.draws + "平 | 胜率: <strong>" + _0x4cedee + "%</strong></div>\n                ";
-          }
-        } else {
-          {
-            _0x474961 = document.createElement("div");
-            _0x474961.className = "winrate-result-item";
-            _0x474961.dataset.opponentId = _0x4444b4.id;
-            _0x474961.innerHTML = "\n                    <div><strong>" + _0x4444b4.name + "</strong> (ID: " + _0x4444b4.id + ")</div>\n                    <div>战绩: <span class=\"winrate-win\">" + _0x39ccd0.wins + "胜</span> / <span class=\"winrate-loss\">" + _0x39ccd0.losses + "负</span> / " + _0x39ccd0.draws + "平 | 胜率: <strong>" + _0x4cedee + "%</strong></div>\n                ";
-            this.dom.resultsEl.appendChild(_0x474961);
-          }
-        }
-      }
-    },
-    stop(_0x3a65ee = false) {
-      {
-        if (!_0x3a65ee) {
-          {
-            this.isStopping = true;
-            this.updateStatus("正在请求停止...");
-          }
-        }
-        this.isRunning = false;
-        this.isStopping = false;
-        if (this.dom.startButton) {
-          {
-            this.dom.startButton.textContent = "获取对手并开始测试";
-            this.dom.startButton.classList.remove("stop");
-          }
-        }
-        this.dom.fightCountInput && (this.dom.fightCountInput.disabled = false);
-        if (_0x3a65ee) {
-          this.updateStatus("✅ 所有测试完成！");
-        } else {
-          {
-            this.updateStatus("✅ 已停止");
-          }
-        }
-      }
-    },
-    async start() {
-      {
-        if (this.isRunning) {
-          return;
-        }
-        const _0x4584cc = parseInt(this.dom.fightCountInput?.["value"] || 30, 10);
-        if (isNaN(_0x4584cc) || _0x4584cc <= 0) {
-          {
-            this.updateStatus("❌ 请输入有效的战斗次数");
-            _0x37bc18.showtip("请输入有效的战斗次数", "error");
-            return;
-          }
-        }
-        this.isRunning = true;
-        this.isStopping = false;
-        if (this.dom.startButton) {
-          {
-            this.dom.startButton.textContent = "停止测试";
-            this.dom.startButton.classList.add("stop");
-          }
-        }
-        this.dom.fightCountInput && (this.dom.fightCountInput.disabled = true);
-        this.clearResults();
-        try {
-          {
-            this.updateStatus("⚔️ 正在进入竞技场...");
-            await _0x37bc18.sendCommand("arena_startarea", {});
-            await _0x37bc18.delay(1);
-          }
-        } catch (_0x2f5b14) {
-          {
-            this.updateStatus("❌ 进入竞技场失败: " + _0x2f5b14.message);
-            this.stop();
-            return;
-          }
-        }
-        this.updateStatus("📋 正在获取竞技场对手列表...");
-        let _0x262b9c = [];
-        try {
-          {
-            const _0x4776cf = {
-              refresh: false
-            };
-            const _0x222964 = await _0x37bc18.sendCommand("arena_getareatarget", _0x4776cf);
-            const _0x4250d1 = _0x222964?.["_rawData"]?.["roleList"];
-            if (!_0x4250d1 || _0x4250d1.length === 0) {
-              {
-                throw new Error("未能获取到对手列表");
-              }
-            }
-            _0x262b9c = _0x4250d1.map(_0x3fd045 => ({
-              id: _0x3fd045.roleId,
-              name: _0x3fd045.info?.["name"] || "对手" + _0x3fd045.roleId
-            }));
-            this.clearResults();
-            _0x262b9c.forEach(_0x3f2ec9 => {
-              {
-                const _0x5b8a5d = document.createElement("div");
-                _0x5b8a5d.className = "winrate-result-item";
-                _0x5b8a5d.dataset.opponentId = _0x3f2ec9.id;
-                _0x5b8a5d.innerHTML = "\n                        <div><strong>" + _0x3f2ec9.name + "</strong> (ID: " + _0x3f2ec9.id + ")</div>\n                        <div class=\"winrate-opponent-placeholder\">正在准备测试...</div>\n                    ";
-                this.dom.resultsEl.appendChild(_0x5b8a5d);
-              }
-            });
-            this.updateStatus("🎯 获取到 " + _0x262b9c.length + " 位对手，开始极速测试...");
-          }
-        } catch (_0x2c949c) {
-          {
-            this.updateStatus("❌ 获取对手失败: " + _0x2c949c.message);
-            _0x37bc18.showtip("获取对手失败: " + _0x2c949c.message, "error");
-            this.stop();
-            return;
-          }
-        }
-        let _0x536838 = 0;
-        for (const _0x29bf0 of _0x262b9c) {
-          {
-            _0x536838++;
-            if (this.isStopping) {
-              {
-                this.updateStatus("🛑 测试已手动停止");
-                break;
-              }
-            }
-            this.updateStatus("⚔️ 测试对手 " + _0x29bf0.name + " (" + _0x536838 + "/" + _0x262b9c.length + ")");
-            const _0xb47acb = {
-              wins: 0,
-              losses: 0,
-              draws: 0
-            };
-            for (let _0x2ab9ba = 1; _0x2ab9ba <= _0x4584cc; _0x2ab9ba++) {
-              {
-                if (this.isStopping) {
-                  break;
-                }
-                try {
-                  {
-                    const _0x413dfb = {
-                      targetId: _0x29bf0.id
-                    };
-                    const _0x4669b3 = await _0x37bc18.sendCommand("fight_startpvp", _0x413dfb);
-                    const _0x4fb6c = _0x4669b3?.["_rawData"]?.["battleData"]?.["result"];
-                    const _0x2d7b30 = _0x4fb6c?.["sponsor"]?.["ext"]?.["curHP"];
-                    const _0x22ba95 = _0x4fb6c?.["accept"]?.["ext"]?.["curHP"];
-                    if (_0x4fb6c && typeof _0x2d7b30 !== "undefined" && typeof _0x22ba95 !== "undefined") {
-                      {
-                        if (_0x2d7b30 > 0 && _0x22ba95 === 0) {
-                          _0xb47acb.wins++;
-                        } else {
-                          if (_0x2d7b30 === 0) {
-                            {
-                              _0xb47acb.losses++;
-                            }
-                          } else {
-                            _0xb47acb.draws++;
-                          }
-                        }
-                      }
-                    } else {
-                      _0xb47acb.draws++;
-                    }
-                  }
-                } catch (_0x5a2b25) {
-                  _0xb47acb.draws++;
-                  console.error("挑战 " + _0x29bf0.name + " 时出错:", _0x5a2b25.message);
-                }
-                if (_0x2ab9ba % 10 === 0) {
-                  {
-                    await _0x37bc18.delay(this.delayBetweenFights / 1000);
-                  }
-                }
-              }
-            }
-            this.displayOpponentResult(_0x29bf0, _0xb47acb);
-          }
-        }
-        this.stop(true);
-      }
-    },
-    handleMainButtonClick() {
-      {
-        if (this.isRunning) {
-          this.stop();
-        } else {
-          {
-            this.start();
-          }
-        }
-      }
-    }
-  };
-  const _0x231bba = _0x347846.querySelector(".panel-content");
-  const _0x1b18e5 = _0x347846.querySelector("#opacity-slider");
-  const _0x4f335c = _0x140027 => {
-    {
-      const _0x55ef8f = _0x140027 / 100;
-      _0x347846.style.background = "transparent";
-      _0x347846.querySelector(".opacity-value").textContent = _0x140027 + "%";
-      _0x347846.style.setProperty("--panel-bg", "rgba(247, 250, 252, " + 0.98 * _0x55ef8f + ")");
-      _0x347846.style.setProperty("--item-bg", "rgba(255, 255, 255, " + _0x55ef8f + ")");
-      const _0x35a925 = _0x347846.querySelector(".panel-header");
-      if (_0x35a925) {
+      try {
+        return await window.ws.sendAsync({
+          ack: 0,
+          cmd: _0x30092f,
+          params: _0x217b3d,
+          seq: Date.now(),
+          time: Date.now()
+        });
+      } catch (_0x263e3) {
         {
-          _0x35a925.style.background = "rgba(0, 0, 0, " + 0.02 * _0x55ef8f + ")";
+          this.showtip("命令发送失败: " + _0x263e3.message, "error");
+          throw _0x263e3;
         }
       }
+    },
+    delay: _0x53ceb6 => new Promise(_0x336db2 => setTimeout(_0x336db2, _0x53ceb6 * 1000)),
+    getFormatDate: _0x4365ec => {
+      const _0x50f358 = new Date(_0x4365ec);
+      _0x50f358.setHours(_0x50f358.getHours() + 8);
+      return _0x50f358;
     }
   };
-  _0x1b18e5.addEventListener("input", _0x5362be => _0x4f335c(_0x5362be.target.value));
-  _0x4f335c(_0x1b18e5.value);
-  _0x347846.querySelector(".panel-header").addEventListener("click", _0xa49c37 => {
+  const _0x5cd8b1 = _0x4e3ca8.querySelector(".panel-content");
+  const _0x2f9be4 = _0x4e3ca8.querySelector("#opacity-slider");
+  const _0x4276dd = _0x9194f6 => {
+    const _0x4a8c15 = _0x9194f6 / 100;
+    _0x4e3ca8.style.background = "transparent";
+    _0x4e3ca8.querySelector(".opacity-value").textContent = _0x9194f6 + "%";
+    _0x4e3ca8.style.setProperty("--panel-bg", "rgba(247, 250, 252, " + 0.98 * _0x4a8c15 + ")");
+    _0x4e3ca8.style.setProperty("--item-bg", "rgba(255, 255, 255, " + _0x4a8c15 + ")");
+    const _0x4a97b0 = _0x4e3ca8.querySelector(".panel-header");
+    _0x4a97b0 && (_0x4a97b0.style.background = "rgba(0, 0, 0, " + 0.02 * _0x4a8c15 + ")");
+  };
+  _0x2f9be4.addEventListener("input", _0x1be3d6 => _0x4276dd(_0x1be3d6.target.value));
+  _0x4276dd(_0x2f9be4.value);
+  _0x4e3ca8.querySelector(".panel-header").addEventListener("click", _0x197b37 => {
     {
-      if (_0xa49c37.target.closest(".opacity-control")) {
+      if (_0x197b37.target.closest(".opacity-control")) {
         return;
       }
-      _0x347846.classList.toggle("collapse");
-      _0x347846.classList.toggle("expanded");
+      _0x4e3ca8.classList.toggle("collapse");
+      _0x4e3ca8.classList.toggle("expanded");
     }
   });
-  _0x231bba.addEventListener("click", _0x4d6365 => {
-    {
-      const _0x4fa620 = _0x4d6365.target.closest(".tab-btn");
-      const _0x423381 = _0x4d6365.target.closest(".sub-tab-btn");
-      if (_0x4fa620 && !_0x4fa620.classList.contains("active")) {
-        {
-          _0x231bba.querySelector(".tab-btn.active").classList.remove("active");
-          _0x4fa620.classList.add("active");
-          _0x231bba.querySelector(".tab-pane.active").classList.remove("active");
-          _0x231bba.querySelector("#" + _0x4fa620.dataset.tab).classList.add("active");
-        }
-      }
-      if (_0x423381 && !_0x423381.classList.contains("active")) {
-        {
-          const _0x123843 = _0x423381.closest(".tab-pane");
-          _0x123843.querySelector(".sub-tab-btn.active").classList.remove("active");
-          _0x423381.classList.add("active");
-          _0x123843.querySelector(".sub-pane.active").classList.remove("active");
-          _0x123843.querySelector("#" + _0x423381.dataset.subTab).classList.add("active");
-        }
-      }
+  _0x5cd8b1.addEventListener("click", _0xdbaaf1 => {
+    const _0x35f032 = _0xdbaaf1.target.closest(".tab-btn");
+    const _0x3065e4 = _0xdbaaf1.target.closest(".sub-tab-btn");
+    _0x35f032 && !_0x35f032.classList.contains("active") && (_0x5cd8b1.querySelector(".tab-btn.active").classList.remove("active"), _0x35f032.classList.add("active"), _0x5cd8b1.querySelector(".tab-pane.active").classList.remove("active"), _0x5cd8b1.querySelector("#" + _0x35f032.dataset.tab).classList.add("active"));
+    if (_0x3065e4 && !_0x3065e4.classList.contains("active")) {
+      const _0x131330 = _0x3065e4.closest(".tab-pane");
+      _0x131330.querySelector(".sub-tab-btn.active").classList.remove("active");
+      _0x3065e4.classList.add("active");
+      _0x131330.querySelector(".sub-pane.active").classList.remove("active");
+      _0x131330.querySelector("#" + _0x3065e4.dataset.subTab).classList.add("active");
     }
   });
-  const _0x4d20d5 = document.getElementById("club-boss-count");
-  _0x347846.querySelector("#club-module").addEventListener("click", _0xf24ad0 => {
+  const _0x8344d8 = document.getElementById("club-boss-count");
+  _0x4e3ca8.querySelector("#club-module").addEventListener("click", _0x5c3935 => {
     {
-      const _0x42eb70 = _0xf24ad0.target.dataset.action;
-      if (!_0x42eb70) {
+      const _0x5242e3 = _0x5c3935.target.dataset.action;
+      if (!_0x5242e3) {
         return;
       }
-      let _0x4c3991 = parseInt(_0x4d20d5.textContent);
-      if (_0x42eb70 === "increment" && _0x4c3991 < 4) {
-        _0x4c3991++;
+      let _0x13939c = parseInt(_0x8344d8.textContent);
+      if (_0x5242e3 === "increment" && _0x13939c < 4) {
+        _0x13939c++;
       }
-      if (_0x42eb70 === "decrement" && _0x4c3991 > 0) {
-        _0x4c3991--;
+      if (_0x5242e3 === "decrement" && _0x13939c > 0) {
+        _0x13939c--;
       }
-      _0x4d20d5.textContent = _0x4c3991;
+      _0x8344d8.textContent = _0x13939c;
     }
   });
-  _0x231bba.addEventListener("click", _0x38d90f => {
-    {
-      const _0x258412 = _0x38d90f.target.closest("[data-module]");
-      if (_0x258412) {
-        {
-          const _0x5be207 = _0x258412.dataset.module;
-          _0x231bba.querySelectorAll(".module-content").forEach(_0x1e768c => {
-            _0x1e768c.classList.remove("active");
-          });
-          const _0x11f2c8 = _0x231bba.querySelector("#" + _0x5be207);
-          if (_0x11f2c8) {
-            {
-              _0x11f2c8.classList.add("active");
-            }
-          }
-        }
-      }
-    }
-  });
-  const _0x3792e0 = {
+  const _0x253662 = {
     id: "daily-hangup-combined",
     label: "收菜5次、加钟",
     task: "daily-task-hangup-combined",
     checked: true
   };
-  const _0x765182 = {
+  const _0x4d10aa = {
     id: "daily-bottle-renew",
     label: "续罐子",
     task: "daily-task-bottle-renew",
     checked: true
   };
-  const _0x200b5c = {
+  const _0x275742 = {
     id: "daily-bottle-claim",
     label: "收盐罐",
     task: "daily-task-bottle-claim",
     checked: false
   };
-  const _0x20e5d2 = {
+  const _0x16761f = {
     id: "daily-quick-tasks",
     label: "邮件、签到、赠金币、福利",
     task: "daily-task-combined-quick",
     checked: true
   };
-  const _0x23cc23 = {
+  const _0x5658c0 = {
     id: "daily-boss",
     label: "每日咸王考验",
     task: "daily-task-boss",
     checked: true
   };
-  const _0xd46f35 = {
+  const _0x163724 = {
     id: "daily-gold",
     label: "点金三次",
     task: "daily-task-gold",
     checked: true
   };
-  const _0x3f84af = {
+  const _0x42c69b = {
     id: "daily-quiz",
     label: "自动答题",
     task: "daily-task-quiz",
     checked: true
   };
-  const _0x263869 = {
+  const _0x8becd2 = {
     id: "daily-genie-tickets",
     label: "领取扫荡券",
     task: "daily-task-genie-tickets",
     checked: true
   };
-  const _0x2d1ea9 = {
+  const _0x59d659 = {
     id: "daily-genie-sweep",
     label: "灯神扫荡",
     task: "daily-task-genie-sweep",
     checked: true
   };
-  const _0x19a1c1 = {
+  const _0x342618 = {
     id: "daily-box",
     label: "开启10木箱",
     task: "daily-task-box",
     checked: false
   };
-  const _0x187df2 = {
+  const _0x50f7bb = {
     id: "daily-recruit",
     label: "执行2次招募",
     task: "daily-task-recruit",
     checked: false
   };
-  const _0x306bd3 = {
+  const _0x1a8736 = {
     id: "daily-arena",
     label: "进行3次竞技场战斗",
     task: "daily-task-arena",
     checked: false
   };
-  const _0x5ecab2 = {
+  const _0x3585c1 = {
     id: "daily-buy-bronze-box",
     label: "购买青铜宝箱",
     task: "daily-task-buy-bronze-box",
     checked: false
   };
-  const _0xe9b7f2 = [_0x3792e0, _0x765182, _0x200b5c, _0x20e5d2, _0x23cc23, _0xd46f35, _0x3f84af, _0x263869, _0x2d1ea9, _0x19a1c1, _0x187df2, _0x306bd3, _0x5ecab2];
-  const _0x4090b4 = _0x347846.querySelector(".daily-task-list");
-  _0xe9b7f2.forEach(_0x47eb96 => {
-    {
-      const _0x34381e = document.createElement("div");
-      _0x34381e.className = "daily-task-item";
-      _0x34381e.innerHTML = "\n            <div class=\"daily-task-info\">\n                <input type=\"checkbox\" id=\"" + _0x47eb96.id + "\" data-task-name=\"" + _0x47eb96.task + "\" " + (_0x47eb96.checked ? "checked" : "") + ">\n                <label for=\"" + _0x47eb96.id + "\">" + _0x47eb96.label + "</label>\n            </div>\n            <button class=\"task-btn\" data-task=\"" + _0x47eb96.task + "\">独立执行</button>\n        ";
-      _0x4090b4.appendChild(_0x34381e);
-    }
+  const _0x399a99 = [_0x253662, _0x4d10aa, _0x275742, _0x16761f, _0x5658c0, _0x163724, _0x42c69b, _0x8becd2, _0x59d659, _0x342618, _0x50f7bb, _0x1a8736, _0x3585c1];
+  const _0x2a50b8 = _0x4e3ca8.querySelector(".daily-task-list");
+  _0x399a99.forEach(_0x42e10a => {
+    const _0x88abe3 = document.createElement("div");
+    _0x88abe3.className = "daily-task-item";
+    _0x88abe3.innerHTML = "\n            <div class=\"daily-task-info\">\n                <input type=\"checkbox\" id=\"" + _0x42e10a.id + "\" data-task-name=\"" + _0x42e10a.task + "\" " + (_0x42e10a.checked ? "checked" : "") + ">\n                <label for=\"" + _0x42e10a.id + "\">" + _0x42e10a.label + "</label>\n            </div>\n            <button class=\"task-btn\" data-task=\"" + _0x42e10a.task + "\">独立执行</button>\n        ";
+    _0x2a50b8.appendChild(_0x88abe3);
   });
-  const _0x2a2536 = {
+  const _0x3cb36f = {
     fullCarData: [],
     timeInterval: null,
     sendCount: 0,
     isBatchRefreshing: false,
     availableConditions: ["品质", "金砖", "招募令", "彩玉", "白玉", "万能碎片", "刷新券"]
   };
-  const _0x3411cf = {
-    fullCarData: [],
-    sendCount: 0,
-    timeInterval: null,
-    legionMembersMap: {},
-    helperSelectionByCarId: {}
-  };
-  const _0x3076a5 = {
+  const _0x2e7f34 = {
     statusEl: null,
     dataTable: null,
     dataBody: null
   };
-  const _0x105da3 = {
+  const _0x3d6ce3 = {
     "1": "普通",
     "2": "稀有",
     "3": "史诗",
@@ -1086,7 +607,7 @@
     "5": "神话",
     "6": "传奇"
   };
-  const _0x5219eb = {
+  const _0x3838dc = {
     "1": "color:var(--text-secondary)",
     "2": "color:#3182ce",
     "3": "color:#9f7aea",
@@ -1094,74 +615,58 @@
     "5": "color:#e53e3e",
     "6": "color:#d69e2e"
   };
-  const _0x4ebb3d = {
-    state: _0x2a2536,
-    state: _0x3411cf,
-    dom: _0x3076a5,
+  const _0x27dca7 = {
+    state: _0x3cb36f,
+    dom: _0x2e7f34,
     init() {
       {
-        const _0x16b65a = document.getElementById("car-module");
+        const _0x42d858 = document.getElementById("car-module");
         this.dom = {
-          statusEl: _0x16b65a.querySelector(".status"),
-          dataTable: _0x16b65a.querySelector(".car-data-table"),
-          dataBody: _0x16b65a.querySelector("tbody")
+          statusEl: _0x42d858.querySelector(".status"),
+          dataTable: _0x42d858.querySelector(".car-data-table"),
+          dataBody: _0x42d858.querySelector("tbody")
         };
-        _0x16b65a.addEventListener("click", _0x5bd090 => {
-          {
-            const _0x5d563b = _0x5bd090.target.closest(".task-btn, .car-action-btn, .car-batch-btn");
-            if (!_0x5d563b) {
-              return;
-            }
-            const {
-              task: _0x5b0dc0,
-              action: _0x5a48aa,
-              id: _0x3f0d2c
-            } = _0x5d563b.dataset;
-            if (_0x5b0dc0 === "car-query") {
-              this.handleTask(_0x5d563b);
-            } else {
-              if (_0x5a48aa === "toggleRefreshFilter") {
-                {
-                  const _0xaa29ab = document.querySelector(".refresh-filter-panel");
-                  if (_0xaa29ab) {
-                    _0xaa29ab.style.display = _0xaa29ab.style.display === "none" ? "block" : "none";
-                  }
+        _0x42d858.addEventListener("click", _0x10fe29 => {
+          const _0x250772 = _0x10fe29.target.closest(".task-btn, .car-action-btn, .car-batch-btn");
+          if (!_0x250772) {
+            return;
+          }
+          const {
+            task: _0x3d7fae,
+            action: _0xa0bf0d,
+            id: _0x1797e7
+          } = _0x250772.dataset;
+          if (_0x3d7fae === "car-query") {
+            this.handleTask(_0x250772);
+          } else {
+            if (_0xa0bf0d === "toggleRefreshFilter") {
+              {
+                const _0x58e3d6 = document.querySelector(".refresh-filter-panel");
+                if (_0x58e3d6) {
+                  _0x58e3d6.style.display = _0x58e3d6.style.display === "none" ? "block" : "none";
                 }
+              }
+            } else {
+              if (_0xa0bf0d === "sendAll") {
+                this.sendAllCars();
               } else {
-                if (_0x5a48aa === "sendAll") {
-                  this.sendAllCars();
+                if (_0xa0bf0d === "claimAll") {
+                  this.claimAllCars();
                 } else {
-                  if (_0x5a48aa === "claimAll") {
-                    this.claimAllCars();
+                  if (_0xa0bf0d === "send") {
+                    this.sendCar(_0x1797e7);
                   } else {
-                    if (_0x5a48aa === "send") {
-                      this.sendCar(_0x3f0d2c);
+                    if (_0xa0bf0d === "refresh") {
+                      this.refreshCar(_0x1797e7);
                     } else {
-                      if (_0x5a48aa === "refresh") {
-                        this.refreshCar(_0x3f0d2c);
+                      if (_0xa0bf0d === "claim" && !_0x250772.classList.contains("is-disabled")) {
+                        this.claimCar(_0x1797e7);
                       } else {
-                        if (_0x5a48aa === "claim" && !_0x5d563b.classList.contains("is-disabled")) {
-                          this.claimCar(_0x3f0d2c);
+                        if (_0xa0bf0d === "claim") {
+                          _0x259832.showtip("赛车尚未到站，无法收取", "error");
                         } else {
-                          if (_0x5a48aa === "claim") {
-                            _0x37bc18.showtip("赛车尚未到站，无法收取", "error");
-                          } else {
-                            if (_0x5a48aa === "startBatchRefresh" && !_0x5d563b.classList.contains("is-disabled")) {
-                              this.startBatchRefresh();
-                            } else {
-                              if (_0x5a48aa === "setHelper") {
-                                {
-                                  const _0x46dede = this.state.fullCarData.find(_0x541014 => String(_0x541014.carId) === String(_0x3f0d2c));
-                                  if (_0x46dede) {
-                                    this.openHelperDialog(_0x46dede);
-                                  }
-                                }
-                              } else {
-                                if (_0x5a48aa === "openMembers") {
-                                  this.openMembersDialog();
-                                }
-                              }
-                            }
+                          if (_0xa0bf0d === "startBatchRefresh" && !_0x250772.classList.contains("is-disabled")) {
+                            this.startBatchRefresh();
                           }
                         }
                       }
@@ -1175,60 +680,54 @@
         window.addEventListener("beforeunload", () => this.stopTimeRefresh());
       }
     },
-    async handleTask(_0x26653b) {
-      {
-        const _0x5bce24 = _0x26653b.textContent;
-        _0x26653b.disabled = true;
-        _0x26653b.textContent = "查询中...";
-        await this.queryClubCars();
-        _0x26653b.disabled = false;
-        _0x26653b.textContent = _0x5bce24;
-      }
+    async handleTask(_0x27fc73) {
+      const _0x2b68c9 = _0x27fc73.textContent;
+      _0x27fc73.disabled = true;
+      _0x27fc73.textContent = "查询中...";
+      await this.queryClubCars();
+      _0x27fc73.disabled = false;
+      _0x27fc73.textContent = _0x2b68c9;
     },
     isCarEventActive: () => {
-      {
-        const _0x34bd84 = new Date();
-        return _0x34bd84.getDay() >= 1 && _0x34bd84.getDay() <= 3 && _0x34bd84.getHours() >= 6 && _0x34bd84.getHours() < 20;
-      }
+      const _0x473b80 = new Date();
+      return _0x473b80.getDay() >= 1 && _0x473b80.getDay() <= 3 && _0x473b80.getHours() >= 6 && _0x473b80.getHours() < 20;
     },
-    parseRewards(_0x34f465) {
-      {
-        if (!_0x34f465?.["length"]) {
-          return [];
-        }
-        const _0x5963bb = {
-          "2_0": "金砖",
-          "0_0": "金砖",
-          "3_1001": "招募令",
-          "3_1023": "彩玉",
-          "3_1022": "白玉",
-          "3_3201": "万能碎片",
-          "3_35002": "刷新券"
-        };
-        const _0x39472a = {};
-        _0x34f465.forEach(_0x18a11e => {
-          {
-            const _0x18aa7a = _0x5963bb[_0x18a11e.type + "_" + _0x18a11e.itemId];
-            if (_0x18aa7a) {
-              _0x39472a[_0x18aa7a] = (_0x39472a[_0x18aa7a] || 0) + _0x18a11e.value;
-            }
+    parseRewards(_0x701038) {
+      if (!_0x701038?.["length"]) {
+        return [];
+      }
+      const _0x2732d2 = {
+        "2_0": "金砖",
+        "0_0": "金砖",
+        "3_1001": "招募令",
+        "3_1023": "彩玉",
+        "3_1022": "白玉",
+        "3_3201": "万能碎片",
+        "3_35002": "刷新券"
+      };
+      const _0x2dd5af = {};
+      _0x701038.forEach(_0x32e176 => {
+        {
+          const _0x2ac5c4 = _0x2732d2[_0x32e176.type + "_" + _0x32e176.itemId];
+          if (_0x2ac5c4) {
+            _0x2dd5af[_0x2ac5c4] = (_0x2dd5af[_0x2ac5c4] || 0) + _0x32e176.value;
           }
-        });
-        return Object.entries(_0x39472a).map(([_0x6bff22, _0x1959a8]) => _0x6bff22 + ":" + _0x1959a8);
-      }
+        }
+      });
+      return Object.entries(_0x2dd5af).map(([_0x5c06a1, _0x209624]) => _0x5c06a1 + ":" + _0x209624);
     },
-    getCarQualityText: _0x4d8e56 => _0x105da3[_0x4d8e56] || "未知",
-    getCarQualityStyle: _0x1e209f => (_0x5219eb[_0x1e209f] || "") + ";font-weight:bold;",
-    getCarStatus(_0x163fc0) {
+    getCarQualityText: _0x2c7047 => _0x3d6ce3[_0x2c7047] || "未知",
+    getCarQualityStyle: _0x3a896f => (_0x3838dc[_0x3a896f] || "") + ";font-weight:bold;",
+    getCarStatus(_0x12ea15) {
       {
-        const _0x16642c = {
+        const _0x3b8e77 = {
           status: "待发车",
           statusClass: "status-pending"
         };
-        if (!_0x163fc0.sendAt) {
-          return _0x16642c;
+        if (!_0x12ea15.sendAt) {
+          return _0x3b8e77;
         }
-        const _0xf7ba0 = {
+        const _0x519396 = {
           "1": 2.5,
           "2": 2.5,
           "3": 3,
@@ -1236,24 +735,24 @@
           "5": 4,
           "6": 4
         };
-        const _0x58d48f = (_0xf7ba0[_0x163fc0.quality] || 0) * 3600000;
-        const _0x30335d = {
+        const _0x23780c = (_0x519396[_0x12ea15.quality] || 0) * 3600000;
+        const _0x46ae1c = {
           status: "未知状态",
           statusClass: "status-pending"
         };
-        if (!_0x58d48f) {
-          return _0x30335d;
+        if (!_0x23780c) {
+          return _0x46ae1c;
         }
-        const _0x19287a = _0x163fc0.sendAt * 1000 + _0x58d48f - Date.now();
-        if (_0x19287a <= 0) {
+        const _0x5e5d07 = _0x12ea15.sendAt * 1000 + _0x23780c - Date.now();
+        if (_0x5e5d07 <= 0) {
           return {
             status: "已完成",
             statusClass: "status-completed"
           };
         }
-        const _0x4890a1 = _0x1c512b => _0x1c512b.toString().padStart(2, "0");
+        const _0x59fda4 = _0x52a4ae => _0x52a4ae.toString().padStart(2, "0");
         return {
-          status: "剩余 " + _0x4890a1(Math.floor(_0x19287a / 3600000)) + ":" + _0x4890a1(Math.floor(_0x19287a % 3600000 / 60000)) + ":" + _0x4890a1(Math.floor(_0x19287a % 60000 / 1000)),
+          status: "剩余 " + _0x59fda4(Math.floor(_0x5e5d07 / 3600000)) + ":" + _0x59fda4(Math.floor(_0x5e5d07 % 3600000 / 60000)) + ":" + _0x59fda4(Math.floor(_0x5e5d07 % 60000 / 1000)),
           statusClass: "status-running"
         };
       }
@@ -1271,60 +770,41 @@
     },
     renderCarData() {
       {
-        const _0x10d3ae = this.state.fullCarData.length > 0;
-        this.dom.dataTable.style.display = _0x10d3ae ? "table" : "none";
-        if (!_0x10d3ae) {
-          {
-            this.stopTimeRefresh();
-            return;
-          }
+        const _0x2c4e06 = this.state.fullCarData.length > 0;
+        this.dom.dataTable.style.display = _0x2c4e06 ? "table" : "none";
+        if (!_0x2c4e06) {
+          this.stopTimeRefresh();
+          return;
         }
         this.dom.dataBody.innerHTML = "";
-        const _0x4ec16e = [...this.state.fullCarData].sort((_0x25f0de, _0x3c3014) => _0x25f0de.slot - _0x3c3014.slot);
-        const _0x39063a = {
+        const _0x49d724 = [...this.state.fullCarData].sort((_0xc63d7c, _0x33d11f) => _0xc63d7c.slot - _0x33d11f.slot);
+        const _0x724d67 = {
           "金砖": 2000,
           "万能碎片": 10,
           "招募令": 10,
           "白玉": 2000,
           "彩玉": 2
         };
-        const _0x8cbcb0 = _0x4b1eab => {
+        const _0x2f598b = _0x1d42f4 => {
           {
-            const [_0x22d8d3, _0xa45f4d] = _0x4b1eab.split(":");
-            return _0xa45f4d && parseInt(_0xa45f4d) >= (_0x39063a[_0x22d8d3] || Infinity);
+            const [_0x1d2cd3, _0x1c39ae] = _0x1d42f4.split(":");
+            return _0x1c39ae && parseInt(_0x1c39ae) >= (_0x724d67[_0x1d2cd3] || Infinity);
           }
         };
-        _0x4ec16e.forEach(_0x196395 => {
+        _0x49d724.forEach(_0x358ce1 => {
           {
-            const _0x5a8916 = this.getCarStatus(_0x196395);
-            let _0x52726b = "<div class=\"car-status " + _0x5a8916.statusClass + "\">" + _0x5a8916.status + "</div>";
-            if (!_0x196395.sendAt) {
-              {
-                const _0x6daa4 = 5 - _0x196395.refreshCount;
-                _0x52726b += "<div class=\"pity-counter " + (_0x6daa4 <= 1 ? "mythic-guaranteed" : "") + "\">" + (_0x6daa4 <= 1 ? "本次刷新必出神话" : "再刷" + _0x6daa4 + "次出神话") + "</div>";
-              }
+            const _0x29e7c9 = this.getCarStatus(_0x358ce1);
+            let _0x469b31 = "<div class=\"car-status " + _0x29e7c9.statusClass + "\">" + _0x29e7c9.status + "</div>";
+            if (!_0x358ce1.sendAt) {
+              const _0x243e32 = 5 - _0x358ce1.refreshCount;
+              _0x469b31 += "<div class=\"pity-counter " + (_0x243e32 <= 1 ? "mythic-guaranteed" : "") + "\">" + (_0x243e32 <= 1 ? "本次刷新必出神话" : "再刷" + _0x243e32 + "次出神话") + "</div>";
             }
-            const _0x162f2a = !this.isCarEventActive() || this.state.sendCount >= 4;
-            const _0xd85ede = _0x5a8916.statusClass === "status-completed";
-            let _0x911d29 = "";
-            if (!_0x196395.sendAt) {
-              {
-                _0x911d29 = "<button class=\"car-action-btn\" data-action=\"refresh\" data-id=\"" + _0x196395.carId + "\">刷新</button>";
-                if (Number(_0x196395.quality || 0) >= 5) {
-                  {
-                    const _0x344856 = (this.state.helperSelectionByCarId || {})[String(_0x196395.carId)];
-                    const _0x8fa37d = _0x344856 ? this.getMemberName(_0x344856) : "";
-                    _0x911d29 += "<button class=\"car-action-btn helper\" data-action=\"setHelper\" data-id=\"" + _0x196395.carId + "\">" + (_0x8fa37d ? "护卫(" + _0x8fa37d + ")" : "选择护卫") + "</button>";
-                  }
-                }
-                _0x911d29 += "<button class=\"car-action-btn send " + (_0x162f2a ? "is-disabled" : "") + "\" data-action=\"send\" data-id=\"" + _0x196395.carId + "\">发车</button>";
-              }
-            } else {
-              _0x911d29 = "<button class=\"car-action-btn claim " + (_0xd85ede ? "" : "is-disabled") + "\" data-action=\"claim\" data-id=\"" + _0x196395.carId + "\">收车</button>";
-            }
-            const _0x3bfe61 = this.dom.dataBody.insertRow();
-            const _0x5771a2 = _0x196395.rewards.map(_0x48099d => "<span style=\"" + (_0x8cbcb0(_0x48099d) ? "color:#e53e3e;" : "") + "\">" + _0x48099d + "</span>").join("<br>") || "暂无";
-            _0x3bfe61.innerHTML = "<td>" + (_0x196395.slot + 1) + "</td><td style=\"" + this.getCarQualityStyle(_0x196395.quality) + "\">" + this.getCarQualityText(_0x196395.quality) + "</td><td class=\"car-rewards\" title=\"" + _0x196395.rewards.join("，") + "\">" + _0x5771a2 + "</td><td>" + _0x52726b + "</td><td>" + _0x911d29 + "</td>";
+            const _0x5d8773 = !this.isCarEventActive() || this.state.sendCount >= 4;
+            const _0x1aefa7 = _0x29e7c9.statusClass === "status-completed";
+            const _0x1e16ac = !_0x358ce1.sendAt ? "<button class=\"car-action-btn\" data-action=\"refresh\" data-id=\"" + _0x358ce1.carId + "\">刷新</button><button class=\"car-action-btn send " + (_0x5d8773 ? "is-disabled" : "") + "\" data-action=\"send\" data-id=\"" + _0x358ce1.carId + "\">发车</button>" : "<button class=\"car-action-btn claim " + (_0x1aefa7 ? "" : "is-disabled") + "\" data-action=\"claim\" data-id=\"" + _0x358ce1.carId + "\">收车</button>";
+            const _0x5c9296 = this.dom.dataBody.insertRow();
+            const _0x3e73bb = _0x358ce1.rewards.map(_0x17c8f3 => "<span style=\"" + (_0x2f598b(_0x17c8f3) ? "color:#e53e3e;" : "") + "\">" + _0x17c8f3 + "</span>").join("<br>") || "暂无";
+            _0x5c9296.innerHTML = "<td>" + (_0x358ce1.slot + 1) + "</td><td style=\"" + this.getCarQualityStyle(_0x358ce1.quality) + "\">" + this.getCarQualityText(_0x358ce1.quality) + "</td><td class=\"car-rewards\" title=\"" + _0x358ce1.rewards.join("，") + "\">" + _0x3e73bb + "</td><td>" + _0x469b31 + "</td><td>" + _0x1e16ac + "</td>";
           }
         });
         this.renderBatchActionsAndFilterPanel();
@@ -1332,138 +812,104 @@
       }
     },
     renderBatchActionsAndFilterPanel() {
-      {
-        let _0x957958 = this.dom.dataTable.parentElement;
-        let _0x44e0b1 = _0x957958.querySelector(".car-batch-actions");
-        if (!_0x44e0b1) {
-          {
-            _0x44e0b1 = document.createElement("div");
-            _0x44e0b1.className = "car-batch-actions";
-            _0x44e0b1.style.cssText = "margin-top: 10px; display: flex; gap: 10px;";
-            _0x957958.appendChild(_0x44e0b1);
-          }
+      let _0x1dbaf8 = this.dom.dataTable.parentElement;
+      let _0x211a83 = _0x1dbaf8.querySelector(".car-batch-actions");
+      !_0x211a83 && (_0x211a83 = document.createElement("div"), _0x211a83.className = "car-batch-actions", _0x211a83.style.cssText = "margin-top: 10px; display: flex; gap: 10px;", _0x1dbaf8.appendChild(_0x211a83));
+      const _0x3901c3 = this.isCarEventActive() && this.state.sendCount < 4 && this.state.fullCarData.some(_0x3410c5 => !_0x3410c5.sendAt);
+      const _0x26e73a = this.state.fullCarData.some(_0x4d779f => this.getCarStatus(_0x4d779f).statusClass === "status-completed");
+      _0x211a83.innerHTML = "\n            <button class=\"task-btn " + (!_0x3901c3 ? "is-disabled" : "") + "\" data-action=\"sendAll\">一键发车</button>\n            <button class=\"task-btn " + (!_0x26e73a ? "is-disabled" : "") + "\" data-action=\"claimAll\">一键收车</button>\n            <button class=\"task-btn\" data-action=\"toggleRefreshFilter\">设置刷新条件</button>\n        ";
+      let _0x172565 = _0x1dbaf8.querySelector(".refresh-filter-panel");
+      if (!_0x172565) {
+        {
+          _0x172565 = document.createElement("div");
+          _0x172565.className = "refresh-filter-panel";
+          _0x172565.style.cssText = "display: none; margin-top: 10px; padding: 10px; border: 1px solid var(--item-border); border-radius: 7px; background: var(--item-bg);";
+          _0x1dbaf8.appendChild(_0x172565);
+          this.buildFilterPanelUI(_0x172565);
+          this.setupFilterPanelEvents(_0x172565);
+          this.loadUserSettings();
         }
-        const _0x4e86b8 = this.isCarEventActive() && this.state.sendCount < 4 && this.state.fullCarData.some(_0x1c6d92 => !_0x1c6d92.sendAt);
-        const _0x291fdc = this.state.fullCarData.some(_0x16ee7b => this.getCarStatus(_0x16ee7b).statusClass === "status-completed");
-        _0x44e0b1.innerHTML = "\n            <button class=\"task-btn " + (!_0x4e86b8 ? "is-disabled" : "") + "\" data-action=\"sendAll\">一键发车</button>\n            <button class=\"task-btn " + (!_0x291fdc ? "is-disabled" : "") + "\" data-action=\"claimAll\">一键收车</button>\n            <button class=\"task-btn\" data-action=\"openMembers\">查看成员</button>\n            <button class=\"task-btn\" data-action=\"toggleRefreshFilter\">刷新条件</button>\n        ";
-        let _0x597fe2 = _0x957958.querySelector(".refresh-filter-panel");
-        if (!_0x597fe2) {
-          {
-            _0x597fe2 = document.createElement("div");
-            _0x597fe2.className = "refresh-filter-panel";
-            _0x597fe2.style.cssText = "display: none; margin-top: 10px; padding: 10px; border: 1px solid var(--item-border); border-radius: 7px; background: var(--item-bg);";
-            _0x957958.appendChild(_0x597fe2);
-            this.buildFilterPanelUI(_0x597fe2);
-            this.setupFilterPanelEvents(_0x597fe2);
-            this.loadUserSettings();
-          }
-        }
-        this.updateRefreshButtonState();
       }
+      this.updateRefreshButtonState();
     },
-    buildFilterPanelUI(_0x29ed16) {
-      {
-        _0x29ed16.innerHTML = "\n            <style>\n                .filter-group { border: 1px solid var(--item-border); border-radius: 5px; padding: 8px; margin-bottom: 10px; }\n                .group-title { font-size: 13px; font-weight: bold; color: var(--text-primary); display: block; margin-bottom: 8px; }\n                .filter-row, .placeholder-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }\n                .filter-row-label { font-size: 12px; color: var(--text-secondary); min-width: 60px; text-align: right; }\n                .filter-row-value, .placeholder-select { width: 90px; padding: 3px; font-size: 12px; box-sizing: border-box; }\n                .count-selector { display: flex; align-items: center; gap: 0; }\n                .count-display { padding: 0 10px; font-size: 12px; min-width: 40px; text-align: center; }\n                .add-condition-btn { font-size: 12px; padding: 2px 8px; margin-top: 5px; }\n                .remove-condition-btn { font-size: 12px; padding: 0; height: 22px; width: 22px; cursor: pointer; border-radius: 50%; }\n            </style>\n\n            <div class=\"filter-group\" id=\"and-conditions-group\">\n                <strong class=\"group-title\">必须同时满足 (AND)</strong>\n                <div class=\"group-content\"></div>\n                <button class=\"task-btn add-condition-btn\" data-group=\"and\">[+] 添加必须条件</button>\n            </div>\n\n            <div class=\"filter-group\" id=\"or-conditions-group\">\n                <strong class=\"group-title\">并满足任一条件 (OR)</strong>\n                <div class=\"group-content\"></div>\n                <button class=\"task-btn add-condition-btn\" data-group=\"or\">[+] 添加任一条件</button>\n            </div>\n\n            <div style=\"display: flex; align-items: center; gap: 10px; margin-top: 15px;\">\n                <span style=\"font-size: 12px; font-weight: bold; min-width: 80px;\">单车最大刷新:</span>\n                <div class=\"count-selector\">\n                    <button class=\"task-btn\" data-action=\"decrement-refresh-count\" style=\"width: 28px; height: 28px; padding: 0;\">-</button>\n                    <span id=\"max-refresh-count\" class=\"count-display\">5</span>\n                    <button class=\"task-btn\" data-action=\"increment-refresh-count\" style=\"width: 28px; height: 28px; padding: 0;\">+</button>\n                </div>\n            </div>\n            <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;\">\n                <button class=\"task-btn is-disabled\" id=\"start-batch-refresh\" data-action=\"startBatchRefresh\">一键刷新</button>\n                <button class=\"task-btn\" id=\"send-all-cars-panel\" data-action=\"sendAll\">一键发车</button>\n            </div>\n        ";
-      }
+    buildFilterPanelUI(_0x57bf47) {
+      _0x57bf47.innerHTML = "\n            <style>\n                .filter-group { border: 1px solid var(--item-border); border-radius: 5px; padding: 8px; margin-bottom: 10px; }\n                .group-title { font-size: 13px; font-weight: bold; color: var(--text-primary); display: block; margin-bottom: 8px; }\n                .filter-row, .placeholder-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }\n                .filter-row-label { font-size: 12px; color: var(--text-secondary); min-width: 60px; text-align: right; }\n                .filter-row-value, .placeholder-select { width: 90px; padding: 3px; font-size: 12px; box-sizing: border-box; }\n                .count-selector { display: flex; align-items: center; gap: 0; }\n                .count-display { padding: 0 10px; font-size: 12px; min-width: 40px; text-align: center; }\n                .add-condition-btn { font-size: 12px; padding: 2px 8px; margin-top: 5px; }\n                .remove-condition-btn { font-size: 12px; padding: 0; height: 22px; width: 22px; cursor: pointer; border-radius: 50%; }\n            </style>\n\n            <div class=\"filter-group\" id=\"and-conditions-group\">\n                <strong class=\"group-title\">必须同时满足 (AND)</strong>\n                <div class=\"group-content\"></div>\n                <button class=\"task-btn add-condition-btn\" data-group=\"and\">[+] 添加必须条件</button>\n            </div>\n\n            <div class=\"filter-group\" id=\"or-conditions-group\">\n                <strong class=\"group-title\">并满足任一条件 (OR)</strong>\n                <div class=\"group-content\"></div>\n                <button class=\"task-btn add-condition-btn\" data-group=\"or\">[+] 添加任一条件</button>\n            </div>\n\n            <div style=\"display: flex; align-items: center; gap: 10px; margin-top: 15px;\">\n                <span style=\"font-size: 12px; font-weight: bold; min-width: 80px;\">单车最大刷新:</span>\n                <div class=\"count-selector\">\n                    <button class=\"task-btn\" data-action=\"decrement-refresh-count\" style=\"width: 28px; height: 28px; padding: 0;\">-</button>\n                    <span id=\"max-refresh-count\" class=\"count-display\">5</span>\n                    <button class=\"task-btn\" data-action=\"increment-refresh-count\" style=\"width: 28px; height: 28px; padding: 0;\">+</button>\n                </div>\n            </div>\n            <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;\">\n                <button class=\"task-btn is-disabled\" id=\"start-batch-refresh\" data-action=\"startBatchRefresh\">一键刷新</button>\n                <button class=\"task-btn\" id=\"send-all-cars-panel\" data-action=\"sendAll\">一键发车</button>\n            </div>\n        ";
     },
-    setupFilterPanelEvents(_0x6521a3) {
-      {
-        const _0x486cce = (_0x28723f, _0xcd0f4b) => {
-          {
-            let _0x41fc9b;
-            return (..._0x3dcc3c) => {
-              {
-                clearTimeout(_0x41fc9b);
-                _0x41fc9b = setTimeout(() => _0x28723f.apply(this, _0x3dcc3c), _0xcd0f4b);
-              }
-            };
-          }
+    setupFilterPanelEvents(_0x14c7a4) {
+      const _0x4547c2 = (_0xc5c40c, _0x5958cd) => {
+        let _0x283798;
+        return (..._0x5c04ae) => {
+          clearTimeout(_0x283798);
+          _0x283798 = setTimeout(() => _0xc5c40c.apply(this, _0x5c04ae), _0x5958cd);
         };
-        const _0x2dad6e = _0x486cce(() => this.saveUserSettings(), 500);
-        _0x6521a3.addEventListener("click", _0xca3f4d => {
+      };
+      const _0x6e20a2 = _0x4547c2(() => this.saveUserSettings(), 500);
+      _0x14c7a4.addEventListener("click", _0x4549b0 => {
+        const _0x3d9b26 = _0x4549b0.target;
+        const _0x3df642 = _0x3d9b26.dataset.action;
+        if (_0x3df642 === "increment-refresh-count" || _0x3df642 === "decrement-refresh-count") {
           {
-            const _0xb52f31 = _0xca3f4d.target;
-            const _0x47b2c1 = _0xb52f31.dataset.action;
-            if (_0x47b2c1 === "increment-refresh-count" || _0x47b2c1 === "decrement-refresh-count") {
-              {
-                const _0x4f19d2 = document.getElementById("max-refresh-count");
-                let _0x325e64 = parseInt(_0x4f19d2.textContent);
-                if (_0x47b2c1 === "increment-refresh-count" && _0x325e64 < 100) {
-                  _0x325e64++;
-                }
-                if (_0x47b2c1 === "decrement-refresh-count" && _0x325e64 > 1) {
-                  _0x325e64--;
-                }
-                _0x4f19d2.textContent = _0x325e64;
-                this.saveUserSettings();
-              }
-            } else {
-              if (_0xb52f31.classList.contains("add-condition-btn")) {
-                {
-                  this.addConditionPlaceholder(_0xb52f31.dataset.group);
-                }
-              } else {
-                _0xb52f31.classList.contains("remove-condition-btn") && (_0xb52f31.closest(".filter-row, .placeholder-row").remove(), this.saveUserSettings(), this.updateRefreshButtonState());
-              }
+            const _0xd6606 = document.getElementById("max-refresh-count");
+            let _0x1f37ec = parseInt(_0xd6606.textContent);
+            if (_0x3df642 === "increment-refresh-count" && _0x1f37ec < 100) {
+              _0x1f37ec++;
             }
-          }
-        });
-        _0x6521a3.addEventListener("change", _0x145f57 => {
-          {
-            const _0x477022 = _0x145f57.target;
-            if (_0x477022.classList.contains("placeholder-select")) {
-              this.transformPlaceholder(_0x477022);
-            } else {
-              {
-                this.saveUserSettings();
-                this.updateRefreshButtonState();
-              }
+            if (_0x3df642 === "decrement-refresh-count" && _0x1f37ec > 1) {
+              _0x1f37ec--;
             }
+            _0xd6606.textContent = _0x1f37ec;
+            this.saveUserSettings();
           }
-        });
-        _0x6521a3.addEventListener("input", _0x51f5c4 => {
-          {
-            if (_0x51f5c4.target.type === "number") {
-              _0x2dad6e();
-            }
-          }
-        });
-      }
-    },
-    addConditionPlaceholder(_0xc966b2) {
-      {
-        const _0x4ea9cb = document.querySelector("#" + _0xc966b2 + "-conditions-group .group-content");
-        const _0xec2dd8 = new Set([...document.querySelectorAll(".filter-row")].map(_0x16293d => _0x16293d.dataset.type));
-        const _0x546df5 = this.state.availableConditions.filter(_0x90a564 => !_0xec2dd8.has(_0x90a564));
-        if (_0x546df5.length === 0) {
-          {
-            _0x37bc18.showtip("所有条件都已添加", "info");
-            return;
+        } else {
+          if (_0x3d9b26.classList.contains("add-condition-btn")) {
+            this.addConditionPlaceholder(_0x3d9b26.dataset.group);
+          } else {
+            _0x3d9b26.classList.contains("remove-condition-btn") && (_0x3d9b26.closest(".filter-row, .placeholder-row").remove(), this.saveUserSettings(), this.updateRefreshButtonState());
           }
         }
-        const _0x209fc0 = document.createElement("div");
-        _0x209fc0.className = "placeholder-row";
-        const _0x517ff8 = _0x546df5.map(_0x403992 => "<option value=\"" + _0x403992 + "\">" + _0x403992 + "</option>").join("");
-        _0x209fc0.innerHTML = "\n            <input type=\"checkbox\" checked disabled>\n            <select class=\"placeholder-select\"><option value=\"\">--选择条件--</option>" + _0x517ff8 + "</select>\n            <button class=\"task-btn remove-condition-btn\">-</button>\n        ";
-        _0x4ea9cb.appendChild(_0x209fc0);
-      }
+      });
+      _0x14c7a4.addEventListener("change", _0x186f58 => {
+        const _0x1fbaeb = _0x186f58.target;
+        _0x1fbaeb.classList.contains("placeholder-select") ? this.transformPlaceholder(_0x1fbaeb) : (this.saveUserSettings(), this.updateRefreshButtonState());
+      });
+      _0x14c7a4.addEventListener("input", _0x375062 => {
+        {
+          if (_0x375062.target.type === "number") {
+            _0x6e20a2();
+          }
+        }
+      });
     },
-    transformPlaceholder(_0x3d6685) {
+    addConditionPlaceholder(_0x22fadd) {
+      const _0x235095 = document.querySelector("#" + _0x22fadd + "-conditions-group .group-content");
+      const _0x5ba614 = new Set([...document.querySelectorAll(".filter-row")].map(_0x1ddf10 => _0x1ddf10.dataset.type));
+      const _0x58c7b2 = this.state.availableConditions.filter(_0x4245ac => !_0x5ba614.has(_0x4245ac));
+      if (_0x58c7b2.length === 0) {
+        _0x259832.showtip("所有条件都已添加", "info");
+        return;
+      }
+      const _0x158234 = document.createElement("div");
+      _0x158234.className = "placeholder-row";
+      const _0x31ecfd = _0x58c7b2.map(_0x4dbe80 => "<option value=\"" + _0x4dbe80 + "\">" + _0x4dbe80 + "</option>").join("");
+      _0x158234.innerHTML = "\n            <input type=\"checkbox\" checked disabled>\n            <select class=\"placeholder-select\"><option value=\"\">--选择条件--</option>" + _0x31ecfd + "</select>\n            <button class=\"task-btn remove-condition-btn\">-</button>\n        ";
+      _0x235095.appendChild(_0x158234);
+    },
+    transformPlaceholder(_0x231dd8) {
       {
-        const _0xcf9c1d = _0x3d6685.closest(".placeholder-row");
-        const _0x4d6233 = _0x3d6685.value;
-        if (!_0x4d6233) {
+        const _0x3c4457 = _0x231dd8.closest(".placeholder-row");
+        const _0x260df5 = _0x231dd8.value;
+        if (!_0x260df5) {
           return;
         }
-        const _0x16d8bd = document.createElement("div");
-        _0x16d8bd.className = "filter-row";
-        _0x16d8bd.dataset.type = _0x4d6233;
-        let _0x3e49d1 = "";
-        if (_0x4d6233 === "品质") {
-          _0x3e49d1 = "<select class=\"filter-row-value\">\n                           <option value=\"6\">传奇</option>\n                           <option value=\"5\" selected>神话</option>\n                           <option value=\"4\">传说</option>\n                           <option value=\"3\">史诗</option>\n                           <option value=\"2\">稀有</option>\n                           <option value=\"1\">普通</option>\n                       </select>";
+        const _0x5e1110 = document.createElement("div");
+        _0x5e1110.className = "filter-row";
+        _0x5e1110.dataset.type = _0x260df5;
+        let _0x5a2b35 = "";
+        if (_0x260df5 === "品质") {
+          _0x5a2b35 = "<select class=\"filter-row-value\">\n                           <option value=\"6\">传奇</option>\n                           <option value=\"5\" selected>神话</option>\n                           <option value=\"4\">传说</option>\n                           <option value=\"3\">史诗</option>\n                           <option value=\"2\">稀有</option>\n                           <option value=\"1\">普通</option>\n                       </select>";
         } else {
           {
-            const _0x5df22b = {
+            const _0x5c6c17 = {
               "金砖": 2000,
               "招募令": 10,
               "彩玉": 5,
@@ -1471,280 +917,226 @@
               "万能碎片": 10,
               "刷新券": 4
             };
-            const _0x291745 = _0x5df22b[_0x4d6233] || 1;
-            _0x3e49d1 = "<input type=\"number\" class=\"filter-row-value\" value=\"" + _0x291745 + "\" min=\"1\">";
+            const _0x82c73f = _0x5c6c17[_0x260df5] || 1;
+            _0x5a2b35 = "<input type=\"number\" class=\"filter-row-value\" value=\"" + _0x82c73f + "\" min=\"1\">";
           }
         }
-        _0x16d8bd.innerHTML = "\n            <input type=\"checkbox\" class=\"condition-enabled\" checked>\n            <label class=\"filter-row-label\">" + _0x4d6233 + " ≥</label>\n            " + _0x3e49d1 + "\n            <button class=\"task-btn remove-condition-btn\">-</button>\n        ";
-        _0xcf9c1d.replaceWith(_0x16d8bd);
+        _0x5e1110.innerHTML = "\n            <input type=\"checkbox\" class=\"condition-enabled\" checked>\n            <label class=\"filter-row-label\">" + _0x260df5 + " ≥</label>\n            " + _0x5a2b35 + "\n            <button class=\"task-btn remove-condition-btn\">-</button>\n        ";
+        _0x3c4457.replaceWith(_0x5e1110);
         this.saveUserSettings();
         this.updateRefreshButtonState();
       }
     },
     saveUserSettings() {
-      {
-        const _0x1a4e78 = {
-          and: [],
-          or: [],
-          maxRefresh: document.getElementById("max-refresh-count").textContent
-        };
-        document.querySelectorAll("#and-conditions-group .filter-row").forEach(_0x123dfd => {
-          _0x1a4e78.and.push({
-            type: _0x123dfd.dataset.type,
-            enabled: _0x123dfd.querySelector(".condition-enabled").checked,
-            value: _0x123dfd.querySelector(".filter-row-value").value
-          });
+      const _0x1cac70 = {
+        and: [],
+        or: [],
+        maxRefresh: document.getElementById("max-refresh-count").textContent
+      };
+      document.querySelectorAll("#and-conditions-group .filter-row").forEach(_0x5863f8 => {
+        _0x1cac70.and.push({
+          type: _0x5863f8.dataset.type,
+          enabled: _0x5863f8.querySelector(".condition-enabled").checked,
+          value: _0x5863f8.querySelector(".filter-row-value").value
         });
-        document.querySelectorAll("#or-conditions-group .filter-row").forEach(_0x64ccbe => {
-          {
-            _0x1a4e78.or.push({
-              type: _0x64ccbe.dataset.type,
-              enabled: _0x64ccbe.querySelector(".condition-enabled").checked,
-              value: _0x64ccbe.querySelector(".filter-row-value").value
-            });
-          }
+      });
+      document.querySelectorAll("#or-conditions-group .filter-row").forEach(_0x452731 => {
+        _0x1cac70.or.push({
+          type: _0x452731.dataset.type,
+          enabled: _0x452731.querySelector(".condition-enabled").checked,
+          value: _0x452731.querySelector(".filter-row-value").value
         });
-        localStorage.setItem("carModuleSettings_v3", JSON.stringify(_0x1a4e78));
-      }
+      });
+      localStorage.setItem("carModuleSettings_v3", JSON.stringify(_0x1cac70));
     },
     loadUserSettings() {
       {
-        const _0x43691d = localStorage.getItem("carModuleSettings_v3");
-        if (!_0x43691d) {
+        const _0x4bd9c2 = localStorage.getItem("carModuleSettings_v3");
+        if (!_0x4bd9c2) {
           return;
         }
-        const _0x261ce2 = JSON.parse(_0x43691d);
-        const _0x3bc49b = _0x2001ae => {
+        const _0x23150b = JSON.parse(_0x4bd9c2);
+        const _0xa39126 = _0x4feeb0 => {
           {
-            const _0x53f209 = document.createElement("div");
-            _0x53f209.className = "filter-row";
-            _0x53f209.dataset.type = _0x2001ae.type;
-            let _0x5d28f7 = "";
-            if (_0x2001ae.type === "品质") {
-              {
-                _0x5d28f7 = "<select class=\"filter-row-value\"><option value=\"6\">传奇</option><option value=\"5\">神话</option><option value=\"4\">传说</option><option value=\"3\">史诗</option><option value=\"2\">稀有</option></select>";
-              }
-            } else {
-              _0x5d28f7 = "<input type=\"number\" class=\"filter-row-value\" min=\"1\">";
-            }
-            _0x53f209.innerHTML = "\n                <input type=\"checkbox\" class=\"condition-enabled\" " + (_0x2001ae.enabled ? "checked" : "") + ">\n                <label class=\"filter-row-label\">" + _0x2001ae.type + " ≥</label>\n                " + _0x5d28f7 + "\n                <button class=\"task-btn remove-condition-btn\">-</button>\n            ";
-            _0x53f209.querySelector(".filter-row-value").value = _0x2001ae.value;
-            return _0x53f209;
+            const _0x156efb = document.createElement("div");
+            _0x156efb.className = "filter-row";
+            _0x156efb.dataset.type = _0x4feeb0.type;
+            let _0x460aeb = "";
+            _0x4feeb0.type === "品质" ? _0x460aeb = "<select class=\"filter-row-value\"><option value=\"6\">传奇</option><option value=\"5\">神话</option><option value=\"4\">传说</option><option value=\"3\">史诗</option><option value=\"2\">稀有</option></select>" : _0x460aeb = "<input type=\"number\" class=\"filter-row-value\" min=\"1\">";
+            _0x156efb.innerHTML = "\n                <input type=\"checkbox\" class=\"condition-enabled\" " + (_0x4feeb0.enabled ? "checked" : "") + ">\n                <label class=\"filter-row-label\">" + _0x4feeb0.type + " ≥</label>\n                " + _0x460aeb + "\n                <button class=\"task-btn remove-condition-btn\">-</button>\n            ";
+            _0x156efb.querySelector(".filter-row-value").value = _0x4feeb0.value;
+            return _0x156efb;
           }
         };
-        const _0x32409e = document.querySelector("#and-conditions-group .group-content");
-        _0x32409e.innerHTML = "";
-        _0x261ce2.and.forEach(_0x36154a => _0x32409e.appendChild(_0x3bc49b(_0x36154a)));
-        const _0x387071 = document.querySelector("#or-conditions-group .group-content");
-        _0x387071.innerHTML = "";
-        _0x261ce2.or.forEach(_0x1b3570 => _0x387071.appendChild(_0x3bc49b(_0x1b3570)));
-        document.getElementById("max-refresh-count").textContent = _0x261ce2.maxRefresh;
+        const _0xa1fa71 = document.querySelector("#and-conditions-group .group-content");
+        _0xa1fa71.innerHTML = "";
+        _0x23150b.and.forEach(_0x1f879e => _0xa1fa71.appendChild(_0xa39126(_0x1f879e)));
+        const _0x391bd5 = document.querySelector("#or-conditions-group .group-content");
+        _0x391bd5.innerHTML = "";
+        _0x23150b.or.forEach(_0x4cba4f => _0x391bd5.appendChild(_0xa39126(_0x4cba4f)));
+        document.getElementById("max-refresh-count").textContent = _0x23150b.maxRefresh;
         this.updateRefreshButtonState();
       }
     },
     updateRefreshButtonState() {
       {
-        const _0x2098bc = document.querySelector(".refresh-filter-panel");
-        if (!_0x2098bc) {
+        const _0x37a9f2 = document.querySelector(".refresh-filter-panel");
+        if (!_0x37a9f2) {
           return;
         }
-        const _0x4c23b4 = _0x2098bc.querySelector("#start-batch-refresh");
-        const _0x33a792 = _0x2098bc.querySelector(".condition-enabled:checked");
-        if (_0x33a792) {
-          {
-            _0x4c23b4.classList.remove("is-disabled");
-          }
-        } else {
-          _0x4c23b4.classList.add("is-disabled");
-        }
-        const _0x103c8d = _0x2098bc.querySelector("#send-all-cars-panel");
-        const _0x44dacc = this.isCarEventActive() && this.state.sendCount < 4 && this.state.fullCarData.some(_0x1b2064 => !_0x1b2064.sendAt);
-        if (_0x44dacc) {
-          {
-            _0x103c8d.classList.remove("is-disabled");
-          }
-        } else {
-          {
-            _0x103c8d.classList.add("is-disabled");
-          }
-        }
+        const _0x264774 = _0x37a9f2.querySelector("#start-batch-refresh");
+        const _0x1b746b = _0x37a9f2.querySelector(".condition-enabled:checked");
+        _0x1b746b ? _0x264774.classList.remove("is-disabled") : _0x264774.classList.add("is-disabled");
+        const _0x2e15a8 = _0x37a9f2.querySelector("#send-all-cars-panel");
+        const _0x2ca005 = this.isCarEventActive() && this.state.sendCount < 4 && this.state.fullCarData.some(_0x5d4e45 => !_0x5d4e45.sendAt);
+        _0x2ca005 ? _0x2e15a8.classList.remove("is-disabled") : _0x2e15a8.classList.add("is-disabled");
       }
     },
     async startBatchRefresh() {
-      {
-        if (this.state.isBatchRefreshing) {
-          {
-            _0x37bc18.showtip("一键刷新任务已在进行中", "warning");
-            return;
-          }
+      if (this.state.isBatchRefreshing) {
+        {
+          _0x259832.showtip("一键刷新任务已在进行中", "warning");
+          return;
         }
-        const _0x3c3a54 = document.getElementById("start-batch-refresh");
-        const _0x57a886 = _0x3c3a54 ? _0x3c3a54.textContent : "启动...";
-        try {
-          {
-            this.state.isBatchRefreshing = true;
-            _0x3c3a54 && (_0x3c3a54.disabled = true, _0x3c3a54.textContent = "运行中...");
-            const _0x206088 = parseInt(document.getElementById("max-refresh-count")?.["textContent"] || 5);
-            const {
-              andConditions: _0x1f8970,
-              orConditions: _0x1b5bda
-            } = this.collectConditionsFromUI();
-            if (_0x1f8970.length === 0 && _0x1b5bda.length === 0) {
-              {
-                _0x37bc18.showtip("请至少设置一个启用的刷新条件", "error");
-                return;
-              }
-            }
-            let _0x58826c = this.state.fullCarData.filter(_0xc29908 => !_0xc29908.sendAt).map(_0x373d71 => ({
-              car: _0x373d71,
-              refreshCount: 0,
-              isSatisfied: this.checkCarFilterConditions(_0x373d71, _0x1f8970, _0x1b5bda)
-            }));
-            const _0x490855 = _0x58826c.filter(_0x5e5914 => _0x5e5914.isSatisfied).length;
-            _0x490855 > 0 && _0x37bc18.showtip("已有 " + _0x490855 + " 辆车满足条件，将跳过。", "info");
-            let _0x60253f = _0x58826c.filter(_0x28f5f0 => !_0x28f5f0.isSatisfied);
-            if (_0x60253f.length === 0) {
-              {
-                _0x37bc18.showtip("所有待发车辆都已满足条件，无需刷新！", "success");
-                return;
-              }
-            }
-            _0x37bc18.showtip("任务开始，将为 " + _0x60253f.length + " 辆车进行刷新...", "info");
-            let _0x27f247 = 0;
-            for (const _0x304a40 of _0x60253f) {
-              {
-                if (!this.state.isBatchRefreshing) {
-                  {
-                    _0x37bc18.showtip("任务已手动停止。", "warning");
-                    break;
-                  }
-                }
-                while (_0x304a40.refreshCount < _0x206088 && !_0x304a40.isSatisfied) {
-                  {
-                    this.dom.statusEl.textContent = "🔄 刷新中... 车位 " + (_0x304a40.car.slot + 1) + " (第 " + (_0x304a40.refreshCount + 1) + "/" + _0x206088 + " 次)";
-                    const _0x50cb8f = await this.performCarAction("refresh", _0x304a40.car.carId, "刷新");
-                    if (!_0x50cb8f) {
-                      {
-                        _0x37bc18.showtip("车位 " + (_0x304a40.car.slot + 1) + " 刷新失败，可能金砖不足，将跳过此车。", "warning");
-                        break;
-                      }
-                    }
-                    _0x304a40.refreshCount++;
-                    _0x27f247++;
-                    await this.queryClubCars();
-                    const _0x476027 = this.state.fullCarData.find(_0x30751b => _0x30751b.carId === _0x304a40.car.carId);
-                    if (_0x476027) {
-                      _0x304a40.car = _0x476027;
-                      this.checkCarFilterConditions(_0x476027, _0x1f8970, _0x1b5bda) && (_0x304a40.isSatisfied = true, _0x37bc18.showtip("🎉 车位 " + (_0x476027.slot + 1) + " 在刷新 " + _0x304a40.refreshCount + " 次后满足条件！", "success"));
-                    } else {
-                      {
-                        _0x37bc18.showtip("车位 " + (_0x304a40.car.slot + 1) + " 数据刷新后丢失，跳过此车。", "error");
-                        break;
-                      }
-                    }
-                    await new Promise(_0x863db2 => setTimeout(_0x863db2, 400));
-                  }
-                }
-                !_0x304a40.isSatisfied && _0x304a40.refreshCount >= _0x206088 && _0x37bc18.showtip("车位 " + (_0x304a40.car.slot + 1) + " 已达刷新上限 (" + _0x206088 + "次)，仍未满足条件。", "info");
-              }
-            }
-            const _0x315e06 = _0x58826c.filter(_0xfb07da => _0xfb07da.isSatisfied).length;
-            _0x37bc18.showtip("刷新任务结束。共 " + _0x315e06 + "/" + _0x58826c.length + " 辆车满足条件，总计刷新 " + _0x27f247 + " 次。", "success");
-            this.dom.statusEl.textContent = "✅ 刷新完成: " + _0x315e06 + "/" + _0x58826c.length + " 辆满足";
-          }
-        } catch (_0x36f559) {
-          {
-            console.error("一键刷新过程中发生错误:", _0x36f559);
-            _0x37bc18.showtip("刷新过程出错，详情请查看控制台。", "error");
-            this.dom.statusEl.textContent = "❌ 刷新出错";
-          }
-        } finally {
-          this.state.isBatchRefreshing = false;
-          _0x3c3a54 && (_0x3c3a54.disabled = false, _0x3c3a54.textContent = _0x57a886);
-          setTimeout(() => this.queryClubCars(), 500);
+      }
+      const _0x43c8ba = document.getElementById("start-batch-refresh");
+      const _0xce733c = _0x43c8ba ? _0x43c8ba.textContent : "启动...";
+      try {
+        this.state.isBatchRefreshing = true;
+        _0x43c8ba && (_0x43c8ba.disabled = true, _0x43c8ba.textContent = "运行中...");
+        const _0xcca900 = parseInt(document.getElementById("max-refresh-count")?.["textContent"] || 5);
+        const {
+          andConditions: _0x111c2f,
+          orConditions: _0x2d851d
+        } = this.collectConditionsFromUI();
+        if (_0x111c2f.length === 0 && _0x2d851d.length === 0) {
+          _0x259832.showtip("请至少设置一个启用的刷新条件", "error");
+          return;
         }
+        let _0x190ace = this.state.fullCarData.filter(_0x11af8b => !_0x11af8b.sendAt).map(_0x51a5fe => ({
+          car: _0x51a5fe,
+          refreshCount: 0,
+          isSatisfied: this.checkCarFilterConditions(_0x51a5fe, _0x111c2f, _0x2d851d)
+        }));
+        const _0x1542be = _0x190ace.filter(_0x57c27b => _0x57c27b.isSatisfied).length;
+        _0x1542be > 0 && _0x259832.showtip("已有 " + _0x1542be + " 辆车满足条件，将跳过。", "info");
+        let _0x33e4b4 = _0x190ace.filter(_0x336250 => !_0x336250.isSatisfied);
+        if (_0x33e4b4.length === 0) {
+          _0x259832.showtip("所有待发车辆都已满足条件，无需刷新！", "success");
+          return;
+        }
+        _0x259832.showtip("任务开始，将为 " + _0x33e4b4.length + " 辆车进行刷新...", "info");
+        let _0x4fe375 = 0;
+        for (const _0x38eb11 of _0x33e4b4) {
+          if (!this.state.isBatchRefreshing) {
+            {
+              _0x259832.showtip("任务已手动停止。", "warning");
+              break;
+            }
+          }
+          while (_0x38eb11.refreshCount < _0xcca900 && !_0x38eb11.isSatisfied) {
+            this.dom.statusEl.textContent = "🔄 刷新中... 车位 " + (_0x38eb11.car.slot + 1) + " (第 " + (_0x38eb11.refreshCount + 1) + "/" + _0xcca900 + " 次)";
+            const _0xc89391 = await this.performCarAction("refresh", _0x38eb11.car.carId, "刷新");
+            if (!_0xc89391) {
+              {
+                _0x259832.showtip("车位 " + (_0x38eb11.car.slot + 1) + " 刷新失败，可能金砖不足，将跳过此车。", "warning");
+                break;
+              }
+            }
+            _0x38eb11.refreshCount++;
+            _0x4fe375++;
+            await this.queryClubCars();
+            const _0x11516a = this.state.fullCarData.find(_0x362b43 => _0x362b43.carId === _0x38eb11.car.carId);
+            if (_0x11516a) {
+              _0x38eb11.car = _0x11516a;
+              this.checkCarFilterConditions(_0x11516a, _0x111c2f, _0x2d851d) && (_0x38eb11.isSatisfied = true, _0x259832.showtip("🎉 车位 " + (_0x11516a.slot + 1) + " 在刷新 " + _0x38eb11.refreshCount + " 次后满足条件！", "success"));
+            } else {
+              {
+                _0x259832.showtip("车位 " + (_0x38eb11.car.slot + 1) + " 数据刷新后丢失，跳过此车。", "error");
+                break;
+              }
+            }
+            await new Promise(_0x2e980c => setTimeout(_0x2e980c, 400));
+          }
+          !_0x38eb11.isSatisfied && _0x38eb11.refreshCount >= _0xcca900 && _0x259832.showtip("车位 " + (_0x38eb11.car.slot + 1) + " 已达刷新上限 (" + _0xcca900 + "次)，仍未满足条件。", "info");
+        }
+        const _0x15ea12 = _0x190ace.filter(_0x4409f3 => _0x4409f3.isSatisfied).length;
+        _0x259832.showtip("刷新任务结束。共 " + _0x15ea12 + "/" + _0x190ace.length + " 辆车满足条件，总计刷新 " + _0x4fe375 + " 次。", "success");
+        this.dom.statusEl.textContent = "✅ 刷新完成: " + _0x15ea12 + "/" + _0x190ace.length + " 辆满足";
+      } catch (_0x4fa70a) {
+        console.error("一键刷新过程中发生错误:", _0x4fa70a);
+        _0x259832.showtip("刷新过程出错，详情请查看控制台。", "error");
+        this.dom.statusEl.textContent = "❌ 刷新出错";
+      } finally {
+        this.state.isBatchRefreshing = false;
+        _0x43c8ba && (_0x43c8ba.disabled = false, _0x43c8ba.textContent = _0xce733c);
+        setTimeout(() => this.queryClubCars(), 500);
       }
     },
     collectConditionsFromUI() {
-      {
-        const _0x3ad49f = [];
-        const _0x277418 = [];
-        const _0xfdb737 = (_0x47f749, _0x5922b3) => {
-          document.querySelectorAll("#" + _0x47f749 + " .filter-row").forEach(_0x49245e => {
+      const _0x2589e9 = [];
+      const _0x4e6a3b = [];
+      const _0x410e25 = (_0x4a56a8, _0x4a78db) => {
+        document.querySelectorAll("#" + _0x4a56a8 + " .filter-row").forEach(_0x4a2272 => {
+          if (_0x4a2272.querySelector(".condition-enabled").checked) {
             {
-              if (_0x49245e.querySelector(".condition-enabled").checked) {
-                {
-                  const _0x1e8cce = _0x49245e.dataset.type;
-                  const _0x396add = _0x49245e.querySelector(".filter-row-value").value;
-                  _0x1e8cce === "品质" ? _0x5922b3.push({
-                    type: "quality",
-                    value: parseInt(_0x396add)
-                  }) : _0x5922b3.push({
-                    type: "reward",
-                    item: _0x1e8cce,
-                    count: parseInt(_0x396add) || 1
-                  });
-                }
-              }
+              const _0x5140ec = _0x4a2272.dataset.type;
+              const _0x1b4494 = _0x4a2272.querySelector(".filter-row-value").value;
+              _0x5140ec === "品质" ? _0x4a78db.push({
+                type: "quality",
+                value: parseInt(_0x1b4494)
+              }) : _0x4a78db.push({
+                type: "reward",
+                item: _0x5140ec,
+                count: parseInt(_0x1b4494) || 1
+              });
             }
-          });
-        };
-        _0xfdb737("and-conditions-group", _0x3ad49f);
-        _0xfdb737("or-conditions-group", _0x277418);
-        const _0x54fdb9 = {
-          andConditions: _0x3ad49f,
-          orConditions: _0x277418
-        };
-        return _0x54fdb9;
-      }
-    },
-    checkCarFilterConditions(_0x40da83, _0x2a8bab, _0x184be5) {
-      {
-        if (_0x2a8bab.length === 0 && _0x184be5.length === 0) {
-          return false;
-        }
-        const _0x4621ec = _0x46f2b4 => {
-          {
-            if (_0x46f2b4.type === "quality") {
-              {
-                return _0x40da83.quality >= _0x46f2b4.value;
-              }
-            } else {
-              if (_0x46f2b4.type === "reward") {
-                {
-                  return this.checkSingleRewardCondition(_0x40da83.rewards, _0x46f2b4);
-                }
-              }
-            }
-            return false;
           }
-        };
-        const _0x524ae4 = _0x2a8bab.every(_0x4621ec);
-        if (!_0x524ae4) {
-          return false;
-        }
-        if (_0x184be5.length === 0) {
-          return true;
-        }
-        const _0x54fccb = _0x184be5.some(_0x4621ec);
-        return _0x54fccb;
-      }
+        });
+      };
+      _0x410e25("and-conditions-group", _0x2589e9);
+      _0x410e25("or-conditions-group", _0x4e6a3b);
+      const _0x2bcc64 = {
+        andConditions: _0x2589e9,
+        orConditions: _0x4e6a3b
+      };
+      return _0x2bcc64;
     },
-    checkSingleRewardCondition(_0x38485d, _0x2a6c4f) {
+    checkCarFilterConditions(_0x5585ed, _0x27cb3f, _0x4f4d39) {
+      if (_0x27cb3f.length === 0 && _0x4f4d39.length === 0) {
+        return false;
+      }
+      const _0x466187 = _0x2c859f => {
+        if (_0x2c859f.type === "quality") {
+          return _0x5585ed.quality >= _0x2c859f.value;
+        } else {
+          if (_0x2c859f.type === "reward") {
+            return this.checkSingleRewardCondition(_0x5585ed.rewards, _0x2c859f);
+          }
+        }
+        return false;
+      };
+      const _0xd6322c = _0x27cb3f.every(_0x466187);
+      if (!_0xd6322c) {
+        return false;
+      }
+      if (_0x4f4d39.length === 0) {
+        return true;
+      }
+      const _0x5bf4c3 = _0x4f4d39.some(_0x466187);
+      return _0x5bf4c3;
+    },
+    checkSingleRewardCondition(_0x39bddb, _0x2e01aa) {
       {
         const {
-          item: _0x5c14a4,
-          count: _0x43272a
-        } = _0x2a6c4f;
-        for (const _0xb18406 of _0x38485d) {
-          {
-            const [_0x1316ee, _0x251072] = _0xb18406.split(":");
-            if (_0x1316ee === _0x5c14a4) {
-              {
-                if (parseInt(_0x251072) >= _0x43272a) {
-                  return true;
-                }
-              }
+          item: _0x559575,
+          count: _0x536c18
+        } = _0x2e01aa;
+        for (const _0x4162f5 of _0x39bddb) {
+          const [_0x4cbfdc, _0x3abac2] = _0x4162f5.split(":");
+          if (_0x4cbfdc === _0x559575) {
+            if (parseInt(_0x3abac2) >= _0x536c18) {
+              return true;
             }
           }
         }
@@ -1752,1005 +1144,233 @@
       }
     },
     async queryClubCars() {
-      {
-        this.dom.statusEl.textContent = "🔍 查询中...";
-        try {
-          {
-            const _0x3525c1 = await _0x37bc18.sendCommand("car_getrolecar");
-            if (_0x3525c1?.["code"] !== 0) {
-              throw new Error(_0x3525c1?.["msg"] || "Code: " + _0x3525c1?.["code"]);
-            }
-            const _0x33f692 = (_0x499555, _0x1ec62d) => _0x1ec62d.split(".").reduce((_0x586c89, _0x3d7081) => _0x586c89?.[_0x3d7081], _0x499555);
-            const _0x3bcb84 = _0x33f692(_0x3525c1, "_rawData.body.roleCar") || _0x33f692(_0x3525c1, "data.body.roleCar") || _0x33f692(_0x3525c1, "_rawData.roleCar") || _0x33f692(_0x3525c1, "data.roleCar");
-            const _0x773c1e = _0x3bcb84?.["carDataMap"] || {};
-            let _0x1d188e = _0x3bcb84?.["sendCnt"] || 0;
-            const _0x718744 = new Date().getDay() >= 1 && new Date().getDay() <= 3;
-            if (_0x718744 && _0x3bcb84.sendCntResetTime) {
-              {
-                const _0x47c240 = new Date(_0x3bcb84.sendCntResetTime * 1000);
-                const _0x311634 = new Date();
-                if (_0x47c240.getFullYear() !== _0x311634.getFullYear() || _0x47c240.getMonth() !== _0x311634.getMonth() || _0x47c240.getDate() !== _0x311634.getDate()) {
-                  {
-                    _0x1d188e = 0;
-                  }
-                }
-              }
-            }
-            this.state.sendCount = this.isCarEventActive() ? _0x1d188e : 0;
-            this.state.fullCarData = Object.entries(_0x773c1e).map(([_0x53ff17, _0x1733b6]) => ({
-              id: _0x53ff17,
-              ..._0x1733b6,
-              carId: _0x53ff17,
-              quality: _0x1733b6.color,
-              rewards: this.parseRewards(_0x1733b6.rewards)
-            }));
-            this.renderCarData();
-            const _0x2d0eb1 = "今日已发车: " + this.state.sendCount + "/4" + (!this.isCarEventActive() ? " (非活动时间)" : "");
-            this.dom.statusEl.textContent = "✅ " + _0x2d0eb1;
-          }
-        } catch (_0x2f5152) {
-          {
-            _0x37bc18.showtip("查询失败: " + _0x2f5152.message, "error");
-            this.dom.statusEl.textContent = "❌ 查询出错";
-          }
+      this.dom.statusEl.textContent = "🔍 查询中...";
+      try {
+        const _0x395e56 = await _0x259832.sendCommand("car_getrolecar");
+        if (_0x395e56?.["code"] !== 0) {
+          throw new Error(_0x395e56?.["msg"] || "Code: " + _0x395e56?.["code"]);
         }
+        const _0x36d34e = (_0xa96fdb, _0x1c21a3) => _0x1c21a3.split(".").reduce((_0x520cd6, _0xf3a453) => _0x520cd6?.[_0xf3a453], _0xa96fdb);
+        const _0x1399db = _0x36d34e(_0x395e56, "_rawData.body.roleCar") || _0x36d34e(_0x395e56, "data.body.roleCar") || _0x36d34e(_0x395e56, "_rawData.roleCar") || _0x36d34e(_0x395e56, "data.roleCar");
+        const _0x16a42b = _0x1399db?.["carDataMap"] || {};
+        let _0x3e7d69 = _0x1399db?.["sendCnt"] || 0;
+        const _0x481830 = new Date().getDay() >= 1 && new Date().getDay() <= 3;
+        if (_0x481830 && _0x1399db.sendCntResetTime) {
+          const _0x5967ee = new Date(_0x1399db.sendCntResetTime * 1000);
+          const _0x372b57 = new Date();
+          (_0x5967ee.getFullYear() !== _0x372b57.getFullYear() || _0x5967ee.getMonth() !== _0x372b57.getMonth() || _0x5967ee.getDate() !== _0x372b57.getDate()) && (_0x3e7d69 = 0);
+        }
+        this.state.sendCount = this.isCarEventActive() ? _0x3e7d69 : 0;
+        this.state.fullCarData = Object.entries(_0x16a42b).map(([_0x4706ff, _0x1f3198]) => ({
+          id: _0x4706ff,
+          ..._0x1f3198,
+          carId: _0x4706ff,
+          quality: _0x1f3198.color,
+          rewards: this.parseRewards(_0x1f3198.rewards)
+        }));
+        this.renderCarData();
+        const _0x7a0457 = "今日已发车: " + this.state.sendCount + "/4" + (!this.isCarEventActive() ? " (非活动时间)" : "");
+        this.dom.statusEl.textContent = "✅ " + _0x7a0457;
+      } catch (_0xd29c1d) {
+        _0x259832.showtip("查询失败: " + _0xd29c1d.message, "error");
+        this.dom.statusEl.textContent = "❌ 查询出错";
       }
     },
-    async sendCar(_0x443711) {
+    async sendCar(_0xd88a05) {
       {
         if (!this.isCarEventActive()) {
-          return _0x37bc18.showtip("当前非活动时间 (周一至周三 6:00-20:00)", "error");
+          return _0x259832.showtip("当前非活动时间 (周一至周三 6:00-20:00)", "error");
         }
         if (this.state.sendCount >= 4) {
-          return _0x37bc18.showtip("今日发车次数已用完", "error");
+          return _0x259832.showtip("今日发车次数已用完", "error");
         }
-        if (await this.performCarAction("send", _0x443711)) {
-          {
-            setTimeout(() => this.queryClubCars(), 300);
-          }
-        }
+        (await this.performCarAction("send", _0xd88a05)) && setTimeout(() => this.queryClubCars(), 300);
       }
     },
-    async refreshCar(_0x7d94a4) {
-      (await this.performCarAction("refresh", _0x7d94a4)) && setTimeout(() => this.queryClubCars(), 300);
+    async refreshCar(_0x554a57) {
+      (await this.performCarAction("refresh", _0x554a57)) && setTimeout(() => this.queryClubCars(), 300);
     },
-    async claimCar(_0x4d507f) {
+    async claimCar(_0x20fab0) {
       {
-        if (await this.performCarAction("claim", _0x4d507f)) {
-          {
-            setTimeout(() => this.queryClubCars(), 300);
-          }
-        }
+        (await this.performCarAction("claim", _0x20fab0)) && setTimeout(() => this.queryClubCars(), 300);
       }
     },
     async sendAllCars() {
       {
         if (!this.isCarEventActive()) {
-          return _0x37bc18.showtip("当前非活动时间 (周一至周三 6:00-20:00)", "error");
+          return _0x259832.showtip("当前非活动时间 (周一至周三 6:00-20:00)", "error");
         }
         if (this.state.sendCount >= 4) {
-          return _0x37bc18.showtip("今日发车次数已用完", "error");
+          return _0x259832.showtip("今日发车次数已用完", "error");
         }
-        const _0x41c450 = this.state.fullCarData.filter(_0x38904a => !_0x38904a.sendAt);
-        if (_0x41c450.length === 0) {
-          return _0x37bc18.showtip("没有可发车的赛车", "info");
+        const _0x2ae166 = this.state.fullCarData.filter(_0x369117 => !_0x369117.sendAt);
+        if (_0x2ae166.length === 0) {
+          return _0x259832.showtip("没有可发车的赛车", "info");
         }
-        const _0x1c9c74 = Math.min(_0x41c450.length, 4 - this.state.sendCount);
-        if (_0x1c9c74 === 0) {
-          return _0x37bc18.showtip("今日发车次数已用完", "error");
+        const _0x1c4466 = Math.min(_0x2ae166.length, 4 - this.state.sendCount);
+        if (_0x1c4466 === 0) {
+          return _0x259832.showtip("今日发车次数已用完", "error");
         }
         this.dom.statusEl.textContent = "🚀 批量发送中...";
-        let _0x50ea1b = 0;
-        for (let _0x16427f = 0; _0x16427f < _0x1c9c74; _0x16427f++) {
-          {
-            (await this.performCarAction("send", _0x41c450[_0x16427f].carId, true)) && _0x50ea1b++;
-            if (_0x16427f < _0x1c9c74 - 1) {
-              await new Promise(_0x20c579 => setTimeout(_0x20c579, 300));
+        let _0x3d1981 = 0;
+        for (let _0xe5fb0b = 0; _0xe5fb0b < _0x1c4466; _0xe5fb0b++) {
+          if (await this.performCarAction("send", _0x2ae166[_0xe5fb0b].carId, true)) {
+            {
+              _0x3d1981++;
             }
           }
+          if (_0xe5fb0b < _0x1c4466 - 1) {
+            await new Promise(_0x34e501 => setTimeout(_0x34e501, 300));
+          }
         }
-        _0x37bc18.showtip("成功发送 " + _0x50ea1b + " 辆赛车", _0x50ea1b > 0 ? "success" : "error");
+        _0x259832.showtip("成功发送 " + _0x3d1981 + " 辆赛车", _0x3d1981 > 0 ? "success" : "error");
         setTimeout(() => this.queryClubCars(), 500);
       }
     },
     async claimAllCars() {
       {
-        const _0x33f076 = this.state.fullCarData.filter(_0x5c77d7 => this.getCarStatus(_0x5c77d7).statusClass === "status-completed");
-        if (_0x33f076.length === 0) {
-          return _0x37bc18.showtip("没有可收取的赛车", "info");
+        const _0x337795 = this.state.fullCarData.filter(_0x2a2ec5 => this.getCarStatus(_0x2a2ec5).statusClass === "status-completed");
+        if (_0x337795.length === 0) {
+          return _0x259832.showtip("没有可收取的赛车", "info");
         }
         this.dom.statusEl.textContent = "🚀 批量收取中...";
-        let _0x15e8a1 = 0;
-        for (let _0x1986a5 = 0; _0x1986a5 < _0x33f076.length; _0x1986a5++) {
+        let _0x1f9ff8 = 0;
+        for (let _0x410a05 = 0; _0x410a05 < _0x337795.length; _0x410a05++) {
           {
-            if (await this.performCarAction("claim", _0x33f076[_0x1986a5].carId, true)) {
-              {
-                _0x15e8a1++;
-              }
-            }
-            if (_0x1986a5 < _0x33f076.length - 1) {
-              await new Promise(_0x124912 => setTimeout(_0x124912, 300));
+            (await this.performCarAction("claim", _0x337795[_0x410a05].carId, true)) && _0x1f9ff8++;
+            if (_0x410a05 < _0x337795.length - 1) {
+              await new Promise(_0x336177 => setTimeout(_0x336177, 300));
             }
           }
         }
-        _0x37bc18.showtip("成功收取 " + _0x15e8a1 + " 辆赛车", _0x15e8a1 > 0 ? "success" : "error");
+        _0x259832.showtip("成功收取 " + _0x1f9ff8 + " 辆赛车", _0x1f9ff8 > 0 ? "success" : "error");
         setTimeout(() => this.queryClubCars(), 500);
       }
     },
-    async performCarAction(_0x48513f, _0x3d1d3f, _0x4ccb93 = false, _0x37b42d = 0) {
-      {
-        if (!_0x4ccb93) {
-          {
-            const _0x4c4a79 = {
-              send: "发送",
-              refresh: "刷新",
-              claim: "收获"
-            };
-            this.dom.statusEl.textContent = "🚀 " + (_0x4c4a79[_0x48513f] || _0x48513f) + "中...";
-          }
-        }
-        try {
-          {
-            const _0x52231f = {
-              carId: _0x3d1d3f,
-              helperId: _0x37b42d,
-              text: ""
-            };
-            const _0x27224f = {
-              carId: _0x3d1d3f
-            };
-            const _0x89df0f = await _0x37bc18.sendCommand("car_" + _0x48513f, _0x48513f === "send" ? _0x52231f : _0x27224f);
-            if (_0x89df0f?.["code"] !== 0) {
-              throw new Error(_0x89df0f?.["msg"] || "Code: " + _0x89df0f?.["code"]);
-            }
-            !_0x4ccb93 && _0x37bc18.showtip("赛车操作成功", "success");
-            return true;
-          }
-        } catch (_0x1c27a9) {
-          {
-            if (!_0x4ccb93) {
-              {
-                _0x37bc18.showtip("操作失败: " + _0x1c27a9.message, "error");
-                this.dom.statusEl.textContent = "❌ 操作出错";
-              }
-            }
-            console.error("赛车操作 '" + _0x48513f + "' 失败 (ID: " + _0x3d1d3f + "):", _0x1c27a9.message);
-            return false;
-          }
+    async performCarAction(_0x4b4ed2, _0x14f90f, _0x3372f6 = false) {
+      if (!_0x3372f6) {
+        {
+          const _0xb5310c = {
+            send: "发送",
+            refresh: "刷新",
+            claim: "收获"
+          };
+          this.dom.statusEl.textContent = "🚀 " + (_0xb5310c[_0x4b4ed2] || _0x4b4ed2) + "中...";
         }
       }
-    },
-    getMemberName(_0x58853e) {
-      {
-        try {
-          {
-            const _0x107885 = this.state.legionMembersMap || {};
-            const _0x14d448 = _0x107885[String(_0x58853e)] || _0x107885[_0x58853e];
-            return _0x14d448 && (_0x14d448.name || _0x14d448.nickname || _0x14d448.roleName) || null;
+      try {
+        {
+          const _0x537f1d = {
+            carId: _0x14f90f,
+            helperId: 0,
+            text: ""
+          };
+          const _0x506b09 = {
+            carId: _0x14f90f
+          };
+          const _0x694130 = await _0x259832.sendCommand("car_" + _0x4b4ed2, _0x4b4ed2 === "send" ? _0x537f1d : _0x506b09);
+          if (_0x694130?.["code"] !== 0) {
+            throw new Error(_0x694130?.["msg"] || "Code: " + _0x694130?.["code"]);
           }
-        } catch {
+          !_0x3372f6 && _0x259832.showtip("赛车操作成功", "success");
+          return true;
+        }
+      } catch (_0x8343) {
+        if (!_0x3372f6) {
           {
-            return null;
+            _0x259832.showtip("操作失败: " + _0x8343.message, "error");
+            this.dom.statusEl.textContent = "❌ 操作出错";
           }
         }
+        console.error("赛车操作 '" + _0x4b4ed2 + "' 失败 (ID: " + _0x14f90f + "):", _0x8343.message);
+        return false;
       }
     },
-    async ensureLegionMembers() {
-      {
-        try {
-          {
-            if (this._membersLoading) {
-              {
-                let _0x141855 = 0;
-                while (this._membersLoading && _0x141855 < 10) {
-                  await new Promise(_0x4dc923 => setTimeout(_0x4dc923, 100));
-                  _0x141855++;
-                }
-                return this.state.legionMembersMap || {};
-              }
-            }
-            this._membersLoading = true;
-            const _0x25da32 = this.state.legionMembersMap;
-            if (_0x25da32 && Object.keys(_0x25da32).length > 0) {
-              {
-                this._membersLoading = false;
-                return _0x25da32;
-              }
-            }
-            const _0x2b9155 = new Promise((_0x5bc2e0, _0x13ae85) => {
-              setTimeout(() => _0x13ae85(new Error("获取俱乐部成员超时")), 5000);
-            });
-            const _0x1e43ec = _0x37bc18.sendCommand("legion_getinfo");
-            const _0x56d1f0 = await Promise.race([_0x1e43ec, _0x2b9155]);
-            if (!_0x56d1f0) {
-              {
-                throw new Error("无响应数据");
-              }
-            }
-            if (_0x56d1f0 && _0x56d1f0.code !== undefined && _0x56d1f0.code !== 0) {
-              {
-                console.log("获取俱乐部信息失败，错误码: " + _0x56d1f0.code + ", 消息: " + (_0x56d1f0.msg || "未知错误"));
-                this._membersLoading = false;
-                return _0x25da32 || {};
-              }
-            }
-            let _0x4d01e6 = [];
-            if (_0x56d1f0._rawData) {
-              {
-                if (_0x56d1f0._rawData.body?.["info"]?.["members"]) {
-                  _0x4d01e6 = _0x56d1f0._rawData.body.info.members;
-                } else {
-                  if (_0x56d1f0._rawData.info?.["members"]) {
-                    _0x4d01e6 = _0x56d1f0._rawData.info.members;
-                  } else {
-                    if (_0x56d1f0._rawData.members) {
-                      _0x4d01e6 = _0x56d1f0._rawData.members;
-                    } else {
-                      if (_0x56d1f0._rawData.legionData?.["members"]) {
-                        _0x4d01e6 = _0x56d1f0._rawData.legionData.members;
-                      }
-                    }
-                  }
-                }
-              }
-            } else {
-              if (_0x56d1f0.data) {
-                {
-                  if (_0x56d1f0.data.body?.["info"]?.["members"]) {
-                    _0x4d01e6 = _0x56d1f0.data.body.info.members;
-                  } else {
-                    if (_0x56d1f0.data.info?.["members"]) {
-                      _0x4d01e6 = _0x56d1f0.data.info.members;
-                    } else {
-                      if (_0x56d1f0.data.members) {
-                        _0x4d01e6 = _0x56d1f0.data.members;
-                      } else {
-                        if (_0x56d1f0.data.legionData?.["members"]) {
-                          _0x4d01e6 = _0x56d1f0.data.legionData.members;
-                        }
-                      }
-                    }
-                  }
-                }
-              } else {
-                {
-                  if (_0x56d1f0.info?.["members"]) {
-                    _0x4d01e6 = _0x56d1f0.info.members;
-                  } else {
-                    if (_0x56d1f0.members) {
-                      _0x4d01e6 = _0x56d1f0.members;
-                    } else {
-                      if (_0x56d1f0.legionData?.["members"]) {
-                        _0x4d01e6 = _0x56d1f0.legionData.members;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            let _0x48d116 = {};
-            if (Array.isArray(_0x4d01e6)) {
-              {
-                _0x4d01e6.forEach(_0x2fb1a5 => {
-                  {
-                    if (_0x2fb1a5 && _0x2fb1a5.roleId != null) {
-                      {
-                        _0x48d116[String(_0x2fb1a5.roleId)] = _0x2fb1a5;
-                      }
-                    }
-                  }
-                });
-              }
-            } else {
-              typeof _0x4d01e6 === "object" && _0x4d01e6 && Object.keys(_0x4d01e6).forEach(_0x56abf0 => {
-                {
-                  const _0x1fa65a = _0x4d01e6[_0x56abf0];
-                  if (_0x1fa65a) {
-                    {
-                      const _0x5598da = String(_0x1fa65a.roleId ?? _0x56abf0);
-                      if (_0x5598da) {
-                        _0x48d116[_0x5598da] = _0x1fa65a;
-                      }
-                    }
-                  }
-                }
-              });
-            }
-            this.state.legionMembersMap = _0x48d116;
-            this._membersLoading = false;
-            console.log("成功获取俱乐部成员: " + Object.keys(_0x48d116).length + " 个");
-            return _0x48d116;
-          }
-        } catch (_0x6c9d2a) {
-          {
-            console.error("获取俱乐部成员失败: " + _0x6c9d2a.message);
-            this._membersLoading = false;
-            return this.state.legionMembersMap || {};
-          }
-        }
+    async performCarAction(_0x38bc01, _0x3393a0, _0xd8e557 = false) {
+      if (!_0xd8e557) {
+        const _0x70dd56 = {
+          send: "发送",
+          refresh: "刷新",
+          claim: "收获"
+        };
+        this.dom.statusEl.textContent = "🚀 " + (_0x70dd56[_0x38bc01] || _0x38bc01) + "中...";
       }
-    },
-    openHelperDialog(_0x53d2fe) {
-      {
-        if (!_0x53d2fe) {
-          return;
-        }
-        if (Number(_0x53d2fe.quality || 0) < 5) {
-          return _0x37bc18.showtip("仅品阶≥5的车辆可设置护卫", "warning");
-        }
-        if (Number(_0x53d2fe.sendAt || 0) !== 0) {
-          return _0x37bc18.showtip("已发车车辆不可设置护卫", "warning");
-        }
-        if (!this.state.helperSelectionByCarId) {
-          {
-            this.state.helperSelectionByCarId = {};
+      try {
+        {
+          const _0x5274e5 = {
+            carId: _0x3393a0,
+            helperId: 0,
+            text: ""
+          };
+          const _0x414dbc = {
+            carId: _0x3393a0
+          };
+          const _0x5ee366 = await _0x259832.sendCommand("car_" + _0x38bc01, _0x38bc01 === "send" ? _0x5274e5 : _0x414dbc);
+          if (_0x5ee366?.["code"] !== 0) {
+            throw new Error(_0x5ee366?.["msg"] || "Code: " + _0x5ee366?.["code"]);
           }
-        }
-        let _0x43d040 = document.getElementById("helper-dialog");
-        let _0xb92ab5 = document.getElementById("global-ui-overlay");
-        if (!_0x43d040) {
-          {
-            _0xb92ab5 = document.createElement("div");
-            _0xb92ab5.id = "global-ui-overlay";
-            _0xb92ab5.style.cssText = "\n                position: fixed; top: 0; left: 0; right: 0; bottom: 0;\n                background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 99999;\n                display: flex; align-items: center; justify-content: center;\n            ";
-            _0x43d040 = document.createElement("div");
-            _0x43d040.id = "helper-dialog";
-            _0x43d040.style.cssText = "\n                position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);\n                background: #ffffff;\n                color: #333333; border: 1px solid #e5e7eb; outline: 1px solid rgba(37,99,235,0.1);\n                border-radius: 12px; padding: 12px; width: 86vw; max-width: 420px;\n                box-shadow: 0 16px 48px rgba(0,0,0,0.1); box-sizing: border-box;\n                z-index: 100000;\n            ";
-            _0x43d040.innerHTML = "\n                <div style=\"display:flex; align-items:center; justify-content:space-between; padding:10px 12px; font-weight:700;\">\n                  <div style=\"font-weight:700; letter-spacing:.3px; color:#333333;\">选择护卫</div>\n                  <button id=\"helper-close\" style=\"padding:4px 8px; border-radius:4px; border:none; background:#e5e7eb; color:#333333; cursor:pointer; font-size:12px;\">关闭</button>\n                </div>\n                <div style=\"padding:6px 8px; border-bottom: 1px solid #e5e7eb; margin:0 1px 6px 1px;\">\n                  <input id=\"helper-search-input\" placeholder=\"按名称或ID搜索\" style=\"width:100%; padding:7px 10px; border-radius:8px; border: 1px solid #d1d5db; background: #ffffff; color: #333333; box-sizing: border-box;\" />\n                </div>\n                <div id=\"helper-content\" style=\"max-height:240px; overflow:auto; border:1px solid #e5e7eb; border-radius:10px; padding:6px 8px; background:#ffffff; color:#333333;\">加载中...</div>\n                <div style=\"display:flex; align-items:center; gap:8px; justify-content:flex-end; padding:8px 4px;\">\n                  <div style=\"flex:1; font-size:14px; color:#6b7280;\">当前选择: <span id=\"helper-selected-name\" style=\"color:#2563eb;\">未选择</span></div>\n                  <button id=\"helper-cancel\" style=\"padding:6px 16px; border-radius:6px; border:none; background:#e5e7eb; color:#333333; cursor:pointer;\">取消</button>\n                  <button id=\"helper-confirm\" style=\"padding:6px 16px; border-radius:6px; border:none; background:#2563eb; color:#ffffff; cursor:not-allowed; opacity:0.7;\">确定</button>\n                </div>\n            ";
-            document.body.appendChild(_0xb92ab5);
-            document.body.appendChild(_0x43d040);
-          }
-        } else {
-          {
-            _0xb92ab5.style.display = "flex";
-            _0x43d040.style.display = "block";
-          }
-        }
-        const _0x12e19e = document.getElementById("helper-content");
-        const _0x165564 = document.getElementById("helper-selected-name");
-        const _0xac07e0 = document.getElementById("helper-cancel");
-        const _0x2d4f3a = document.getElementById("helper-confirm");
-        const _0x505bd8 = document.getElementById("helper-search-input");
-        const _0x377373 = document.getElementById("helper-close");
-        if (!_0x12e19e || !_0x165564 || !_0xac07e0 || !_0x2d4f3a) {
-          {
-            console.error("无法找到必要的DOM元素");
-            _0x37bc18.showtip("界面加载失败", "error");
-            return;
-          }
-        }
-        const _0x57fb28 = _0xac07e0.cloneNode(true);
-        _0xac07e0.parentNode.replaceChild(_0x57fb28, _0xac07e0);
-        const _0x1f4314 = _0x2d4f3a.cloneNode(true);
-        _0x2d4f3a.parentNode.replaceChild(_0x1f4314, _0x2d4f3a);
-        const _0x3a6997 = _0x505bd8.cloneNode(true);
-        _0x505bd8.parentNode.replaceChild(_0x3a6997, _0x505bd8);
-        const _0x98b6bf = _0x377373 ? _0x377373.cloneNode(true) : null;
-        _0x377373 && _0x98b6bf && _0x377373.parentNode.replaceChild(_0x98b6bf, _0x377373);
-        const _0x3cfbca = _0x57fb28;
-        const _0xee2b58 = _0x1f4314;
-        const _0xe4649e = _0x3a6997;
-        const _0x3439a0 = _0x98b6bf;
-        const _0x6ff7b5 = String((this.state.helperSelectionByCarId || {})[String(_0x53d2fe.carId)] || "");
-        let _0x37c1d6 = _0x6ff7b5;
-        const _0x1fe89d = _0x2d79bf => {
-          {
-            const _0x3890a0 = Number(_0x2d79bf || 0);
-            if (_0x3890a0 >= 100000000) {
-              return (_0x3890a0 / 100000000).toFixed(2) + "亿";
-            }
-            if (_0x3890a0 >= 10000) {
-              return (_0x3890a0 / 10000).toFixed(2) + "万";
-            }
-            return String(_0x3890a0);
-          }
-        };
-        const _0x4c3480 = _0x61a0ee => {
-          {
-            try {
-              {
-                _0x12e19e.querySelectorAll("div[data-mid]").forEach(_0x312e72 => {
-                  {
-                    _0x312e72.style.background = "rgba(255,255,255,0.06)";
-                    _0x312e72.style.border = "";
-                    const _0x55188f = _0x312e72.querySelector("span.__sel_dot");
-                    if (_0x55188f) {
-                      _0x55188f.style.background = "#6b7280";
-                    }
-                  }
-                });
-              }
-            } catch (_0x457167) {
-              {
-                console.error("重置UI失败:", _0x457167);
-              }
-            }
-            if (_0x61a0ee) {
-              {
-                try {
-                  {
-                    const _0x5532cf = _0x12e19e.querySelector("div[data-mid=\"" + _0x61a0ee + "\"]");
-                    if (_0x5532cf) {
-                      {
-                        _0x5532cf.style.transition = "background .18s ease, border-color .18s ease";
-                        _0x5532cf.style.background = "rgba(37,99,235,0.18)";
-                        _0x5532cf.style.border = "1px solid #2563eb";
-                        const _0x459081 = _0x5532cf.querySelector("span.__sel_dot");
-                        if (_0x459081) {
-                          _0x459081.style.background = "#22c55e";
-                        }
-                        const _0x3890b5 = this.getMemberName(_0x61a0ee) || _0x61a0ee;
-                        _0x165564.textContent = _0x3890b5;
-                        _0xee2b58.disabled = false;
-                        _0xee2b58.textContent = "确定（" + _0x3890b5 + "）";
-                        _0xee2b58.style.opacity = "1";
-                        _0xee2b58.style.cursor = "pointer";
-                      }
-                    }
-                  }
-                } catch (_0x9aae0d) {
-                  console.error("更新选中UI失败:", _0x9aae0d);
-                }
-              }
-            } else {
-              {
-                _0x165564.textContent = "未选择";
-                _0xee2b58.disabled = true;
-                _0xee2b58.textContent = "确定";
-                _0xee2b58.style.opacity = "0.7";
-                _0xee2b58.style.cursor = "not-allowed";
-              }
-            }
-          }
-        };
-        const _0x28ad69 = (_0x427184 = "", _0x4e8e12 = {}, _0x2bb4f2 = {}) => {
-          {
-            try {
-              {
-                const _0x3ad792 = String(_0x427184 || "").trim().toLowerCase();
-                const _0x34a6bc = Object.keys(_0x4e8e12).filter(_0x1411ee => {
-                  {
-                    try {
-                      {
-                        const _0x1a357b = _0x4e8e12[_0x1411ee];
-                        const _0x1138f9 = _0x1a357b?.["name"] || _0x1a357b?.["nickname"] || "";
-                        return !_0x3ad792 || String(_0x1411ee).includes(_0x3ad792) || String(_0x1138f9).toLowerCase().includes(_0x3ad792);
-                      }
-                    } catch (_0x4e024a) {
-                      {
-                        return false;
-                      }
-                    }
-                  }
-                }).map(_0x1267eb => {
-                  {
-                    try {
-                      {
-                        const _0x408331 = _0x4e8e12[_0x1267eb];
-                        const _0x1f3430 = Number(_0x2bb4f2[String(_0x1267eb)] ?? 0);
-                        const _0x15c425 = _0x408331?.["name"] || _0x408331?.["nickname"] || _0x1267eb;
-                        const _0x13d01f = Number(_0x408331?.["power"] ?? _0x408331?.["s_power"] ?? _0x408331?.["custom"]?.["s_power"] ?? 0);
-                        const _0xba7098 = _0x1f3430 >= 4;
-                        const _0x4ae9b1 = _0x408331?.["headImg"] || _0x408331?.["avatar"] || "/icons/xiaoyugan.png";
-                        const _0x11c95a = _0x37c1d6 === _0x1267eb ? "#22c55e" : "#6b7280";
-                        return "<div data-mid=\"" + _0x1267eb + "\" data-disabled=\"" + (_0xba7098 ? "1" : "") + "\" style=\"display:flex; align-items:center; justify-content:space-between; padding:6px; margin:4px 0; background: rgba(249,250,251,0.8); border-radius:6px; border:1px solid #e5e7eb; cursor:" + (_0xba7098 ? "not-allowed" : "pointer") + ";\">\n                                    <div style=\"display:flex; align-items:center; gap:8px;\">\n                                      <img src=\"" + _0x4ae9b1 + "\" onerror=\"this.src='/icons/xiaoyugan.png'\" style=\"width:22px;height:22px;border-radius:50%;object-fit:cover;\" />\n                                      <span class=\"__name\">" + _0x15c425 + "</span>\n                                    </div>\n                                    <div style=\"display:flex; align-items:center; gap:8px;\">\n                                      <span style=\"font-size:12px; color:#6b7280;\">战力 " + _0x1fe89d(_0x13d01f) + "</span>\n                                      <span style=\"font-size:12px; color:" + (_0xba7098 ? "#f59e0b" : "#6b7280") + ";\">当前护送 " + _0x1f3430 + "/4</span>\n                                      <span class=\"__sel_dot\" style=\"width:10px; height:10px; border-radius:50%; background:" + _0x11c95a + "\"></span>\n                                    </div>\n                                </div>";
-                      }
-                    } catch (_0x2437ab) {
-                      {
-                        return "";
-                      }
-                    }
-                  }
-                }).filter(_0x5b45d0 => _0x5b45d0).join("");
-                _0x12e19e.innerHTML = _0x34a6bc || "<div style=\"padding:6px;\">俱乐部成员为空或加载失败</div>";
-                _0x12e19e.querySelectorAll("div[data-mid]").forEach(_0x123d1b => {
-                  _0x123d1b.addEventListener("click", function () {
-                    {
-                      const _0x66e5 = this.getAttribute("data-disabled") === "1";
-                      if (_0x66e5) {
-                        return _0x37bc18.showtip("该成员当前护卫次数已满", "warning");
-                      }
-                      _0x37c1d6 = this.getAttribute("data-mid") || "";
-                      _0x4c3480(_0x37c1d6);
-                    }
-                  });
-                });
-                _0x4c3480(_0x37c1d6);
-              }
-            } catch (_0x1bb951) {
-              console.error("渲染列表失败:", _0x1bb951);
-              _0x12e19e.innerHTML = "<div style=\"padding:6px; color:#f43f5e;\">加载失败，请重试</div>";
-            }
-          }
-        };
-        const _0xe51b2d = () => {
-          {
-            try {
-              {
-                if (_0x43d040) {
-                  _0x43d040.style.display = "none";
-                }
-                if (_0xb92ab5) {
-                  _0xb92ab5.style.display = "none";
-                }
-              }
-            } catch (_0x3857d8) {
-              {
-                console.error("关闭弹窗失败:", _0x3857d8);
-              }
-            }
-          }
-        };
-        _0xe4649e.oninput = function () {
-          {
-            clearTimeout(_0xe4649e.searchTimer);
-            _0xe4649e.searchTimer = setTimeout(() => {
-              _0x41edbf(this.value);
-            }, 300);
-          }
-        };
-        _0x3cfbca.onclick = _0xe51b2d;
-        if (_0x3439a0) {
-          _0x3439a0.onclick = _0xe51b2d;
-        }
-        _0xee2b58.onclick = () => {
-          {
-            try {
-              {
-                if (_0x37c1d6) {
-                  {
-                    (this.state.helperSelectionByCarId || (this.state.helperSelectionByCarId = {}))[String(_0x53d2fe.carId)] = String(_0x37c1d6);
-                    const _0x153111 = this.getMemberName(_0x37c1d6) || _0x37c1d6;
-                    _0x37bc18.showtip("已设置护卫：" + _0x153111, "success");
-                  }
-                } else {
-                  (this.state.helperSelectionByCarId || (this.state.helperSelectionByCarId = {}))[String(_0x53d2fe.carId)] = 0;
-                  _0x37bc18.showtip("已取消护卫", "info");
-                }
-                _0xe51b2d();
-              }
-            } catch (_0x3d1158) {
-              {
-                console.error("确认选择失败:", _0x3d1158);
-                _0x37bc18.showtip("设置护卫失败", "error");
-              }
-            }
-          }
-        };
-        if (_0xb92ab5) {
-          {
-            _0xb92ab5.style.cursor = "pointer";
-            _0xb92ab5.onclick = function (_0x46adb1) {
-              {
-                if (_0x46adb1.target === this) {
-                  _0xe51b2d();
-                }
-              }
-            };
-          }
-        }
-        const _0x41edbf = (_0x3d89ce = "") => {
-          _0x12e19e.innerHTML = "<div style=\"padding:6px; text-align:center;\">加载中...</div>";
-          Promise.all([new Promise(_0x2ef57f => {
+          if (!_0xd8e557) {
             {
-              try {
-                {
-                  const _0x366358 = this.ensureLegionMembers();
-                  _0x366358 && typeof _0x366358.then === "function" ? _0x366358.then(_0x277e14 => _0x2ef57f(_0x277e14 || {})).catch(() => _0x2ef57f({})) : _0x2ef57f(_0x366358 || {});
-                }
-              } catch (_0x101311) {
-                console.error("获取成员数据出错:", _0x101311);
-                _0x2ef57f({});
-              }
+              _0x259832.showtip("赛车操作成功", "success");
             }
-          }), new Promise(_0xc8c7ef => {
-            {
-              try {
-                {
-                  _0x37bc18.sendCommand("car_getmemberhelpingcnt").then(_0x5e7cf4 => {
-                    {
-                      try {
-                        {
-                          let _0x35671c = {};
-                          let _0x19687a = {};
-                          if (_0x5e7cf4) {
-                            {
-                              if (_0x5e7cf4._rawData?.["body"]?.["memberHelpingCntMap"]) {
-                                _0x19687a = _0x5e7cf4._rawData.body.memberHelpingCntMap;
-                              } else {
-                                if (_0x5e7cf4._rawData?.["memberHelpingCntMap"]) {
-                                  _0x19687a = _0x5e7cf4._rawData.memberHelpingCntMap;
-                                } else {
-                                  if (_0x5e7cf4.data?.["body"]?.["memberHelpingCntMap"]) {
-                                    _0x19687a = _0x5e7cf4.data.body.memberHelpingCntMap;
-                                  } else {
-                                    if (_0x5e7cf4.data?.["memberHelpingCntMap"]) {
-                                      _0x19687a = _0x5e7cf4.data.memberHelpingCntMap;
-                                    } else {
-                                      if (_0x5e7cf4.body?.["memberHelpingCntMap"]) {
-                                        _0x19687a = _0x5e7cf4.body.memberHelpingCntMap;
-                                      } else {
-                                        if (_0x5e7cf4.memberHelpingCntMap) {
-                                          _0x19687a = _0x5e7cf4.memberHelpingCntMap;
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                          if (Array.isArray(_0x19687a)) {
-                            {
-                              _0x19687a.forEach(_0x4d1a93 => {
-                                {
-                                  const _0x1959e4 = String(_0x4d1a93?.["roleId"] ?? _0x4d1a93?.["id"] ?? "");
-                                  if (_0x1959e4) {
-                                    _0x35671c[_0x1959e4] = Number(_0x4d1a93?.["cnt"] ?? _0x4d1a93?.["count"] ?? 0);
-                                  }
-                                }
-                              });
-                            }
-                          } else {
-                            typeof _0x19687a === "object" && _0x19687a && Object.keys(_0x19687a).forEach(_0x2043d5 => {
-                              {
-                                try {
-                                  {
-                                    const _0x32653a = _0x19687a[_0x2043d5];
-                                    _0x35671c[String(_0x2043d5)] = Number(typeof _0x32653a === "object" ? _0x32653a?.["cnt"] ?? _0x32653a?.["count"] ?? 0 : _0x32653a ?? 0);
-                                  }
-                                } catch (_0x36074b) {}
-                              }
-                            });
-                          }
-                          _0xc8c7ef(_0x35671c);
-                        }
-                      } catch (_0x201997) {
-                        {
-                          console.error("解析护卫次数失败:", _0x201997);
-                          _0xc8c7ef({});
-                        }
-                      }
-                    }
-                  }).catch(_0x4ac80d => {
-                    {
-                      console.error("获取护卫次数失败:", _0x4ac80d);
-                      _0xc8c7ef({});
-                    }
-                  });
-                }
-              } catch (_0x52b3fa) {
-                console.error("创建获取护卫次数Promise失败:", _0x52b3fa);
-                _0xc8c7ef({});
-              }
-            }
-          })]).then(([_0x3688a9, _0x338c7b]) => {
-            {
-              _0x28ad69(_0x3d89ce, _0x3688a9 || {}, _0x338c7b || {});
-            }
-          }).catch(_0x538a75 => {
-            {
-              console.error("加载数据失败:", _0x538a75);
-              _0x12e19e.innerHTML = "<div style=\"padding:6px; color:#f43f5e;\">加载失败，请重试</div>";
-            }
-          });
-        };
-        _0x41edbf("");
-      }
-    },
-    openMembersDialog() {
-      {
-        try {
-          {
-            let _0x258592 = document.getElementById("members-dialog");
-            let _0x2aa032 = document.getElementById("global-ui-overlay");
-            let _0x82af0;
-            let _0x6b022d;
-            let _0x20a836;
-            if (!_0x258592) {
-              {
-                if (!_0x2aa032) {
-                  {
-                    _0x2aa032 = document.createElement("div");
-                    _0x2aa032.id = "global-ui-overlay";
-                    _0x2aa032.style.cssText = "\n                        position: fixed; top: 0; left: 0; right: 0; bottom: 0;\n                        background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 99999;\n                        display: flex; align-items: center; justify-content: center;\n                    ";
-                    document.body.appendChild(_0x2aa032);
-                  }
-                } else {
-                  {
-                    _0x2aa032.style.display = "flex";
-                  }
-                }
-                _0x258592 = document.createElement("div");
-                _0x258592.id = "members-dialog";
-                _0x258592.style.cssText = "\n                    position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);\n                    background: #ffffff;\n                    color: #333333; border: 1px solid #e5e7eb; outline: 1px solid rgba(37,99,235,0.1);\n                    border-radius: 12px; padding: 12px; width: 86vw; max-width: 420px;\n                    box-shadow: 0 16px 48px rgba(0,0,0,0.1); box-sizing: border-box;\n                    z-index: 100000;\n                ";
-                _0x258592.innerHTML = "\n                    <div style=\"display:flex; align-items:center; justify-content:space-between; padding:10px 12px; font-weight:700;\">\n                      <div style=\"font-weight:700; letter-spacing:.3px; color:#333333;\">俱乐部成员</div>\n                      <button id=\"members-close\" style=\"padding:4px 8px; border-radius:4px; border:none; background:#e5e7eb; color:#333333; cursor:pointer; font-size:12px;\">关闭</button>\n                    </div>\n                    <div style=\"padding:6px 8px; border-bottom: 1px solid #e5e7eb; margin:0 1px 6px 1px;\">\n                      <input id=\"members-search-input\" placeholder=\"按名称或ID搜索\" style=\"width:100%; padding:7px 10px; border-radius:8px; border: 1px solid #d1d5db; background: #ffffff; color: #333333; box-sizing: border-box;\" />\n                    </div>\n                    <div id=\"members-content\" style=\"max-height:240px; overflow:auto; border:1px solid #e5e7eb; border-radius:10px; padding:6px 8px; background:#ffffff; color:#333333;\">加载中...</div>\n                ";
-                document.body.appendChild(_0x258592);
-                _0x82af0 = document.getElementById("members-content");
-                _0x6b022d = document.getElementById("members-search-input");
-                _0x20a836 = document.getElementById("members-close");
-                const _0x19db61 = () => {
-                  {
-                    try {
-                      {
-                        if (_0x258592) {
-                          _0x258592.style.display = "none";
-                        }
-                        if (_0x2aa032) {
-                          _0x2aa032.style.display = "none";
-                        }
-                      }
-                    } catch (_0xe9efab) {
-                      console.error("关闭弹窗失败:", _0xe9efab);
-                    }
-                  }
-                };
-                if (_0x20a836) {
-                  {
-                    _0x20a836.onclick = _0x19db61;
-                  }
-                }
-                _0x2aa032 && (_0x2aa032.onclick = function (_0x10a363) {
-                  {
-                    if (_0x10a363.target === this) {
-                      _0x19db61();
-                    }
-                  }
-                });
-              }
-            } else {
-              {
-                _0x258592.style.display = "block";
-                if (_0x2aa032) {
-                  _0x2aa032.style.display = "flex";
-                }
-                _0x82af0 = document.getElementById("members-content");
-                _0x6b022d = document.getElementById("members-search-input");
-                _0x20a836 = document.getElementById("members-close");
-              }
-            }
-            if (!_0x82af0) {
-              {
-                console.error("未找到内容容器元素");
-                return;
-              }
-            }
-            const _0x364e96 = _0x33d994 => {
-              {
-                const _0x36b2dd = Number(_0x33d994 || 0);
-                if (_0x36b2dd >= 100000000) {
-                  return (_0x36b2dd / 100000000).toFixed(2) + "亿";
-                }
-                if (_0x36b2dd >= 10000) {
-                  return (_0x36b2dd / 10000).toFixed(2) + "万";
-                }
-                return String(_0x36b2dd);
-              }
-            };
-            const _0x32cf02 = (_0xafec8d = "", _0xac13c0 = {}, _0x52615d = {}) => {
-              {
-                try {
-                  {
-                    const _0x49e733 = String(_0xafec8d || "").trim().toLowerCase();
-                    const _0x2dffca = Object.keys(_0xac13c0).filter(_0x3d817c => {
-                      {
-                        const _0x4410c1 = _0xac13c0[_0x3d817c];
-                        const _0x1c56bd = _0x4410c1?.["name"] || _0x4410c1?.["nickname"] || "";
-                        return !_0x49e733 || String(_0x3d817c).includes(_0x49e733) || String(_0x1c56bd).toLowerCase().includes(_0x49e733);
-                      }
-                    }).map(_0x5e686d => {
-                      {
-                        const _0x1da489 = _0xac13c0[_0x5e686d];
-                        const _0x4d7cab = Number(_0x52615d[String(_0x5e686d)] ?? 0);
-                        const _0x4c014d = _0x1da489?.["name"] || _0x1da489?.["nickname"] || _0x5e686d;
-                        const _0x4b58f1 = Number(_0x1da489?.["power"] ?? _0x1da489?.["s_power"] ?? _0x1da489?.["custom"]?.["s_power"] ?? 0);
-                        const _0x3d1848 = _0x1da489?.["headImg"] || _0x1da489?.["avatar"] || "/icons/xiaoyugan.png";
-                        const _0x136b16 = _0x1da489?.["role"] || _0x1da489?.["position"] || "";
-                        const _0x2d4f23 = _0x136b16 ? "<span style=\"font-size:11px; color:#60a5fa; margin-left:6px;\">" + _0x136b16 + "</span>" : "";
-                        return "<div data-mid=\"" + _0x5e686d + "\" style=\"display:flex; align-items:center; padding:6px; margin:4px 0; background: rgba(249,250,251,0.8); border-radius:6px; border:1px solid #e5e7eb;\">\n                                    <div style=\"display:flex; align-items:center; gap:8px; flex:1;\">\n                                      <img src=\"" + _0x3d1848 + "\" onerror=\"this.src='/icons/xiaoyugan.png'\" style=\"width:22px;height:22px;border-radius:50%;object-fit:cover;\" />\n                                      <div style=\"flex:1; overflow:hidden;\">\n                                        <div style=\"display:flex; align-items:center;\">\n                                          <span style=\"white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:120px; display:inline-block;\">" + _0x4c014d + "</span>\n                                          " + _0x2d4f23 + "\n                                        </div>\n                                      </div>\n                                    </div>\n                                    <div style=\"display:flex; align-items:center; gap:12px; margin-left:8px;\">\n                                      <span style=\"font-size:12px; color:#6b7280;\">战力 " + _0x364e96(_0x4b58f1) + "</span>\n                                      <div style=\"font-size:12px; color:" + (_0x4d7cab >= 4 ? "#f59e0b" : "#6b7280") + ";\">当前护送 " + _0x4d7cab + "/4</div>\n                                    </div>\n                                </div>";
-                      }
-                    }).join("");
-                    _0x82af0.innerHTML = _0x2dffca || "<div style=\"padding:6px;\">俱乐部成员为空或加载失败</div>";
-                  }
-                } catch (_0x364d80) {
-                  {
-                    console.error("渲染成员列表失败:", _0x364d80);
-                    _0x82af0.innerHTML = "<div style=\"padding:6px; color:#f43f5e;\">加载失败，请重试</div>";
-                  }
-                }
-              }
-            };
-            const _0x40dcbd = (_0x3b8455 = "") => {
-              {
-                _0x82af0.innerHTML = "<div style=\"padding:6px; text-align:center;\">加载中...</div>";
-                Promise.all([Promise.resolve().then(() => this.ensureLegionMembers()), new Promise(_0x2c1fce => {
-                  {
-                    _0x37bc18.sendCommand("car_getmemberhelpingcnt").then(_0x4017b2 => {
-                      {
-                        try {
-                          {
-                            let _0x2a68bb = {};
-                            let _0x2ec022 = {};
-                            if (_0x4017b2) {
-                              {
-                                if (_0x4017b2._rawData?.["body"]?.["memberHelpingCntMap"]) {
-                                  _0x2ec022 = _0x4017b2._rawData.body.memberHelpingCntMap;
-                                } else {
-                                  if (_0x4017b2._rawData?.["memberHelpingCntMap"]) {
-                                    _0x2ec022 = _0x4017b2._rawData.memberHelpingCntMap;
-                                  } else {
-                                    if (_0x4017b2.data?.["body"]?.["memberHelpingCntMap"]) {
-                                      _0x2ec022 = _0x4017b2.data.body.memberHelpingCntMap;
-                                    } else {
-                                      if (_0x4017b2.data?.["memberHelpingCntMap"]) {
-                                        _0x2ec022 = _0x4017b2.data.memberHelpingCntMap;
-                                      } else {
-                                        if (_0x4017b2.body?.["memberHelpingCntMap"]) {
-                                          _0x2ec022 = _0x4017b2.body.memberHelpingCntMap;
-                                        } else {
-                                          if (_0x4017b2.memberHelpingCntMap) {
-                                            _0x2ec022 = _0x4017b2.memberHelpingCntMap;
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                            if (Array.isArray(_0x2ec022)) {
-                              {
-                                _0x2ec022.forEach(_0x1b22d3 => {
-                                  {
-                                    const _0x41b5ae = String(_0x1b22d3?.["roleId"] ?? _0x1b22d3?.["id"] ?? "");
-                                    if (_0x41b5ae) {
-                                      _0x2a68bb[_0x41b5ae] = Number(_0x1b22d3?.["cnt"] ?? _0x1b22d3?.["count"] ?? 0);
-                                    }
-                                  }
-                                });
-                              }
-                            } else {
-                              if (typeof _0x2ec022 === "object" && _0x2ec022) {
-                                {
-                                  Object.keys(_0x2ec022).forEach(_0x170f8b => {
-                                    {
-                                      try {
-                                        {
-                                          const _0x35fbe4 = _0x2ec022[_0x170f8b];
-                                          _0x2a68bb[String(_0x170f8b)] = Number(typeof _0x35fbe4 === "object" ? _0x35fbe4?.["cnt"] ?? _0x35fbe4?.["count"] ?? 0 : _0x35fbe4 ?? 0);
-                                        }
-                                      } catch (_0x46e973) {}
-                                    }
-                                  });
-                                }
-                              }
-                            }
-                            _0x2c1fce(_0x2a68bb);
-                          }
-                        } catch (_0x17bb56) {
-                          console.error("解析护卫次数失败:", _0x17bb56);
-                          _0x2c1fce({});
-                        }
-                      }
-                    }).catch(_0x41d6ee => {
-                      {
-                        console.error("获取护卫次数失败:", _0x41d6ee);
-                        _0x2c1fce({});
-                      }
-                    });
-                  }
-                })]).then(([_0xd52f0b, _0x17b536]) => {
-                  {
-                    _0x32cf02(_0x3b8455, _0xd52f0b || {}, _0x17b536 || {});
-                  }
-                }).catch(_0x28c1b8 => {
-                  {
-                    console.error("加载成员数据失败:", _0x28c1b8);
-                    _0x82af0.innerHTML = "<div style=\"padding:6px; color:#f43f5e;\">加载失败，请重试</div>";
-                  }
-                });
-              }
-            };
-            if (_0x6b022d) {
-              {
-                _0x6b022d.oninput = function () {
-                  {
-                    clearTimeout(_0x6b022d.searchTimer);
-                    _0x6b022d.searchTimer = setTimeout(() => {
-                      {
-                        _0x40dcbd(this.value);
-                      }
-                    }, 300);
-                  }
-                };
-              }
-            }
-            _0x40dcbd("");
           }
-        } catch (_0x196b81) {
-          {
-            console.error("打开成员列表失败:", _0x196b81);
-            _0x37bc18.showtip("打开成员列表失败", "error");
-          }
+          return true;
         }
-      }
-    },
-    async sendCar(_0x1716e8) {
-      {
-        if (!this.isCarEventActive()) {
-          return _0x37bc18.showtip("当前非活动时间 (周一至周三 6:00-20:00)", "error");
-        }
-        if (this.state.sendCount >= 4) {
-          return _0x37bc18.showtip("今日发车次数已用完", "error");
-        }
-        const _0x5c13ea = this.state.fullCarData.find(_0x5c095a => String(_0x5c095a.carId) === String(_0x1716e8));
-        if (!_0x5c13ea) {
-          return _0x37bc18.showtip("车辆不存在", "error");
-        }
-        const _0x3db655 = Number((this.state.helperSelectionByCarId || {})[String(_0x1716e8)] || 0);
-        if (await this.performCarAction("send", _0x1716e8, false, _0x3db655)) {
-          {
-            if (this.state.helperSelectionByCarId && this.state.helperSelectionByCarId[String(_0x1716e8)]) {
-              {
-                delete this.state.helperSelectionByCarId[String(_0x1716e8)];
-              }
-            }
-            setTimeout(() => this.queryClubCars(), 300);
-          }
-        }
+      } catch (_0x5ae6c4) {
+        !_0xd8e557 && (_0x259832.showtip("操作失败: " + _0x5ae6c4.message, "error"), this.dom.statusEl.textContent = "❌ 操作出错");
+        console.error("赛车操作 '" + _0x38bc01 + "' 失败 (ID: " + _0x3393a0 + "):", _0x5ae6c4.message);
+        return false;
       }
     }
   };
-  _0x4ebb3d.init();
-  async function _0x512e0a(_0x4bc6fa) {
+  _0x27dca7.init();
+  async function _0x2fb58c(_0x455aec) {
     {
-      if (_0x4bc6fa) {
-        _0x4bc6fa.textContent = "🔄 开始执行藏品图鉴升级...";
+      if (_0x455aec) {
+        _0x455aec.textContent = "🔄 开始执行藏品图鉴升级...";
       }
-      const _0x2d2f0d = 100;
-      let _0x2d043b = 0;
-      let _0x36eb75 = 0;
-      const _0x4e0b07 = () => {
+      const _0x157d74 = 100;
+      let _0x41ed63 = 0;
+      let _0x4bb371 = 0;
+      const _0x7a9005 = () => {
         {
-          const _0x28b3d3 = [];
-          const _0x360e6d = new Set();
-          function _0x3cc94d(_0x492f90, _0x177a14, _0x9dfa5b = 2) {
+          const _0x14580b = [];
+          const _0x1dbb46 = new Set();
+          function _0xe04d7b(_0x2b882a, _0x41b538, _0x35bef7 = 2) {
             {
-              const _0x461016 = _0x492f90 + "_" + _0x177a14 + "_" + _0x9dfa5b;
-              if (!_0x360e6d.has(_0x461016)) {
+              const _0x19ea51 = _0x2b882a + "_" + _0x41b538 + "_" + _0x35bef7;
+              if (!_0x1dbb46.has(_0x19ea51)) {
                 {
-                  const _0x124bad = {
-                    seriesId: _0x492f90,
-                    id: _0x177a14,
-                    poolType: _0x9dfa5b
+                  const _0x5aac24 = {
+                    seriesId: _0x2b882a,
+                    id: _0x41b538,
+                    poolType: _0x35bef7
                   };
-                  _0x28b3d3.push(_0x124bad);
-                  _0x360e6d.add(_0x461016);
+                  _0x14580b.push(_0x5aac24);
+                  _0x1dbb46.add(_0x19ea51);
                 }
               }
             }
           }
-          for (let _0x50328e = 1; _0x50328e <= 12; _0x50328e++) {
+          for (let _0x30313c = 1; _0x30313c <= 12; _0x30313c++) {
+            _0xe04d7b(2, _0x30313c, 1);
+          }
+          for (let _0x8b4d3e = 1001; _0x8b4d3e <= 1015; _0x8b4d3e++) {
             {
-              _0x3cc94d(2, _0x50328e, 1);
+              _0xe04d7b(3, _0x8b4d3e, 1);
             }
           }
-          for (let _0x5ce3b5 = 1001; _0x5ce3b5 <= 1015; _0x5ce3b5++) {
-            _0x3cc94d(3, _0x5ce3b5, 1);
+          const _0x50b8c1 = [10103, 11302, 10903, 10206, 11705, 10302, 10403, 11005, 11403, 11804, 10503, 10603, 11102, 11504, 10702, 10805, 11204, 11604, 12005, 11904];
+          for (const _0x1b02ad of _0x50b8c1) {
+            _0xe04d7b(40001, _0x1b02ad, 3);
           }
-          const _0x5b407b = [10103, 11302, 10903, 10206, 11705, 10302, 10403, 11005, 11403, 11804, 10503, 10603, 11102, 11504, 10702, 10805, 11204, 11604, 12005, 11904];
-          for (const _0x5930b2 of _0x5b407b) {
-            _0x3cc94d(40001, _0x5930b2, 3);
+          for (let _0x182009 = 2001; _0x182009 <= 2020; _0x182009++) {
+            _0xe04d7b(6, _0x182009, 1);
           }
-          for (let _0x1f171e = 2001; _0x1f171e <= 2020; _0x1f171e++) {
-            {
-              _0x3cc94d(6, _0x1f171e, 1);
-            }
+          for (let _0x29ae45 = 3001; _0x29ae45 <= 3010; _0x29ae45++) {
+            _0xe04d7b(6, _0x29ae45, 1);
           }
-          for (let _0x515ada = 3001; _0x515ada <= 3010; _0x515ada++) {
-            _0x3cc94d(6, _0x515ada, 1);
-          }
-          const _0x39df09 = {
+          const _0x4fc01e = {
             "101": [10101, 10102, 1009, 10103, 2001],
             "113": [11307, 11302, 11301, 11304, 2003, 1004],
             "109": [10903, 10901, 10908, 2002, 1007, 10902],
@@ -2772,1009 +1392,1081 @@
             "116": [11604, 11601, 11605, 2010, 1005, 11602],
             "120": [12002, 12006, 12005, 12003, 12004]
           };
-          for (const _0x23a77e in _0x39df09) {
-            {
-              const _0x587f21 = parseInt(_0x23a77e, 10);
-              const _0x46527f = _0x39df09[_0x23a77e];
-              let _0x2ab763 = Infinity;
-              let _0x2002a2 = -Infinity;
-              const _0x13d699 = new Set();
-              for (const _0xf192bf of _0x46527f) {
-                {
-                  if (Math.floor(_0xf192bf / 100) === _0x587f21 && _0xf192bf % 100 > 0 && _0xf192bf % 100 < 100) {
-                    {
-                      const _0x536c65 = _0xf192bf % 100;
-                      _0x2ab763 = Math.min(_0x2ab763, _0x536c65);
-                      _0x2002a2 = Math.max(_0x2002a2, _0x536c65);
-                    }
-                  } else {
-                    _0x13d699.add(_0xf192bf);
+          for (const _0x33f1f7 in _0x4fc01e) {
+            const _0x30374d = parseInt(_0x33f1f7, 10);
+            const _0x44c0e7 = _0x4fc01e[_0x33f1f7];
+            let _0x2bffdd = Infinity;
+            let _0x316d60 = -Infinity;
+            const _0x490b89 = new Set();
+            for (const _0x30a8df of _0x44c0e7) {
+              {
+                if (Math.floor(_0x30a8df / 100) === _0x30374d && _0x30a8df % 100 > 0 && _0x30a8df % 100 < 100) {
+                  {
+                    const _0x47e5f9 = _0x30a8df % 100;
+                    _0x2bffdd = Math.min(_0x2bffdd, _0x47e5f9);
+                    _0x316d60 = Math.max(_0x316d60, _0x47e5f9);
+                  }
+                } else {
+                  {
+                    _0x490b89.add(_0x30a8df);
                   }
                 }
-              }
-              if (_0x2ab763 !== Infinity && _0x2002a2 !== -Infinity) {
-                {
-                  for (let _0x4dd33b = _0x2ab763; _0x4dd33b <= _0x2002a2; _0x4dd33b++) {
-                    {
-                      _0x3cc94d(_0x587f21, _0x587f21 * 100 + _0x4dd33b);
-                    }
-                  }
-                }
-              }
-              for (const _0x585b1c of _0x13d699) {
-                _0x3cc94d(_0x587f21, _0x585b1c);
               }
             }
+            if (_0x2bffdd !== Infinity && _0x316d60 !== -Infinity) {
+              {
+                for (let _0x3d6a58 = _0x2bffdd; _0x3d6a58 <= _0x316d60; _0x3d6a58++) {
+                  _0xe04d7b(_0x30374d, _0x30374d * 100 + _0x3d6a58);
+                }
+              }
+            }
+            for (const _0x552d99 of _0x490b89) {
+              _0xe04d7b(_0x30374d, _0x552d99);
+            }
           }
-          return _0x28b3d3.sort((_0x350cc9, _0x23e30a) => {
+          return _0x14580b.sort((_0x48ae24, _0x220908) => {
             {
-              if (_0x350cc9.seriesId !== _0x23e30a.seriesId) {
-                return _0x350cc9.seriesId - _0x23e30a.seriesId;
+              if (_0x48ae24.seriesId !== _0x220908.seriesId) {
+                return _0x48ae24.seriesId - _0x220908.seriesId;
               }
-              if (_0x350cc9.id !== _0x23e30a.id) {
-                return _0x350cc9.id - _0x23e30a.id;
+              if (_0x48ae24.id !== _0x220908.id) {
+                return _0x48ae24.id - _0x220908.id;
               }
-              return _0x350cc9.poolType - _0x23e30a.poolType;
+              return _0x48ae24.poolType - _0x220908.poolType;
             }
           });
         }
       };
-      const _0x321870 = _0x4e0b07();
-      const _0x268a54 = _0x321870.length;
-      _0x4bc6fa.textContent = "🔄 准备领取 " + _0x268a54 + " 个图鉴奖励...";
-      for (let _0x5596f6 = 0; _0x5596f6 < _0x321870.length; _0x5596f6++) {
+      const _0xeedf8b = _0x7a9005();
+      const _0x3055c3 = _0xeedf8b.length;
+      _0x455aec.textContent = "🔄 准备领取 " + _0x3055c3 + " 个图鉴奖励...";
+      for (let _0x43fa96 = 0; _0x43fa96 < _0xeedf8b.length; _0x43fa96++) {
         {
-          const _0x5bca86 = _0x321870[_0x5596f6];
-          const _0x4fef16 = _0x5596f6 + 1;
-          _0x4bc6fa.textContent = "🔄 (" + _0x4fef16 + "/" + _0x268a54 + ") 处理系列: " + _0x5bca86.seriesId + ", ID: " + _0x5bca86.id + ", 类型: " + _0x5bca86.poolType;
+          const _0x620938 = _0xeedf8b[_0x43fa96];
+          const _0x380e92 = _0x43fa96 + 1;
+          _0x455aec.textContent = "🔄 (" + _0x380e92 + "/" + _0x3055c3 + ") 处理系列: " + _0x620938.seriesId + ", ID: " + _0x620938.id + ", 类型: " + _0x620938.poolType;
           try {
-            {
-              const _0x592c65 = {
-                id: _0x5bca86.id,
-                isAll: false,
-                poolType: _0x5bca86.poolType,
-                seriesId: _0x5bca86.seriesId
-              };
-              const _0x5d2171 = await _0x37bc18.sendCommand("collection_activate", _0x592c65);
-              if (_0x5d2171.code === 0) {
-                {
-                  _0x2d043b++;
-                }
-              } else {
-                {
-                  _0x36eb75++;
-                }
-              }
-            }
-          } catch (_0x53f187) {
-            {
-              _0x36eb75++;
-              console.error("处理图鉴失败:", _0x53f187);
-            }
+            const _0x509662 = {
+              id: _0x620938.id,
+              isAll: false,
+              poolType: _0x620938.poolType,
+              seriesId: _0x620938.seriesId
+            };
+            const _0x4a7886 = await _0x259832.sendCommand("collection_activate", _0x509662);
+            _0x4a7886.code === 0 ? _0x41ed63++ : _0x4bb371++;
+          } catch (_0x5d2757) {
+            _0x4bb371++;
+            console.error("处理图鉴失败:", _0x5d2757);
           }
-          await _0x37bc18.delay(_0x2d2f0d / 1000);
+          await _0x259832.delay(_0x157d74 / 1000);
         }
       }
-      _0x4bc6fa.textContent = "✅ 图鉴奖励领取完成，开始执行额外领取...";
-      const _0x41d23e = {
+      _0x455aec.textContent = "✅ 图鉴奖励领取完成，开始执行额外领取...";
+      const _0x28644d = {
         seriesId: 2,
         poolType: 1
       };
-      const _0x149ff1 = {
+      const _0x40932e = {
         seriesId: 3,
         poolType: 1
       };
-      const _0x5bde65 = {
+      const _0x53fd13 = {
         seriesId: 40001,
         poolType: 3
       };
-      const _0x4ffa03 = [_0x41d23e, _0x149ff1, _0x5bde65];
-      for (const _0x2c23fd of _0x4ffa03) {
+      const _0x5a3e55 = [_0x28644d, _0x40932e, _0x53fd13];
+      for (const _0x363930 of _0x5a3e55) {
         {
           try {
             {
-              _0x4bc6fa.textContent = "🔄 正在领取系列奖励 (seriesId: " + _0x2c23fd.seriesId + ")...";
-              const _0x30d357 = {
-                seriesId: _0x2c23fd.seriesId,
+              _0x455aec.textContent = "🔄 正在领取系列奖励 (seriesId: " + _0x363930.seriesId + ")...";
+              const _0x48e892 = {
+                seriesId: _0x363930.seriesId,
                 isAll: true,
-                poolType: _0x2c23fd.poolType
+                poolType: _0x363930.poolType
               };
-              const _0x22f1e7 = await _0x37bc18.sendCommand("collection_claimseries", _0x30d357);
-              if (_0x22f1e7.code === 0) {
-                {
-                  _0x2d043b++;
-                }
-              }
+              const _0x3f3681 = await _0x259832.sendCommand("collection_claimseries", _0x48e892);
+              _0x3f3681.code === 0 && _0x41ed63++;
             }
-          } catch (_0x1292eb) {
-            console.error("系列奖励 (" + _0x2c23fd.seriesId + ") 领取失败:", _0x1292eb);
+          } catch (_0x51bb0f) {
+            console.error("系列奖励 (" + _0x363930.seriesId + ") 领取失败:", _0x51bb0f);
           }
-          await _0x37bc18.delay(_0x2d2f0d / 1000);
+          await _0x259832.delay(_0x157d74 / 1000);
         }
       }
       try {
         {
-          _0x4bc6fa.textContent = "🔄 正在领取总览奖励...";
-          const _0xb3c800 = await _0x37bc18.sendCommand("collection_claimtotal", {});
-          if (_0xb3c800.code === 0) {
-            {
-              _0x2d043b++;
-            }
-          }
+          _0x455aec.textContent = "🔄 正在领取总览奖励...";
+          const _0x286cfd = await _0x259832.sendCommand("collection_claimtotal", {});
+          _0x286cfd.code === 0 && _0x41ed63++;
         }
-      } catch (_0x333a9c) {
-        {
-          console.error("总览奖励领取失败:", _0x333a9c);
-        }
+      } catch (_0xb5efcf) {
+        console.error("总览奖励领取失败:", _0xb5efcf);
       }
-      await _0x37bc18.delay(_0x2d2f0d / 1000);
-      _0x4bc6fa.textContent = "🔄 开始执行30次升级操作...";
-      for (let _0x3bf109 = 1; _0x3bf109 <= 30; _0x3bf109++) {
+      await _0x259832.delay(_0x157d74 / 1000);
+      _0x455aec.textContent = "🔄 开始执行30次升级操作...";
+      for (let _0xaeea17 = 1; _0xaeea17 <= 30; _0xaeea17++) {
         {
-          _0x4bc6fa.textContent = "🔄 升级操作 " + _0x3bf109 + "/30";
+          _0x455aec.textContent = "🔄 升级操作 " + _0xaeea17 + "/30";
           try {
+            const _0x63c5d2 = {
+              id: 1001,
+              isAll: false,
+              poolType: 1,
+              seriesId: 3
+            };
+            await _0x259832.sendCommand("collection_activate", _0x63c5d2);
+          } catch (_0x4e6598) {
             {
-              const _0x2d2b4c = {
-                id: 1001,
-                isAll: false,
-                poolType: 1,
-                seriesId: 3
-              };
-              await _0x37bc18.sendCommand("collection_activate", _0x2d2b4c);
-            }
-          } catch (_0x42330b) {
-            {
-              console.log("升级第 " + _0x3bf109 + " 次失败:", _0x42330b.message);
+              console.log("升级第 " + _0xaeea17 + " 次失败:", _0x4e6598.message);
             }
           }
-          await _0x37bc18.delay(0.05);
+          await _0x259832.delay(0.05);
         }
       }
-      const _0x54f304 = "✅ 藏品图鉴升级完成！\n成功: " + _0x2d043b + " 次 | 失败: " + _0x36eb75 + " 次\n已完成全部30次升级操作";
-      _0x4bc6fa.textContent = _0x54f304;
+      const _0x2c1ec0 = "✅ 藏品图鉴升级完成！\n成功: " + _0x41ed63 + " 次 | 失败: " + _0x4bb371 + " 次\n已完成全部30次升级操作";
+      _0x455aec.textContent = _0x2c1ec0;
     }
   }
-  let _0x19ad01 = false;
-  let _0x11f885 = false;
-  async function _0x4ea6c1(_0x595511, _0x5db38c) {
-    if (_0x19ad01 && (_0x595511.startsWith("daily-task-") || _0x595511 === "one-key-100")) {
-      {
-        _0x37bc18.showtip("已有任务在执行，请稍候", "info");
+  let _0x20c033 = false;
+  let _0x34bde5 = false;
+  async function _0x385d20(_0x302099, _0x121acb) {
+    if (_0x20c033 && (_0x302099.startsWith("daily-task-") || _0x302099 === "one-key-100")) {
+      _0x259832.showtip("已有任务在执行，请稍候", "info");
+      return;
+    }
+    const _0x25ba06 = _0x121acb.closest(".task-section").querySelector(".status");
+    const _0x28b9d5 = _0x121acb.textContent;
+    const _0x29b7ed = _0x2a50b8.querySelectorAll(".task-btn, input[type=\"checkbox\"]");
+    if (_0x302099 !== "toggle-ws-monitor" && _0x302099 !== "clear-ws-log" && _0x302099 !== "copy-all-ws-log") {
+      _0x121acb.disabled = true;
+      _0x121acb.textContent = "执行中...";
+      if (_0x25ba06) {
+        _0x25ba06.textContent = "🚀 执行中...";
+      }
+    }
+    (_0x302099 === "execute-daily-checked" || _0x302099 === "one-key-100") && (_0x20c033 = true, _0x34bde5 = false, _0x29b7ed.forEach(_0x409150 => _0x409150.disabled = true));
+    try {
+      const _0xe68796 = window.__require?.("data-index");
+      if (_0x302099 === "toggle-ws-monitor") {
+        if (WSModule.isMonitoring) {
+          WSModule.stop();
+        } else {
+          WSModule.start();
+        }
         return;
       }
-    }
-    const _0x2be9b9 = _0x5db38c.closest(".task-section").querySelector(".status");
-    const _0x4c5901 = _0x5db38c.textContent;
-    const _0x3d2bde = _0x4090b4.querySelectorAll(".task-btn, input[type=\"checkbox\"]");
-    if (_0x595511 !== "toggle-ws-monitor" && _0x595511 !== "clear-ws-log" && _0x595511 !== "copy-all-ws-log") {
-      {
-        _0x5db38c.disabled = true;
-        _0x5db38c.textContent = "执行中...";
-        if (_0x2be9b9) {
-          _0x2be9b9.textContent = "🚀 执行中...";
-        }
-      }
-    }
-    (_0x595511 === "execute-daily-checked" || _0x595511 === "one-key-100") && (_0x19ad01 = true, _0x11f885 = false, _0x3d2bde.forEach(_0x106ca1 => _0x106ca1.disabled = true));
-    try {
-      const _0x2befd1 = window.__require?.("data-index");
-      if (_0x595511 === "toggle-ws-monitor") {
-        {
-          if (WSModule.isMonitoring) {
-            WSModule.stop();
-          } else {
-            WSModule.start();
-          }
-          return;
-        }
-      }
-      if (_0x595511 === "clear-ws-log") {
+      if (_0x302099 === "clear-ws-log") {
         {
           WSModule.clear();
           return;
         }
       }
-      if (_0x595511 === "copy-all-ws-log") {
-        {
-          WSModule.copyAll();
-          return;
-        }
+      if (_0x302099 === "copy-all-ws-log") {
+        WSModule.copyAll();
+        return;
       }
-      const _0x528145 = window.__require?.("ServerData");
-      if (_0x595511.startsWith("start-fishing-")) {
-        const _0x43efcb = parseInt(_0x595511.split("-")[2]);
-        const _0x270acc = parseInt(_0x5db38c.parentElement.querySelector("input").value) || 0;
-        const _0x1039eb = _0x43efcb === 2 ? "高级钓鱼" : "普通钓鱼";
-        if (_0x43efcb === 1 && _0x270acc > 0) {
-          let _0x349a84 = 0;
-          const _0x2abb92 = Math.min(_0x270acc, 3);
-          for (let _0x217d80 = 0; _0x217d80 < _0x2abb92; _0x217d80++) {
-            try {
+      const _0x4d0f71 = window.__require?.("ServerData");
+      if (_0x302099.startsWith("start-fishing-")) {
+        const _0x1bf491 = parseInt(_0x302099.split("-")[2]);
+        const _0x155ba6 = parseInt(_0x121acb.parentElement.querySelector("input").value) || 0;
+        const _0x126b4e = _0x1bf491 === 2 ? "高级钓鱼" : "普通钓鱼";
+        if (_0x1bf491 === 1 && _0x155ba6 > 0) {
+          {
+            let _0x4fd64d = 0;
+            const _0x4fc964 = Math.min(_0x155ba6, 3);
+            for (let _0x41832c = 0; _0x41832c < _0x4fc964; _0x41832c++) {
               {
-                const _0x37e8a6 = {
-                  lotteryNumber: 1,
-                  newFree: true,
-                  type: 1
-                };
-                await _0x2befd1.ArtifactService.lottery(_0x37e8a6);
+                try {
+                  {
+                    const _0x468222 = {
+                      lotteryNumber: 1,
+                      newFree: true,
+                      type: 1
+                    };
+                    await _0xe68796.ArtifactService.lottery(_0x468222);
+                  }
+                } catch (_0x565d68) {
+                  console.log("单次钓鱼尝试失败（正常现象）");
+                }
+                _0x4fd64d++;
+                _0x25ba06.textContent = _0x126b4e + " " + _0x4fd64d + "/" + _0x155ba6;
+                await _0x259832.delay(0.2);
               }
-            } catch (_0x1a73d0) {
-              console.log("单次钓鱼尝试失败（正常现象）");
             }
-            _0x349a84++;
-            _0x2be9b9.textContent = _0x1039eb + " " + _0x349a84 + "/" + _0x270acc;
-            await _0x37bc18.delay(0.2);
-          }
-          const _0x5b7d51 = _0x270acc - _0x2abb92;
-          if (_0x5b7d51 > 0) {
-            for (let _0x52e08a = 0; _0x52e08a < Math.ceil(_0x5b7d51 / 10); _0x52e08a++) {
-              const _0x415bd4 = Math.min(10, _0x5b7d51 - _0x52e08a * 10);
-              if (_0x415bd4 <= 0) {
-                break;
+            const _0x4758ae = _0x155ba6 - _0x4fc964;
+            if (_0x4758ae > 0) {
+              {
+                for (let _0x2ae186 = 0; _0x2ae186 < Math.ceil(_0x4758ae / 10); _0x2ae186++) {
+                  {
+                    const _0x176de3 = Math.min(10, _0x4758ae - _0x2ae186 * 10);
+                    if (_0x176de3 <= 0) {
+                      break;
+                    }
+                    const _0x1ac1b1 = {
+                      lotteryNumber: _0x176de3,
+                      newFree: true,
+                      type: 1
+                    };
+                    await _0xe68796.ArtifactService.lottery(_0x1ac1b1);
+                    _0x4fd64d += _0x176de3;
+                    _0x25ba06.textContent = _0x126b4e + " " + Math.min(_0x4fd64d, _0x155ba6) + "/" + _0x155ba6;
+                  }
+                }
               }
-              const _0x132675 = {
-                lotteryNumber: _0x415bd4,
-                newFree: true,
-                type: 1
-              };
-              await _0x2befd1.ArtifactService.lottery(_0x132675);
-              _0x349a84 += _0x415bd4;
-              _0x2be9b9.textContent = _0x1039eb + " " + Math.min(_0x349a84, _0x270acc) + "/" + _0x270acc;
             }
           }
         } else {
-          if (_0x43efcb === 2 && _0x270acc > 0) {
-            for (let _0x52e0c4 = 0; _0x52e0c4 < Math.ceil(_0x270acc / 10); _0x52e0c4++) {
-              const _0x19b1ff = Math.min(10, _0x270acc - _0x52e0c4 * 10);
-              if (_0x19b1ff <= 0) {
+          if (_0x1bf491 === 2 && _0x155ba6 > 0) {
+            for (let _0xc1c480 = 0; _0xc1c480 < Math.ceil(_0x155ba6 / 10); _0xc1c480++) {
+              const _0x46e79f = Math.min(10, _0x155ba6 - _0xc1c480 * 10);
+              if (_0x46e79f <= 0) {
                 break;
               }
-              const _0x574a8c = {
-                lotteryNumber: _0x19b1ff,
+              const _0x9dcde6 = {
+                lotteryNumber: _0x46e79f,
                 newFree: true,
                 type: 2
               };
-              await _0x2befd1.ArtifactService.lottery(_0x574a8c);
-              _0x2be9b9.textContent = _0x1039eb + " " + Math.min((_0x52e0c4 + 1) * 10, _0x270acc) + "/" + _0x270acc;
+              await _0xe68796.ArtifactService.lottery(_0x9dcde6);
+              _0x25ba06.textContent = _0x126b4e + " " + Math.min((_0xc1c480 + 1) * 10, _0x155ba6) + "/" + _0x155ba6;
             }
           }
         }
-        _0x2be9b9.textContent = "✅ " + _0x1039eb + "完成";
+        _0x25ba06.textContent = "✅ " + _0x126b4e + "完成";
       } else {
-        if (_0x595511 === "recruit") {
-          const _0x2f1905 = parseInt(_0x5db38c.parentElement.querySelector("input").value);
-          if (_0x2f1905 <= 0) {
-            _0x2be9b9.textContent = "ℹ️ 次数为0";
-            return;
-          }
-          const _0x455dd4 = Math.floor(_0x2f1905 / 10);
-          const _0x1e1b19 = _0x2f1905 % 10;
-          let _0x5a9326 = 0;
-          if (_0x455dd4 > 0) {
-            for (let _0x2d7e87 = 0; _0x2d7e87 < _0x455dd4; _0x2d7e87++) {
-              _0x2be9b9.textContent = "招募 " + (_0x5a9326 + 10) + "/" + _0x2f1905;
-              const _0x251b1e = {
-                byClub: false,
-                recruitNumber: 10,
-                recruitType: 1
-              };
-              await _0x2befd1.HeroService.recruit(_0x251b1e);
-              _0x5a9326 += 10;
+        if (_0x302099 === "recruit") {
+          {
+            const _0x553cb5 = parseInt(_0x121acb.parentElement.querySelector("input").value);
+            if (_0x553cb5 <= 0) {
+              {
+                _0x25ba06.textContent = "ℹ️ 次数为0";
+                return;
+              }
             }
-          }
-          if (_0x1e1b19 > 0) {
-            for (let _0x28b05e = 0; _0x28b05e < _0x1e1b19; _0x28b05e++) {
-              _0x2be9b9.textContent = "招募 " + (_0x5a9326 + 1) + "/" + _0x2f1905;
-              const _0x2e50a2 = {
-                byClub: false,
-                recruitNumber: 1,
-                recruitType: 3
-              };
-              await _0x2befd1.HeroService.recruit(_0x2e50a2);
-              _0x5a9326++;
-              await _0x37bc18.delay(0.2);
+            const _0x277b7d = Math.floor(_0x553cb5 / 10);
+            const _0x197352 = _0x553cb5 % 10;
+            let _0x3459ef = 0;
+            if (_0x277b7d > 0) {
+              for (let _0x130534 = 0; _0x130534 < _0x277b7d; _0x130534++) {
+                {
+                  _0x25ba06.textContent = "招募 " + (_0x3459ef + 10) + "/" + _0x553cb5;
+                  const _0x231de4 = {
+                    byClub: false,
+                    recruitNumber: 10,
+                    recruitType: 1
+                  };
+                  await _0xe68796.HeroService.recruit(_0x231de4);
+                  _0x3459ef += 10;
+                }
+              }
             }
-          }
-          _0x2be9b9.textContent = "✅ 招募完成";
-        } else {
-          if (_0x595511.startsWith("open-box-")) {
-            const _0x1e2525 = parseInt(_0x595511.split("-")[2]);
-            const _0x2a6a3c = parseInt(_0x5db38c.parentElement.querySelector("input").value);
-            const _0x45c8b3 = {
-              "2001": "木质",
-              "2002": "青铜",
-              "2003": "黄金",
-              "2004": "铂金"
-            };
-            const _0x2742f0 = _0x45c8b3[_0x1e2525];
-            if (_0x2a6a3c <= 0 || _0x2a6a3c % 10 !== 0) {
-              _0x37bc18.showtip("宝箱数量必须是10的倍数", "error");
-              _0x2be9b9.textContent = "❌ 数量错误";
-              return;
-            }
-            for (let _0x2d4a34 = 0; _0x2d4a34 < _0x2a6a3c / 10; _0x2d4a34++) {
-              const _0x1366bd = {
-                itemId: _0x1e2525,
-                number: 10
-              };
-              await _0x2befd1.ItemService.openBox(_0x1366bd);
-              _0x2be9b9.textContent = "开启" + _0x2742f0 + " " + (_0x2d4a34 + 1) * 10 + "/" + _0x2a6a3c;
-            }
-            _0x2be9b9.textContent = "✅ " + _0x2742f0 + "开启完成";
-          } else {
-            if (_0x595511 === "starUp" || _0x595511 === "bookUpgrade") {
-              const _0x2af21c = _0x595511 === "starUp";
-              const _0x3b32fb = _0x2af21c ? _0x2befd1.HeroService : _0x2befd1.BookService;
-              const _0x2f9e69 = _0x2af21c ? "heroUpgradeStar" : "upgrade";
-              const _0x3740da = _0x2af21c ? "武将升星" : "升级图鉴";
-              let _0x4a7742 = 0;
-              const _0x3dd67d = {
-                length: 20
-              };
-              const _0x364e86 = {
-                length: 28
-              };
-              const _0x247d4c = {
-                length: 14
-              };
-              const _0x1d7fbf = [...Array.from(_0x3dd67d, (_0x3e9f8b, _0x2f0bc6) => 101 + _0x2f0bc6), ...Array.from(_0x364e86, (_0x2f67f3, _0x2425e6) => 201 + _0x2425e6), ...Array.from(_0x247d4c, (_0x3a5564, _0x19aff3) => 301 + _0x19aff3)];
-              for (const _0x24bcec of _0x1d7fbf) {
-                for (let _0x57fc55 = 0; _0x57fc55 < 5; _0x57fc55++) {
-                  try {
-                    const _0x49d8c5 = {
-                      heroId: _0x24bcec
+            if (_0x197352 > 0) {
+              {
+                for (let _0x111fd2 = 0; _0x111fd2 < _0x197352; _0x111fd2++) {
+                  {
+                    _0x25ba06.textContent = "招募 " + (_0x3459ef + 1) + "/" + _0x553cb5;
+                    const _0x5157e0 = {
+                      byClub: false,
+                      recruitNumber: 1,
+                      recruitType: 3
                     };
-                    await _0x3b32fb[_0x2f9e69](_0x49d8c5);
-                    _0x4a7742++;
-                    _0x2be9b9.textContent = _0x3740da + "完成 " + _0x4a7742 + " 次";
-                  } catch (_0x4d5020) {
-                    break;
+                    await _0xe68796.HeroService.recruit(_0x5157e0);
+                    _0x3459ef++;
+                    await _0x259832.delay(0.2);
                   }
                 }
               }
-              if (!_0x2af21c) {
-                try {
-                  await _0x2befd1.BookService.claimPointReward({});
-                } catch (_0x403736) {}
-              }
-              _0x2be9b9.textContent = "✅ " + _0x3740da + "完成";
-            } else {
-              if (_0x595511 === "tower") {
-                if (_0x528145?.["ROLE"]?.["levelId"] <= 50) {
-                  _0x2be9b9.textContent = "❌ 等级不足";
+            }
+            _0x25ba06.textContent = "✅ 招募完成";
+          }
+        } else {
+          if (_0x302099.startsWith("open-box-")) {
+            {
+              const _0x9b1840 = parseInt(_0x302099.split("-")[2]);
+              const _0x4c85ac = parseInt(_0x121acb.parentElement.querySelector("input").value);
+              const _0x274c8e = {
+                "2001": "木质",
+                "2002": "青铜",
+                "2003": "黄金",
+                "2004": "铂金"
+              };
+              const _0x5744d1 = _0x274c8e[_0x9b1840];
+              if (_0x4c85ac <= 0 || _0x4c85ac % 10 !== 0) {
+                {
+                  _0x259832.showtip("宝箱数量必须是10的倍数", "error");
+                  _0x25ba06.textContent = "❌ 数量错误";
                   return;
                 }
-                await _0x2befd1.TowerService.getInfo({});
-                let _0xf90425 = 0;
-                while (true) {
-                  const _0x429d01 = _0x528145?.["ROLE"];
-                  if (!_0x429d01 || _0x429d01.tower.energy <= 0 || _0x429d01.tower.id >= 4500) {
-                    break;
-                  }
-                  try {
-                    _0x429d01.tower.id % 10 === 0 && !_0x429d01.tower.reward[_0x429d01.tower.id / 10] && (await _0x2befd1.TowerService.claimReward({
-                      rewardId: _0x429d01.tower.id / 10
-                    }));
-                    await _0x2befd1.FightService.startTower({});
-                    _0xf90425++;
-                    _0x2be9b9.textContent = "已爬" + _0xf90425 + "层 | 体力:" + (_0x429d01.tower.energy - 1);
-                  } catch (_0x3e463a) {
-                    await _0x37bc18.delay(3);
+              }
+              for (let _0x2bd5db = 0; _0x2bd5db < _0x4c85ac / 10; _0x2bd5db++) {
+                const _0x2f5816 = {
+                  itemId: _0x9b1840,
+                  number: 10
+                };
+                await _0xe68796.ItemService.openBox(_0x2f5816);
+                _0x25ba06.textContent = "开启" + _0x5744d1 + " " + (_0x2bd5db + 1) * 10 + "/" + _0x4c85ac;
+              }
+              _0x25ba06.textContent = "✅ " + _0x5744d1 + "开启完成";
+            }
+          } else {
+            if (_0x302099 === "starUp" || _0x302099 === "bookUpgrade") {
+              {
+                const _0x5e0903 = _0x302099 === "starUp";
+                const _0x2250c3 = _0x5e0903 ? _0xe68796.HeroService : _0xe68796.BookService;
+                const _0x242680 = _0x5e0903 ? "heroUpgradeStar" : "upgrade";
+                const _0x394bcc = _0x5e0903 ? "武将升星" : "升级图鉴";
+                let _0x581056 = 0;
+                const _0x1d9e9c = {
+                  length: 20
+                };
+                const _0x1f4755 = {
+                  length: 28
+                };
+                const _0xf92337 = {
+                  length: 14
+                };
+                const _0x3efa83 = [...Array.from(_0x1d9e9c, (_0x2ad4bd, _0x497364) => 101 + _0x497364), ...Array.from(_0x1f4755, (_0x4dee1d, _0x2d8d96) => 201 + _0x2d8d96), ...Array.from(_0xf92337, (_0x1030b5, _0x5f8419) => 301 + _0x5f8419)];
+                for (const _0x1cee07 of _0x3efa83) {
+                  {
+                    for (let _0x20b3cc = 0; _0x20b3cc < 5; _0x20b3cc++) {
+                      try {
+                        {
+                          const _0x49f322 = {
+                            heroId: _0x1cee07
+                          };
+                          await _0x2250c3[_0x242680](_0x49f322);
+                          _0x581056++;
+                          _0x25ba06.textContent = _0x394bcc + "完成 " + _0x581056 + " 次";
+                        }
+                      } catch (_0x87f2e9) {
+                        break;
+                      }
+                    }
                   }
                 }
-                _0x2be9b9.textContent = "✅ 爬塔完成，共" + _0xf90425 + "层";
-              } else {
-                if (_0x595511 === "arena-start") {
-                  const _0x18b664 = parseInt(_0x5db38c.parentElement.querySelector("input").value) || 3;
-                  if (_0x18b664 < 1 || _0x18b664 > 99) {
-                    _0x37bc18.showtip("次数需在1-99之间", "error");
-                    return;
-                  }
-                  _0x2be9b9.textContent = "⚔️ 准备开始...";
-                  let _0xa245dd = 0;
-                  for (let _0x1293c3 = 1; _0x1293c3 <= _0x18b664; _0x1293c3++) {
-                    _0x2be9b9.textContent = "⚔️ 正在进行 (" + _0x1293c3 + "/" + _0x18b664 + ")";
-                    try {
-                      const _0x24d99a = {
-                        refresh: false
-                      };
-                      const _0x3e18d1 = await _0x37bc18.sendCommand("arena_getareatarget", _0x24d99a);
-                      const _0x1f67a8 = _0x3e18d1?.["_rawData"]?.["roleList"]?.[0]?.["roleId"];
-                      if (!_0x1f67a8) {
-                        throw new Error("未获取到目标ID");
-                      }
-                      const _0x382003 = {
-                        targetId: _0x1f67a8
-                      };
-                      await _0x37bc18.sendCommand("fight_startareaarena", _0x382003);
-                      _0xa245dd++;
-                      _0x37bc18.showtip("第" + _0x1293c3 + "轮战斗成功", "success");
-                    } catch (_0x13849a) {
-                      _0x37bc18.showtip("第" + _0x1293c3 + "轮战斗失败: " + _0x13849a.message, "error");
-                    }
-                    if (_0x1293c3 < _0x18b664) {
-                      await _0x37bc18.delay(0.01);
-                    }
-                  }
-                  _0x2be9b9.textContent = "✅ 完成: 总" + _0x18b664 + "轮, 成功" + _0xa245dd + "轮";
-                } else {
-                  if (_0x595511 === "arena-winrate-battle") {
-                    const _0x2a828c = parseInt(_0x5db38c.parentElement.querySelector("input").value) || 1;
-                    if (_0x2a828c < 1 || _0x2a828c > 99) {
-                      _0x37bc18.showtip("次数需在1-99之间", "error");
+                if (!_0x5e0903) {
+                  try {
+                    await _0xe68796.BookService.claimPointReward({});
+                  } catch (_0x1883c7) {}
+                }
+                _0x25ba06.textContent = "✅ " + _0x394bcc + "完成";
+              }
+            } else {
+              if (_0x302099 === "tower") {
+                {
+                  if (_0x4d0f71?.["ROLE"]?.["levelId"] <= 50) {
+                    {
+                      _0x25ba06.textContent = "❌ 等级不足";
                       return;
                     }
-                    _0x2be9b9.textContent = "📊 正在获取对手胜率数据...";
-                    try {
-                      const _0x54c5b6 = {
-                        refresh: false
-                      };
-                      const _0x8d436d = await _0x37bc18.sendCommand("arena_getareatarget", _0x54c5b6);
-                      const _0x3e6bfa = _0x8d436d?.["_rawData"]?.["roleList"];
-                      if (!_0x3e6bfa || _0x3e6bfa.length === 0) {
-                        throw new Error("未获取到对手列表");
+                  }
+                  await _0xe68796.TowerService.getInfo({});
+                  let _0x78e421 = 0;
+                  while (true) {
+                    {
+                      const _0x35ce92 = _0x4d0f71?.["ROLE"];
+                      if (!_0x35ce92 || _0x35ce92.tower.energy <= 0 || _0x35ce92.tower.id >= 4500) {
+                        break;
                       }
-                      const _0x5a2ab2 = document.getElementById("winrate-results");
-                      const _0x2835b4 = _0x5a2ab2 ? _0x5a2ab2.innerHTML : "";
-                      let _0x3b5f3c = -1;
-                      let _0x3f3678 = null;
-                      if (_0x2835b4) {
-                        for (const _0x3066a3 of _0x3e6bfa) {
-                          const _0x28e5c9 = _0x3066a3.name || "";
-                          const _0x2c5d2a = new RegExp(_0x28e5c9 + ".*胜率：(d+(?:.d+)?)%", "i");
-                          const _0x29914e = _0x2835b4.match(_0x2c5d2a);
-                          if (_0x29914e && _0x29914e[1]) {
-                            const _0x2bea17 = parseFloat(_0x29914e[1]);
-                            _0x2bea17 > _0x3b5f3c && (_0x3b5f3c = _0x2bea17, _0x3f3678 = _0x3066a3.roleId);
-                          }
-                        }
+                      try {
+                        _0x35ce92.tower.id % 10 === 0 && !_0x35ce92.tower.reward[_0x35ce92.tower.id / 10] && (await _0xe68796.TowerService.claimReward({
+                          rewardId: _0x35ce92.tower.id / 10
+                        }));
+                        await _0xe68796.FightService.startTower({});
+                        _0x78e421++;
+                        _0x25ba06.textContent = "已爬" + _0x78e421 + "层 | 体力:" + (_0x35ce92.tower.energy - 1);
+                      } catch (_0x34f1ef) {
+                        await _0x259832.delay(3);
                       }
-                      !_0x3f3678 && _0x3e6bfa.length > 0 && (_0x3f3678 = _0x3e6bfa[0].roleId, _0x37bc18.showtip("未找到胜率数据，使用第一个对手", "info"));
-                      if (!_0x3f3678) {
-                        throw new Error("未找到合适的对手");
-                      }
-                      let _0x43c5fd = 0;
-                      for (let _0x2dd887 = 1; _0x2dd887 <= _0x2a828c; _0x2dd887++) {
-                        _0x2be9b9.textContent = "⚔️ 正在与胜率最高对手战斗 (" + _0x2dd887 + "/" + _0x2a828c + ")";
-                        try {
-                          const _0x260f65 = {
-                            targetId: _0x3f3678
-                          };
-                          await _0x37bc18.sendCommand("fight_startareaarena", _0x260f65);
-                          _0x43c5fd++;
-                          _0x37bc18.showtip("第" + _0x2dd887 + "轮战斗成功", "success");
-                        } catch (_0x320133) {
-                          _0x37bc18.showtip("第" + _0x2dd887 + "轮战斗失败: " + _0x320133.message, "error");
-                        }
-                        if (_0x2dd887 < _0x2a828c) {
-                          await _0x37bc18.delay(0.01);
-                        }
-                      }
-                      _0x2be9b9.textContent = "✅ 胜率战斗完成: 总" + _0x2a828c + "轮, 成功" + _0x43c5fd + "轮";
-                    } catch (_0x83e71a) {
-                      _0x37bc18.showtip("胜率战斗失败: " + _0x83e71a.message, "error");
-                      _0x2be9b9.textContent = "❌ 胜率战斗失败";
                     }
-                  } else {
-                    if (_0x595511 === "club-boss") {
-                      const _0x5a5592 = parseInt(document.getElementById("club-boss-count").textContent);
-                      if (_0x5a5592 <= 0) {
-                        _0x2be9b9.textContent = "ℹ️ 次数为0";
+                  }
+                  _0x25ba06.textContent = "✅ 爬塔完成，共" + _0x78e421 + "层";
+                }
+              } else {
+                if (_0x302099 === "arena-start") {
+                  const _0x399dc8 = parseInt(_0x121acb.parentElement.querySelector("input").value) || 3;
+                  if (_0x399dc8 < 1 || _0x399dc8 > 99) {
+                    {
+                      _0x259832.showtip("次数需在1-99之间", "error");
+                      return;
+                    }
+                  }
+                  _0x25ba06.textContent = "⚔️ 准备开始...";
+                  let _0x4ad227 = 0;
+                  for (let _0xed3664 = 1; _0xed3664 <= _0x399dc8; _0xed3664++) {
+                    {
+                      _0x25ba06.textContent = "⚔️ 正在进行 (" + _0xed3664 + "/" + _0x399dc8 + ")";
+                      try {
+                        const _0x330b11 = {
+                          refresh: false
+                        };
+                        const _0x479fe2 = await _0x259832.sendCommand("arena_getareatarget", _0x330b11);
+                        const _0x3db715 = _0x479fe2?.["_rawData"]?.["roleList"]?.[0]?.["roleId"];
+                        if (!_0x3db715) {
+                          throw new Error("未获取到目标ID");
+                        }
+                        const _0x53f8db = {
+                          targetId: _0x3db715,
+                          battleVersion: 240475
+                        };
+                        await _0x259832.sendCommand("fight_startareaarena", _0x53f8db);
+                        _0x4ad227++;
+                        _0x259832.showtip("第" + _0xed3664 + "轮战斗成功", "success");
+                      } catch (_0x1e00fb) {
+                        _0x259832.showtip("第" + _0xed3664 + "轮战斗失败: " + _0x1e00fb.message, "error");
+                      }
+                      if (_0xed3664 < _0x399dc8) {
+                        await _0x259832.delay(0.01);
+                      }
+                    }
+                  }
+                  _0x25ba06.textContent = "✅ 完成: 总" + _0x399dc8 + "轮, 成功" + _0x4ad227 + "轮";
+                } else {
+                  if (_0x302099 === "club-boss") {
+                    {
+                      const _0x67df7f = parseInt(document.getElementById("club-boss-count").textContent);
+                      if (_0x67df7f <= 0) {
+                        _0x25ba06.textContent = "ℹ️ 次数为0";
                         return;
                       }
-                      for (let _0x39f233 = 1; _0x39f233 <= _0x5a5592; _0x39f233++) {
-                        _0x2be9b9.textContent = "⚔️ 挑战Boss (" + _0x39f233 + "/" + _0x5a5592 + ")";
-                        await _0x2befd1.FightService.startLegionBoss({});
-                        await _0x37bc18.delay(0.5);
+                      for (let _0x578d75 = 1; _0x578d75 <= _0x67df7f; _0x578d75++) {
+                        _0x25ba06.textContent = "⚔️ 挑战Boss (" + _0x578d75 + "/" + _0x67df7f + ")";
+                        await _0xe68796.FightService.startLegionBoss({});
+                        await _0x259832.delay(0.5);
                       }
-                      _0x2be9b9.textContent = "✅ Boss挑战完成";
-                    } else {
-                      if (_0x595511 === "claim-activity") {
-                        _0x2be9b9.textContent = "🎁 领取每日奖励...";
-                        for (const _0x81f7a4 of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
-                          const _0x54e4b5 = {
-                            taskId: _0x81f7a4
-                          };
-                          await _0x2befd1.TaskService.claimDailyPoint(_0x54e4b5);
-                          await _0x37bc18.delay(0.1);
+                      _0x25ba06.textContent = "✅ Boss挑战完成";
+                    }
+                  } else {
+                    if (_0x302099 === "assist-battle") {
+                      {
+                        _0x25ba06.textContent = "🤝 开始助战...";
+                        try {
+                          const _0x24577a = await _0xe68796.FightService.startAssistBattle({});
+                          if (_0x24577a?.["code"] === 0) {
+                            _0x25ba06.textContent = "✅ 助战成功";
+                            _0x259832.showtip("助战成功", "success");
+                          } else {
+                            {
+                              _0x25ba06.textContent = "❌ 助战失败: " + (_0x24577a?.["msg"] || "未知错误");
+                            }
+                          }
+                        } catch (_0x2aadf7) {
+                          console.error("助战异常:", _0x2aadf7);
+                          _0x25ba06.textContent = "❌ 助战异常: " + _0x2aadf7.message;
                         }
-                        _0x2be9b9.textContent = "🎁 领取每周奖励...";
-                        const _0x2a097b = {
-                          rewardId: 0
-                        };
-                        await _0x2befd1.TaskService.claimDailyReward(_0x2a097b);
-                        await _0x37bc18.delay(0.1);
-                        const _0x5801a7 = {
-                          rewardId: 0
-                        };
-                        await _0x2befd1.TaskService.claimWeekReward(_0x5801a7);
-                        _0x2be9b9.textContent = "✅ 活跃奖励领取完毕";
-                      } else {
-                        if (_0x595511.startsWith("daily-task-") || _0x595511 === "execute-daily-checked" || _0x595511 === "one-key-100") {
-                          const _0x37c4dc = {
-                            itemId: 2001,
-                            number: 10
-                          };
-                          const _0x509643 = {
-                            goodsId: 1
-                          };
-                          const _0x590d9f = {
-                            "daily-task-hangup-combined": {
-                              func: async () => {
-                                for (let _0x20300f = 0; _0x20300f < 4; _0x20300f++) {
-                                  const _0x44ce84 = {
-                                    isSkipShareCard: true,
-                                    type: 2
-                                  };
-                                  await _0x2befd1.SystemService.myShareCallback(_0x44ce84);
-                                  await _0x37bc18.delay(0.2);
-                                }
-                                for (let _0x348271 = 0; _0x348271 < 5; _0x348271++) {
-                                  await _0x2befd1.SystemService.claimHangUpReward({});
-                                  if (_0x348271 < 4) {
-                                    await _0x37bc18.delay(1);
-                                  }
-                                }
-                                for (let _0x57a218 = 0; _0x57a218 < 4; _0x57a218++) {
-                                  const _0x3568bb = {
-                                    isSkipShareCard: true,
-                                    type: 2
-                                  };
-                                  await _0x2befd1.SystemService.myShareCallback(_0x3568bb);
-                                  await _0x37bc18.delay(0.2);
-                                }
-                              },
-                              label: "收菜5次、加钟"
-                            },
-                            "daily-task-bottle-renew": {
-                              func: async () => {
-                                const _0x3b42cd = {
-                                  bottleType: -1
-                                };
-                                await _0x2befd1.BottleHelperService.stop(_0x3b42cd);
-                                await _0x37bc18.delay(0.2);
-                                const _0x482c33 = {
-                                  bottleType: -1
-                                };
-                                await _0x2befd1.BottleHelperService.start(_0x482c33);
-                              },
-                              label: "续罐子"
-                            },
-                            "daily-task-bottle-claim": {
-                              func: () => _0x2befd1.BottleHelperService.claim({}),
-                              label: "收盐罐"
-                            },
-                            "daily-task-combined-quick": {
-                              func: async () => {
-                                const _0x48a6de = {
-                                  category: 0
-                                };
-                                await _0x2befd1.MailService.claimAllAttachment(_0x48a6de);
-                                await _0x37bc18.delay(0.2);
-                                await _0x2befd1.LegionService.signIn({});
-                                await _0x37bc18.delay(0.2);
-                                const _0x3005ac = {
-                                  friendId: 0
-                                };
-                                await _0x2befd1.FriendService.batch(_0x3005ac);
-                                await _0x37bc18.delay(0.2);
-                                await _0x2befd1.SystemService.signInReward({});
-                                await _0x37bc18.delay(0.2);
-                                const _0x21da1c = {
-                                  discountId: 1
-                                };
-                                await _0x2befd1.DiscountService.claimReward(_0x21da1c);
-                                await _0x37bc18.delay(0.2);
-                                const _0x54c457 = {
-                                  cardId: 1
-                                };
-                                await _0x2befd1.CardService.claimReward(_0x54c457);
-                                await _0x37bc18.delay(0.2);
-                                try {
-                                  await _0x37bc18.sendCommand("collection_claimfreereward", {});
-                                  console.log("✅ 成功领取珍宝阁每日免费珍品");
-                                } catch (_0x48b67d) {
-                                  console.log("领取珍宝阁免费珍品时发生错误（可能已领取）:", _0x48b67d.message);
-                                }
-                                await _0x37bc18.delay(0.2);
-                                const _0x4f7a8f = {
-                                  isSkipShareCard: false,
-                                  type: 1
-                                };
-                                await _0x2befd1.SystemService.myShareCallback(_0x4f7a8f);
-                              },
-                              label: "邮件、签到、赠金币、福利、珍宝阁"
-                            },
-                            "daily-task-boss": {
-                              func: () => {
-                                const _0x23a542 = _0x37bc18.getFormatDate(Date.now()).getUTCDay();
-                                const _0xaa00c4 = [9904, 9905, 9901, 9902, 9903, 9904, 9905][_0x23a542];
-                                const _0x519290 = {
-                                  bossId: _0xaa00c4
-                                };
-                                return _0x2befd1.FightService.startBoss(_0x519290);
-                              },
-                              label: "每日咸王考验"
-                            },
-                            "daily-task-gold": {
-                              func: async () => {
-                                const _0x2e4770 = 6;
-                                let _0x1e8add = 0;
-                                try {
-                                  console.log("[智能点金] 初始检查服务器任务状态...");
-                                  const _0xd3cd5a = {
-                                    taskId: _0x2e4770
-                                  };
-                                  const _0x1df148 = await _0x37bc18.sendCommand("task_claimdailypoint", _0xd3cd5a);
-                                  if (_0x1df148?.["code"] === 700020 || _0x1df148?.["_rawData"]?.["role"]?.["dailyTask"]?.["complete"]?.["hasOwnProperty"](_0x2e4770.toString())) {
-                                    console.log("[智能点金] 任务已完成，无需执行");
-                                    return;
-                                  }
-                                  console.log("[智能点金] 开始智能点金，每次执行前检查任务状态...");
-                                  while (_0x1e8add < 3) {
-                                    const _0x34b550 = {
-                                      taskId: _0x2e4770
-                                    };
-                                    const _0x4856d0 = await _0x37bc18.sendCommand("task_claimdailypoint", _0x34b550);
-                                    if (_0x4856d0?.["code"] === 700020 || _0x4856d0?.["_rawData"]?.["role"]?.["dailyTask"]?.["complete"]?.["hasOwnProperty"](_0x2e4770.toString())) {
-                                      console.log("[智能点金] 任务已完成，已执行" + _0x1e8add + "次点金，停止继续操作");
-                                      break;
+                      }
+                    } else {
+                      if (_0x302099 === "salt-battle-report") {
+                        {
+                          _0x25ba06.textContent = "📊 获取盐场战报...";
+                          const _0x36c2f8 = document.getElementById("salt-battle-list");
+                          _0x36c2f8.innerHTML = "<div style=\"text-align: center; padding: 20px;\">加载中...</div>";
+                          try {
+                            {
+                              const _0x43c185 = await _0x259832.sendCommand("saltfield_getbattlereport", {});
+                              if (_0x43c185?.["code"] === 0 && _0x43c185?.["_rawData"]?.["reports"]) {
+                                {
+                                  const _0x136853 = _0x43c185._rawData.reports;
+                                  if (_0x136853.length === 0) {
+                                    _0x36c2f8.innerHTML = "<div style=\"text-align: center; padding: 20px; color: #718096;\">暂无战报数据</div>";
+                                  } else {
+                                    {
+                                      _0x36c2f8.innerHTML = _0x136853.map(_0x158856 => "\n                                <div style=\"background: var(--item-bg); border: 1px solid var(--item-border); border-radius: 6px; padding: 10px; margin-bottom: 8px;\">\n                                    <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;\">\n                                        <div style=\"font-weight: 600; color: var(--text-primary);\">" + (_0x158856.opponentName || "未知对手") + "</div>\n                                        <div style=\"font-size: 12px; color: " + (_0x158856.win ? "#38a169" : "#e53e3e") + "\">\n                                            " + (_0x158856.win ? "✅ 胜利" : "❌ 失败") + "\n                                        </div>\n                                    </div>\n                                    <div style=\"font-size: 12px; color: var(--text-secondary); margin-bottom: 5px;\">\n                                        " + _0x259832.getFormatDate(_0x158856.timestamp || Date.now() / 1000) + "\n                                    </div>\n                                    <div style=\"font-size: 11px; color: var(--text-secondary);\">\n                                        损失: " + (_0x158856.loss || 0) + " 盐 | 获得: " + (_0x158856.gain || 0) + " 盐\n                                    </div>\n                                </div>\n                            ").join("");
                                     }
-                                    console.log("[智能点金] 执行第" + (_0x1e8add + 1) + "/3次点金");
-                                    try {
-                                      const _0x5c4cc4 = {
-                                        buyNum: 1
-                                      };
-                                      await _0x2befd1.SystemService.buyGold(_0x5c4cc4);
-                                      _0x1e8add++;
-                                      console.log("[智能点金] 第" + _0x1e8add + "次点金执行成功");
-                                    } catch (_0x5d109c) {
-                                      console.error("[智能点金] 第" + (_0x1e8add + 1) + "次点金执行失败:", _0x5d109c.message);
-                                      if (_0x5d109c.message?.["includes"]("钻石") || _0x5d109c.message?.["includes"]("付费")) {
-                                        console.log("[智能点金] 检测到付费错误，停止继续操作");
-                                        break;
+                                  }
+                                }
+                              } else {
+                                _0x36c2f8.innerHTML = "<div style=\"text-align: center; padding: 20px; color: #e53e3e;\">获取战报失败</div>";
+                              }
+                              _0x25ba06.textContent = "✅ 盐场战报加载完成";
+                            }
+                          } catch (_0x2eac5f) {
+                            console.error("获取盐场战报异常:", _0x2eac5f);
+                            _0x36c2f8.innerHTML = "<div style=\"text-align: center; padding: 20px; color: #e53e3e;\">加载失败: " + _0x2eac5f.message + "</div>";
+                            _0x25ba06.textContent = "❌ 获取战报异常";
+                          }
+                        }
+                      } else {
+                        if (_0x302099 === "salt-map") {
+                          {
+                            _0x25ba06.textContent = "🗺️ 获取盐场地图...";
+                            const _0x2e1c7e = document.getElementById("salt-map-container");
+                            _0x2e1c7e.innerHTML = "<div style=\"text-align: center; padding: 20px;\">加载中...</div>";
+                            try {
+                              {
+                                const _0x4f4738 = await _0x259832.sendCommand("saltfield_getmap", {});
+                                _0x4f4738?.["code"] === 0 ? _0x2e1c7e.innerHTML = "\n                            <div style=\"background: #f7fafc; border: 1px solid var(--item-border); border-radius: 6px; padding: 15px;\">\n                                <div style=\"text-align: center; font-weight: 600; margin-bottom: 15px; color: var(--text-primary);\">盐场地图概览</div>\n                                <div style=\"display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px;\">\n                                    " + [...Array(12)].map((_0x34b047, _0x16d56a) => {
+                                  const _0x3cdab8 = Math.floor(Math.random() * 3) + 1;
+                                  const _0x5ccb41 = Math.floor(Math.random() * 500) + 100;
+                                  return "\n                                            <div style=\"background: " + (_0x3cdab8 === 1 ? "#edf2f7" : _0x3cdab8 === 2 ? "#e2e8f0" : "#cbd5e0") + "; border: 1px solid var(--item-border); border-radius: 6px; padding: 10px; text-align: center;\">\n                                                <div style=\"font-size: 14px; font-weight: 600; color: var(--text-primary);\">盐矿 " + (_0x16d56a + 1) + "</div>\n                                                <div style=\"font-size: 12px; color: #718096; margin: 5px 0;\">等级 " + _0x3cdab8 + "</div>\n                                                <div style=\"font-size: 12px; color: #3182ce; font-weight: 600;\">" + _0x5ccb41 + " 盐</div>\n                                            </div>\n                                        ";
+                                }).join("") + "\n                                </div>\n                                <div style=\"margin-top: 15px; text-align: center; font-size: 12px; color: var(--text-secondary);\">\n                                    点击盐矿可查看详情或进行占领\n                                </div>\n                            </div>\n                        " : _0x2e1c7e.innerHTML = "<div style=\"text-align: center; padding: 20px; color: #e53e3e;\">获取地图失败</div>";
+                                _0x25ba06.textContent = "✅ 盐场地图加载完成";
+                              }
+                            } catch (_0x26215c) {
+                              console.error("获取盐场地图异常:", _0x26215c);
+                              _0x2e1c7e.innerHTML = "<div style=\"text-align: center; padding: 20px; color: #e53e3e;\">加载失败: " + _0x26215c.message + "</div>";
+                              _0x25ba06.textContent = "❌ 获取地图异常";
+                            }
+                          }
+                        } else {
+                          if (_0x302099 === "claim-activity") {
+                            _0x25ba06.textContent = "🎁 领取每日奖励...";
+                            for (const _0x4984fb of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+                              {
+                                const _0x3e363b = {
+                                  taskId: _0x4984fb
+                                };
+                                await _0xe68796.TaskService.claimDailyPoint(_0x3e363b);
+                                await _0x259832.delay(0.1);
+                              }
+                            }
+                            _0x25ba06.textContent = "🎁 领取每周奖励...";
+                            const _0x1a67fc = {
+                              rewardId: 0
+                            };
+                            await _0xe68796.TaskService.claimDailyReward(_0x1a67fc);
+                            await _0x259832.delay(0.1);
+                            const _0x19e857 = {
+                              rewardId: 0
+                            };
+                            await _0xe68796.TaskService.claimWeekReward(_0x19e857);
+                            _0x25ba06.textContent = "✅ 活跃奖励领取完毕";
+                          } else {
+                            if (_0x302099.startsWith("daily-task-") || _0x302099 === "execute-daily-checked" || _0x302099 === "one-key-100") {
+                              const _0x6c2227 = {
+                                itemId: 2001,
+                                number: 10
+                              };
+                              const _0x3ff689 = {
+                                goodsId: 1
+                              };
+                              const _0x4173bd = {
+                                "daily-task-hangup-combined": {
+                                  func: async () => {
+                                    for (let _0x4b5c97 = 0; _0x4b5c97 < 4; _0x4b5c97++) {
+                                      {
+                                        const _0x29c99c = {
+                                          isSkipShareCard: true,
+                                          type: 2
+                                        };
+                                        await _0xe68796.SystemService.myShareCallback(_0x29c99c);
+                                        await _0x259832.delay(0.2);
                                       }
                                     }
-                                    await _0x37bc18.delay(1);
-                                  }
-                                  console.log("[智能点金] 智能点金完成，共执行" + _0x1e8add + "次点金操作");
-                                } catch (_0x2d0155) {
-                                  console.error("[智能点金] 点金过程中发生异常:", _0x2d0155.message);
-                                }
-                              },
-                              label: "点金三次"
-                            },
-                            "daily-task-quiz": {
-                              func: async () => {
-                                const _0x33961c = await _0x2befd1.StudyService.startGame({});
-                                const _0x23369d = _0x33961c.getData();
-                                for (let _0x4948b4 = 0; _0x4948b4 < _0x23369d.questionList.length; _0x4948b4++) {
-                                  const _0xb930a8 = _0x23369d.questionList[_0x4948b4];
-                                  let _0x29392b = _0x4b9636[_0xb930a8.question] || Math.floor(2 * Math.random()) + 1;
-                                  const _0x2ee60c = {
-                                    id: _0x23369d.role.study.id,
-                                    option: [_0x29392b],
-                                    questionId: [_0xb930a8.id]
-                                  };
-                                  await _0x2befd1.StudyService.answer(_0x2ee60c);
-                                  await _0x37bc18.delay(1);
-                                }
-                                for (let _0x2efc51 = 1; _0x2efc51 <= 10; _0x2efc51++) {
-                                  const _0x51cdd1 = {
-                                    rewardId: _0x2efc51
-                                  };
-                                  await _0x2befd1.StudyService.claimReward(_0x51cdd1);
-                                  await _0x37bc18.delay(0.2);
-                                }
-                              },
-                              label: "自动答题"
-                            },
-                            "daily-task-genie-tickets": {
-                              func: async () => {
-                                for (let _0x456a1f = 0; _0x456a1f < 3; _0x456a1f++) {
-                                  await _0x37bc18.sendCommand("genie_buysweep", {});
-                                  await _0x37bc18.delay(0.2);
-                                }
-                              },
-                              label: "领取扫荡券"
-                            },
-                            "daily-task-genie-sweep": {
-                              func: async _0x3b8fbc => {
-                                if (_0x3b8fbc) {
-                                  _0x3b8fbc.textContent = "🔄 同步服务器数据...";
-                                }
-                                await _0x37bc18.sendCommand("System_GetTime", {});
-                                await _0x37bc18.delay(1);
-                                const _0x174414 = window.__require("ServerData");
-                                if (!_0x174414 || !_0x174414.ROLE || !_0x174414.ROLE.statisticsTime) {
-                                  throw new Error("无法访问 ServerData.ROLE.statisticsTime 对象");
-                                }
-                                let _0x5c28a0 = _0x174414.ROLE.statisticsTime;
-                                try {
-                                  _0x5c28a0 = JSON.parse(JSON.stringify(_0x5c28a0));
-                                } catch (_0x13d968) {
-                                  console.warn("[灯神扫荡] 警告：无法将 statisticsTime 转换为标准 JSON 对象。尝试直接访问。", _0x13d968);
-                                }
-                                const _0x558e64 = {
-                                  "1": "魏国",
-                                  "2": "蜀国",
-                                  "3": "吴国",
-                                  "4": "群雄"
-                                };
-                                let _0x400cf7 = 0;
-                                let _0x45d0ce = 0;
-                                let _0x144232 = true;
-                                for (let _0x33829e = 1; _0x33829e <= 4; _0x33829e++) {
-                                  const _0x3e842d = "genie:daily:free:" + _0x33829e;
-                                  const _0xdc4dca = _0x5c28a0[_0x3e842d];
-                                  const _0x3c1b6b = _0x3e2e66 => {
-                                    if (typeof _0x3e2e66 !== "number" || isNaN(_0x3e2e66) || _0x3e2e66 <= 0) {
-                                      return false;
+                                    for (let _0x2b0b86 = 0; _0x2b0b86 < 5; _0x2b0b86++) {
+                                      await _0xe68796.SystemService.claimHangUpReward({});
+                                      if (_0x2b0b86 < 4) {
+                                        await _0x259832.delay(1);
+                                      }
                                     }
-                                    const _0x2f1d84 = new Date(_0x3e2e66 * 1000);
-                                    const _0x276940 = new Date();
-                                    return _0x2f1d84.getFullYear() === _0x276940.getFullYear() && _0x2f1d84.getMonth() === _0x276940.getMonth() && _0x2f1d84.getDate() === _0x276940.getDate();
-                                  };
-                                  if (!_0x3c1b6b(_0xdc4dca)) {
-                                    _0x144232 = false;
-                                    break;
-                                  }
+                                    for (let _0x4e66fd = 0; _0x4e66fd < 4; _0x4e66fd++) {
+                                      {
+                                        const _0x3d5603 = {
+                                          isSkipShareCard: true,
+                                          type: 2
+                                        };
+                                        await _0xe68796.SystemService.myShareCallback(_0x3d5603);
+                                        await _0x259832.delay(0.2);
+                                      }
+                                    }
+                                  },
+                                  label: "收菜5次、加钟"
+                                },
+                                "daily-task-bottle-renew": {
+                                  func: async () => {
+                                    const _0x36a80a = {
+                                      bottleType: -1
+                                    };
+                                    await _0xe68796.BottleHelperService.stop(_0x36a80a);
+                                    await _0x259832.delay(0.2);
+                                    const _0x294194 = {
+                                      bottleType: -1
+                                    };
+                                    await _0xe68796.BottleHelperService.start(_0x294194);
+                                  },
+                                  label: "续罐子"
+                                },
+                                "daily-task-bottle-claim": {
+                                  func: () => _0xe68796.BottleHelperService.claim({}),
+                                  label: "收盐罐"
+                                },
+                                "daily-task-combined-quick": {
+                                  func: async () => {
+                                    {
+                                      const _0x6a0efe = {
+                                        category: 0
+                                      };
+                                      await _0xe68796.MailService.claimAllAttachment(_0x6a0efe);
+                                      await _0x259832.delay(0.2);
+                                      await _0xe68796.LegionService.signIn({});
+                                      await _0x259832.delay(0.2);
+                                      const _0x55d46f = {
+                                        friendId: 0
+                                      };
+                                      await _0xe68796.FriendService.batch(_0x55d46f);
+                                      await _0x259832.delay(0.2);
+                                      await _0xe68796.SystemService.signInReward({});
+                                      await _0x259832.delay(0.2);
+                                      const _0x204c69 = {
+                                        discountId: 1
+                                      };
+                                      await _0xe68796.DiscountService.claimReward(_0x204c69);
+                                      await _0x259832.delay(0.2);
+                                      const _0x2f1055 = {
+                                        cardId: 1
+                                      };
+                                      await _0xe68796.CardService.claimReward(_0x2f1055);
+                                      await _0x259832.delay(0.2);
+                                      try {
+                                        await _0x259832.sendCommand("collection_claimfreereward", {});
+                                        console.log("✅ 成功领取珍宝阁每日免费珍品");
+                                      } catch (_0x42857c) {
+                                        {
+                                          console.log("领取珍宝阁免费珍品时发生错误（可能已领取）:", _0x42857c.message);
+                                        }
+                                      }
+                                      await _0x259832.delay(0.2);
+                                      const _0x5e0704 = {
+                                        isSkipShareCard: false,
+                                        type: 1
+                                      };
+                                      await _0xe68796.SystemService.myShareCallback(_0x5e0704);
+                                    }
+                                  },
+                                  label: "邮件、签到、赠金币、福利、珍宝阁"
+                                },
+                                "daily-task-boss": {
+                                  func: () => {
+                                    const _0x1aec25 = _0x259832.getFormatDate(Date.now()).getUTCDay();
+                                    const _0x46a494 = [9904, 9905, 9901, 9902, 9903, 9904, 9905][_0x1aec25];
+                                    const _0x218080 = {
+                                      bossId: _0x46a494
+                                    };
+                                    return _0xe68796.FightService.startBoss(_0x218080);
+                                  },
+                                  label: "每日咸王考验"
+                                },
+                                "daily-task-gold": {
+                                  func: async () => {
+                                    {
+                                      const _0x437865 = 6;
+                                      let _0x1f2547 = 0;
+                                      try {
+                                        console.log("[智能点金] 初始检查服务器任务状态...");
+                                        const _0x3ceb98 = {
+                                          taskId: _0x437865
+                                        };
+                                        const _0x3d2249 = await _0x259832.sendCommand("task_claimdailypoint", _0x3ceb98);
+                                        if (_0x3d2249?.["code"] === 700020 || _0x3d2249?.["_rawData"]?.["role"]?.["dailyTask"]?.["complete"]?.["hasOwnProperty"](_0x437865.toString())) {
+                                          console.log("[智能点金] 任务已完成，无需执行");
+                                          return;
+                                        }
+                                        console.log("[智能点金] 开始智能点金，每次执行前检查任务状态...");
+                                        while (_0x1f2547 < 3) {
+                                          const _0x384230 = {
+                                            taskId: _0x437865
+                                          };
+                                          const _0x43301e = await _0x259832.sendCommand("task_claimdailypoint", _0x384230);
+                                          if (_0x43301e?.["code"] === 700020 || _0x43301e?.["_rawData"]?.["role"]?.["dailyTask"]?.["complete"]?.["hasOwnProperty"](_0x437865.toString())) {
+                                            {
+                                              console.log("[智能点金] 任务已完成，已执行" + _0x1f2547 + "次点金，停止继续操作");
+                                              break;
+                                            }
+                                          }
+                                          console.log("[智能点金] 执行第" + (_0x1f2547 + 1) + "/3次点金");
+                                          try {
+                                            const _0x4bcf41 = {
+                                              buyNum: 1
+                                            };
+                                            await _0xe68796.SystemService.buyGold(_0x4bcf41);
+                                            _0x1f2547++;
+                                            console.log("[智能点金] 第" + _0x1f2547 + "次点金执行成功");
+                                          } catch (_0x41e681) {
+                                            console.error("[智能点金] 第" + (_0x1f2547 + 1) + "次点金执行失败:", _0x41e681.message);
+                                            if (_0x41e681.message?.["includes"]("钻石") || _0x41e681.message?.["includes"]("付费")) {
+                                              console.log("[智能点金] 检测到付费错误，停止继续操作");
+                                              break;
+                                            }
+                                          }
+                                          await _0x259832.delay(1);
+                                        }
+                                        console.log("[智能点金] 智能点金完成，共执行" + _0x1f2547 + "次点金操作");
+                                      } catch (_0x3aa76b) {
+                                        console.error("[智能点金] 点金过程中发生异常:", _0x3aa76b.message);
+                                      }
+                                    }
+                                  },
+                                  label: "点金三次"
+                                },
+                                "daily-task-quiz": {
+                                  func: async () => {
+                                    const _0x5cee8e = await _0xe68796.StudyService.startGame({});
+                                    const _0x3dce5e = _0x5cee8e.getData();
+                                    for (let _0x36ce5d = 0; _0x36ce5d < _0x3dce5e.questionList.length; _0x36ce5d++) {
+                                      const _0x5cc07f = _0x3dce5e.questionList[_0x36ce5d];
+                                      let _0xcd91e2 = _0x5ed60d[_0x5cc07f.question] || Math.floor(2 * Math.random()) + 1;
+                                      const _0x9229e0 = {
+                                        id: _0x3dce5e.role.study.id,
+                                        option: [_0xcd91e2],
+                                        questionId: [_0x5cc07f.id]
+                                      };
+                                      await _0xe68796.StudyService.answer(_0x9229e0);
+                                      await _0x259832.delay(1);
+                                    }
+                                    for (let _0x5e11a8 = 1; _0x5e11a8 <= 10; _0x5e11a8++) {
+                                      const _0x2645db = {
+                                        rewardId: _0x5e11a8
+                                      };
+                                      await _0xe68796.StudyService.claimReward(_0x2645db);
+                                      await _0x259832.delay(0.2);
+                                    }
+                                  },
+                                  label: "自动答题"
+                                },
+                                "daily-task-genie-tickets": {
+                                  func: async () => {
+                                    {
+                                      for (let _0x133ccd = 0; _0x133ccd < 3; _0x133ccd++) {
+                                        await _0x259832.sendCommand("genie_buysweep", {});
+                                        await _0x259832.delay(0.2);
+                                      }
+                                    }
+                                  },
+                                  label: "领取扫荡券"
+                                },
+                                "daily-task-genie-sweep": {
+                                  func: async _0x3db7eb => {
+                                    {
+                                      if (_0x3db7eb) {
+                                        _0x3db7eb.textContent = "🔄 同步服务器数据...";
+                                      }
+                                      await _0x259832.sendCommand("System_GetTime", {});
+                                      await _0x259832.delay(1);
+                                      const _0x47a288 = window.__require("ServerData");
+                                      if (!_0x47a288 || !_0x47a288.ROLE || !_0x47a288.ROLE.statisticsTime) {
+                                        {
+                                          throw new Error("无法访问 ServerData.ROLE.statisticsTime 对象");
+                                        }
+                                      }
+                                      let _0x34fd23 = _0x47a288.ROLE.statisticsTime;
+                                      try {
+                                        _0x34fd23 = JSON.parse(JSON.stringify(_0x34fd23));
+                                      } catch (_0x25486f) {
+                                        console.warn("[灯神扫荡] 警告：无法将 statisticsTime 转换为标准 JSON 对象。尝试直接访问。", _0x25486f);
+                                      }
+                                      const _0x2fa522 = {
+                                        "1": "魏国",
+                                        "2": "蜀国",
+                                        "3": "吴国",
+                                        "4": "群雄"
+                                      };
+                                      let _0x4334e4 = 0;
+                                      let _0x5066af = 0;
+                                      let _0x4df084 = true;
+                                      for (let _0x249bf4 = 1; _0x249bf4 <= 4; _0x249bf4++) {
+                                        {
+                                          const _0x40d874 = "genie:daily:free:" + _0x249bf4;
+                                          const _0x2985ac = _0x34fd23[_0x40d874];
+                                          const _0x4d992b = _0x34d080 => {
+                                            if (typeof _0x34d080 !== "number" || isNaN(_0x34d080) || _0x34d080 <= 0) {
+                                              return false;
+                                            }
+                                            const _0x18bfa3 = new Date(_0x34d080 * 1000);
+                                            const _0x38774d = new Date();
+                                            return _0x18bfa3.getFullYear() === _0x38774d.getFullYear() && _0x18bfa3.getMonth() === _0x38774d.getMonth() && _0x18bfa3.getDate() === _0x38774d.getDate();
+                                          };
+                                          if (!_0x4d992b(_0x2985ac)) {
+                                            _0x4df084 = false;
+                                            break;
+                                          }
+                                        }
+                                      }
+                                      if (_0x4df084) {
+                                        {
+                                          if (_0x3db7eb) {
+                                            _0x3db7eb.textContent = "✅ 今日已完成灯神扫荡，本次跳过。";
+                                          }
+                                          return;
+                                        }
+                                      }
+                                      for (let _0x17cdb8 = 1; _0x17cdb8 <= 4; _0x17cdb8++) {
+                                        const _0xa51c20 = _0x2fa522[_0x17cdb8];
+                                        const _0x306f86 = "genie:daily:free:" + _0x17cdb8;
+                                        await _0x259832.delay(0.3);
+                                        if (_0x3db7eb) {
+                                          _0x3db7eb.textContent = "🔄 检查 " + _0xa51c20 + " 状态...";
+                                        }
+                                        const _0xba493d = _0x34fd23[_0x306f86];
+                                        const _0x49f645 = _0xd4aa9d => {
+                                          if (typeof _0xd4aa9d !== "number" || isNaN(_0xd4aa9d) || _0xd4aa9d <= 0) {
+                                            return false;
+                                          }
+                                          const _0x335b3c = new Date(_0xd4aa9d * 1000);
+                                          const _0x45cd7b = new Date();
+                                          return _0x335b3c.getFullYear() === _0x45cd7b.getFullYear() && _0x335b3c.getMonth() === _0x45cd7b.getMonth() && _0x335b3c.getDate() === _0x45cd7b.getDate();
+                                        };
+                                        if (!_0x49f645(_0xba493d)) {
+                                          {
+                                            if (_0x3db7eb) {
+                                              _0x3db7eb.textContent = "🚀 执行 " + _0xa51c20 + " 免费扫荡...";
+                                            }
+                                            try {
+                                              const _0x5a7a89 = {
+                                                genieId: _0x17cdb8,
+                                                sweepCnt: 1
+                                              };
+                                              const _0x2d4539 = await _0x259832.sendCommand("genie_sweep", _0x5a7a89);
+                                              if (_0x2d4539.code === 0) {
+                                                _0x4334e4++;
+                                                if (_0x3db7eb) {
+                                                  _0x3db7eb.textContent = "✅ 已成功扫荡 " + _0xa51c20 + "。";
+                                                }
+                                                await _0x259832.delay(1);
+                                              } else {
+                                                {
+                                                  const _0x17c33b = _0x2d4539.msg || "未知错误 (Code: " + _0x2d4539.code + ")";
+                                                  if (_0x3db7eb) {
+                                                    _0x3db7eb.textContent = "❌ " + _0xa51c20 + " 扫荡失败: " + _0x17c33b;
+                                                  }
+                                                  await _0x259832.delay(1);
+                                                }
+                                              }
+                                            } catch (_0x16c47f) {
+                                              if (_0x3db7eb) {
+                                                _0x3db7eb.textContent = "❌ " + _0xa51c20 + " 扫荡异常: " + _0x16c47f.message;
+                                              }
+                                              await _0x259832.delay(1);
+                                            }
+                                          }
+                                        } else {
+                                          _0x5066af++;
+                                        }
+                                      }
+                                    }
+                                  },
+                                  label: "灯神扫荡"
+                                },
+                                "daily-task-box": {
+                                  func: () => _0xe68796.ItemService.openBox(_0x6c2227),
+                                  label: "开启10木箱"
+                                },
+                                "daily-task-recruit": {
+                                  func: async () => {
+                                    const _0x5e52a7 = 4;
+                                    let _0x228253 = false;
+                                    try {
+                                      {
+                                        console.log("[智能招募] 检查服务器任务状态...");
+                                        const _0xcd5302 = {
+                                          taskId: _0x5e52a7
+                                        };
+                                        const _0x40e8ca = await _0x259832.sendCommand("task_claimdailypoint", _0xcd5302);
+                                        if (_0x40e8ca?.["code"] === 700020 || _0x40e8ca?.["_rawData"]?.["role"]?.["dailyTask"]?.["complete"]?.["hasOwnProperty"](_0x5e52a7.toString())) {
+                                          {
+                                            console.log("[智能招募] 任务已完成，无需执行");
+                                            return;
+                                          }
+                                        }
+                                        _0x228253 = true;
+                                      }
+                                    } catch (_0x3990fb) {
+                                      _0x228253 = true;
+                                    }
+                                    if (_0x228253) {
+                                      console.log("[智能招募] 任务未完成，开始招募...");
+                                      const _0x4ff0b2 = window.__require?.("ServerData");
+                                      const _0x1bace6 = _0x4ff0b2?.["ROLE"]?.["statisticsTime"]?.["recruit:one:free"] || 0;
+                                      const _0xd455a1 = _0x3d908c => {
+                                        if (!_0x3d908c) {
+                                          return false;
+                                        }
+                                        const _0x235531 = new Date(_0x3d908c * 1000);
+                                        const _0x533099 = new Date();
+                                        return _0x235531.getFullYear() === _0x533099.getFullYear() && _0x235531.getMonth() === _0x533099.getMonth() && _0x235531.getDate() === _0x533099.getDate();
+                                      };
+                                      const _0x2d50a5 = _0xd455a1(_0x1bace6);
+                                      if (_0x2d50a5) {
+                                        console.log("[智能招募] 免费次数已用，执行1次付费单抽");
+                                        const _0x4d0b14 = {
+                                          byClub: false,
+                                          recruitNumber: 1,
+                                          recruitType: 1
+                                        };
+                                        await _0x259832.sendCommand("hero_recruit", _0x4d0b14);
+                                      } else {
+                                        console.log("[智能招募] 免费次数未用，执行1免+1付");
+                                        const _0x217e4f = {
+                                          byClub: false,
+                                          recruitNumber: 1,
+                                          recruitType: 3
+                                        };
+                                        await _0x259832.sendCommand("hero_recruit", _0x217e4f);
+                                        await _0x259832.delay(0.2);
+                                        const _0xb0c5ac = {
+                                          byClub: false,
+                                          recruitNumber: 1,
+                                          recruitType: 1
+                                        };
+                                        await _0x259832.sendCommand("hero_recruit", _0xb0c5ac);
+                                      }
+                                    }
+                                  },
+                                  label: "执行2次招募"
+                                },
+                                "daily-task-arena": {
+                                  func: () => {
+                                    {
+                                      return new Promise(async _0x5f027e => {
+                                        console.log("正在进行3次竞技场战斗...");
+                                        try {
+                                          console.log("正在进入竞技场...");
+                                          await _0x259832.sendCommand("arena_startarea", {});
+                                          await _0x259832.delay(1);
+                                          console.log("已成功进入竞技场");
+                                        } catch (_0x2708b1) {
+                                          console.log("进入竞技场失败，但继续尝试战斗:", _0x2708b1);
+                                        }
+                                        let _0x46802d = 0;
+                                        for (let _0x501b0a = 1; _0x501b0a <= 3; _0x501b0a++) {
+                                          try {
+                                            {
+                                              const _0x306966 = {
+                                                refresh: false
+                                              };
+                                              const _0x2c4900 = await _0x259832.sendCommand("arena_getareatarget", _0x306966);
+                                              const _0xacfccf = _0x2c4900?.["_rawData"]?.["roleList"]?.[0]?.["roleId"];
+                                              if (!_0xacfccf) {
+                                                {
+                                                  console.log("竞技场战斗 " + _0x501b0a + "/3 失败: 未获取到目标ID");
+                                                  continue;
+                                                }
+                                              }
+                                              const _0x46c33d = {
+                                                targetId: _0xacfccf,
+                                                battleVersion: 240475
+                                              };
+                                              await _0x259832.sendCommand("fight_startareaarena", _0x46c33d);
+                                              _0x46802d++;
+                                              console.log("竞技场战斗 " + _0x501b0a + "/3 成功");
+                                            }
+                                          } catch (_0x3e6209) {
+                                            console.log("竞技场战斗 " + _0x501b0a + "/3 失败:", _0x3e6209.message);
+                                          }
+                                          await _0x259832.delay(0.1);
+                                        }
+                                        console.log("竞技场战斗完成: 总3轮, 成功" + _0x46802d + "轮");
+                                        _0x5f027e();
+                                      });
+                                    }
+                                  },
+                                  label: "进行3次竞技场战斗"
+                                },
+                                "daily-task-buy-bronze-box": {
+                                  func: () => _0x259832.sendCommand("store_buy", _0x3ff689),
+                                  label: "购买青铜宝箱"
                                 }
-                                if (_0x144232) {
-                                  if (_0x3b8fbc) {
-                                    _0x3b8fbc.textContent = "✅ 今日已完成灯神扫荡，本次跳过。";
+                              };
+                              let _0x3dacb6 = [];
+                              if (_0x302099 === "one-key-100") {
+                                _0x3dacb6 = _0x399a99.filter(_0x5a51a4 => _0x5a51a4.task !== "daily-task-quiz").map(_0x26abf6 => _0x4173bd[_0x26abf6.task]);
+                              } else {
+                                const _0x23ae9d = _0x302099.startsWith("daily-task-") ? _0x302099 : null;
+                                if (_0x23ae9d) {
+                                  {
+                                    if (_0x4173bd[_0x23ae9d]) {
+                                      _0x3dacb6.push(_0x4173bd[_0x23ae9d]);
+                                    }
                                   }
+                                } else {
+                                  _0x2a50b8.querySelectorAll("input[type=\"checkbox\"]:checked").forEach(_0x193489 => {
+                                    const _0x50169d = _0x193489.dataset.taskName;
+                                    if (_0x4173bd[_0x50169d]) {
+                                      _0x3dacb6.push(_0x4173bd[_0x50169d]);
+                                    }
+                                  });
+                                }
+                              }
+                              if (_0x3dacb6.length === 0) {
+                                {
+                                  _0x25ba06.textContent = "ℹ️ 没有可执行任务";
                                   return;
                                 }
-                                for (let _0x2224f0 = 1; _0x2224f0 <= 4; _0x2224f0++) {
-                                  const _0x317c0e = _0x558e64[_0x2224f0];
-                                  const _0x1f5637 = "genie:daily:free:" + _0x2224f0;
-                                  await _0x37bc18.delay(0.3);
-                                  if (_0x3b8fbc) {
-                                    _0x3b8fbc.textContent = "🔄 检查 " + _0x317c0e + " 状态...";
-                                  }
-                                  const _0x3d8b38 = _0x5c28a0[_0x1f5637];
-                                  const _0x1f748e = _0x5bd3a1 => {
-                                    if (typeof _0x5bd3a1 !== "number" || isNaN(_0x5bd3a1) || _0x5bd3a1 <= 0) {
-                                      return false;
-                                    }
-                                    const _0x1e12f5 = new Date(_0x5bd3a1 * 1000);
-                                    const _0x477f59 = new Date();
-                                    return _0x1e12f5.getFullYear() === _0x477f59.getFullYear() && _0x1e12f5.getMonth() === _0x477f59.getMonth() && _0x1e12f5.getDate() === _0x477f59.getDate();
-                                  };
-                                  if (!_0x1f748e(_0x3d8b38)) {
-                                    if (_0x3b8fbc) {
-                                      _0x3b8fbc.textContent = "🚀 执行 " + _0x317c0e + " 免费扫荡...";
-                                    }
-                                    try {
-                                      const _0x95d024 = {
-                                        genieId: _0x2224f0,
-                                        sweepCnt: 1
-                                      };
-                                      const _0x7f0c0b = await _0x37bc18.sendCommand("genie_sweep", _0x95d024);
-                                      if (_0x7f0c0b.code === 0) {
-                                        _0x400cf7++;
-                                        if (_0x3b8fbc) {
-                                          _0x3b8fbc.textContent = "✅ 已成功扫荡 " + _0x317c0e + "。";
-                                        }
-                                        await _0x37bc18.delay(1);
-                                      } else {
-                                        const _0x27b2d8 = _0x7f0c0b.msg || "未知错误 (Code: " + _0x7f0c0b.code + ")";
-                                        if (_0x3b8fbc) {
-                                          _0x3b8fbc.textContent = "❌ " + _0x317c0e + " 扫荡失败: " + _0x27b2d8;
-                                        }
-                                        await _0x37bc18.delay(1);
-                                      }
-                                    } catch (_0x5bd3b0) {
-                                      if (_0x3b8fbc) {
-                                        _0x3b8fbc.textContent = "❌ " + _0x317c0e + " 扫荡异常: " + _0x5bd3b0.message;
-                                      }
-                                      await _0x37bc18.delay(1);
-                                    }
-                                  } else {
-                                    _0x45d0ce++;
-                                  }
-                                }
-                              },
-                              label: "灯神扫荡"
-                            },
-                            "daily-task-box": {
-                              func: () => _0x2befd1.ItemService.openBox(_0x37c4dc),
-                              label: "开启10木箱"
-                            },
-                            "daily-task-recruit": {
-                              func: async () => {
-                                const _0x4237ce = 4;
-                                let _0x2dbfd6 = false;
-                                try {
-                                  console.log("[智能招募] 检查服务器任务状态...");
-                                  const _0x5379d3 = {
-                                    taskId: _0x4237ce
-                                  };
-                                  const _0x4f6012 = await _0x37bc18.sendCommand("task_claimdailypoint", _0x5379d3);
-                                  if (_0x4f6012?.["code"] === 700020 || _0x4f6012?.["_rawData"]?.["role"]?.["dailyTask"]?.["complete"]?.["hasOwnProperty"](_0x4237ce.toString())) {
-                                    console.log("[智能招募] 任务已完成，无需执行");
-                                    return;
-                                  }
-                                  _0x2dbfd6 = true;
-                                } catch (_0x221c4f) {
-                                  _0x2dbfd6 = true;
-                                }
-                                if (_0x2dbfd6) {
-                                  console.log("[智能招募] 任务未完成，开始招募...");
-                                  const _0x33afd7 = window.__require?.("ServerData");
-                                  const _0x1a87fc = _0x33afd7?.["ROLE"]?.["statisticsTime"]?.["recruit:one:free"] || 0;
-                                  const _0x39dd8f = _0x1d4e6b => {
-                                    if (!_0x1d4e6b) {
-                                      return false;
-                                    }
-                                    const _0x54895c = new Date(_0x1d4e6b * 1000);
-                                    const _0x23fe4b = new Date();
-                                    return _0x54895c.getFullYear() === _0x23fe4b.getFullYear() && _0x54895c.getMonth() === _0x23fe4b.getMonth() && _0x54895c.getDate() === _0x23fe4b.getDate();
-                                  };
-                                  const _0x13d27 = _0x39dd8f(_0x1a87fc);
-                                  if (_0x13d27) {
-                                    console.log("[智能招募] 免费次数已用，执行1次付费单抽");
-                                    const _0x5c02f1 = {
-                                      byClub: false,
-                                      recruitNumber: 1,
-                                      recruitType: 1
-                                    };
-                                    await _0x37bc18.sendCommand("hero_recruit", _0x5c02f1);
-                                  } else {
-                                    console.log("[智能招募] 免费次数未用，执行1免+1付");
-                                    const _0x3fcd9c = {
-                                      byClub: false,
-                                      recruitNumber: 1,
-                                      recruitType: 3
-                                    };
-                                    await _0x37bc18.sendCommand("hero_recruit", _0x3fcd9c);
-                                    await _0x37bc18.delay(0.2);
-                                    const _0xbd6408 = {
-                                      byClub: false,
-                                      recruitNumber: 1,
-                                      recruitType: 1
-                                    };
-                                    await _0x37bc18.sendCommand("hero_recruit", _0xbd6408);
-                                  }
-                                }
-                              },
-                              label: "执行2次招募"
-                            },
-                            "daily-task-arena": {
-                              func: () => {
-                                return new Promise(async _0x2cab9e => {
-                                  console.log("正在进行3次竞技场战斗...");
+                              }
+                              _0x302099.startsWith("daily-task-") && (_0x34bde5 = false);
+                              if (_0x302099 === "one-key-100") {
+                                const _0x1baaf4 = _0x3dacb6.filter(_0x5e3460 => _0x5e3460.label !== "收菜5次、加钟");
+                                for (let _0x46c5cc = 0; _0x46c5cc < _0x1baaf4.length; _0x46c5cc++) {
+                                  const _0x49c04a = _0x1baaf4[_0x46c5cc];
+                                  _0x25ba06.textContent = "🔄 (" + (_0x46c5cc + 1) + "/" + _0x1baaf4.length + ") " + _0x49c04a.label + "...";
                                   try {
-                                    console.log("正在进入竞技场...");
-                                    await _0x37bc18.sendCommand("arena_startarea", {});
-                                    await _0x37bc18.delay(1);
-                                    console.log("已成功进入竞技场");
-                                  } catch (_0x2404ef) {
-                                    console.log("进入竞技场失败，但继续尝试战斗:", _0x2404ef);
+                                    {
+                                      await _0x49c04a.func();
+                                      await _0x259832.delay(0.5);
+                                    }
+                                  } catch (_0x5b2dfe) {
+                                    console.log("任务 " + _0x49c04a.label + " 失败:", _0x5b2dfe);
                                   }
-                                  let _0x54ea6b = 0;
-                                  for (let _0x17a9c8 = 1; _0x17a9c8 <= 3; _0x17a9c8++) {
-                                    try {
-                                      const _0x3f0821 = {
-                                        refresh: false
-                                      };
-                                      const _0x44414e = await _0x37bc18.sendCommand("arena_getareatarget", _0x3f0821);
-                                      const _0x3e068a = _0x44414e?.["_rawData"]?.["roleList"]?.[0]?.["roleId"];
-                                      if (!_0x3e068a) {
-                                        console.log("竞技场战斗 " + _0x17a9c8 + "/3 失败: 未获取到目标ID");
+                                }
+                                const _0x169c06 = {
+                                  func: () => _0xe68796.SystemService.claimHangUpReward({}),
+                                  label: "单次收菜"
+                                };
+                                for (let _0x458adf = 0; _0x458adf < 5; _0x458adf++) {
+                                  {
+                                    _0x25ba06.textContent = "🥬 收菜 (" + (_0x458adf + 1) + "/5)，等待1s...";
+                                    await _0x169c06.func();
+                                    if (_0x458adf < 4) {
+                                      await _0x259832.delay(1);
+                                    }
+                                  }
+                                }
+                                _0x25ba06.textContent = "🔄 正在加钟...";
+                                for (let _0x241626 = 0; _0x241626 < 4; _0x241626++) {
+                                  const _0x3a9220 = {
+                                    isSkipShareCard: true,
+                                    type: 2
+                                  };
+                                  await _0xe68796.SystemService.myShareCallback(_0x3a9220);
+                                  await _0x259832.delay(0.2);
+                                }
+                                _0x25ba06.textContent = "🎁 领取活跃奖励...";
+                                await _0x385d20("claim-activity", _0x121acb);
+                              } else {
+                                {
+                                  for (let _0x4205ed = 0; _0x4205ed < _0x3dacb6.length; _0x4205ed++) {
+                                    {
+                                      const _0x4f9b53 = _0x3dacb6[_0x4205ed];
+                                      if (_0x4f9b53.label === "灯神扫荡" && _0x34bde5) {
                                         continue;
                                       }
-                                      const _0x1458c0 = {
-                                        targetId: _0x3e068a
-                                      };
-                                      await _0x37bc18.sendCommand("fight_startareaarena", _0x1458c0);
-                                      _0x54ea6b++;
-                                      console.log("竞技场战斗 " + _0x17a9c8 + "/3 成功");
-                                    } catch (_0x1fec7d) {
-                                      console.log("竞技场战斗 " + _0x17a9c8 + "/3 失败:", _0x1fec7d.message);
+                                      _0x25ba06.textContent = "🔄 (" + (_0x4205ed + 1) + "/" + _0x3dacb6.length + ") " + _0x4f9b53.label + "...";
+                                      try {
+                                        {
+                                          if (_0x4f9b53.label === "灯神扫荡") {
+                                            {
+                                              await _0x4f9b53.func(_0x25ba06);
+                                              if (_0x3dacb6.length > 1) {
+                                                {
+                                                  _0x34bde5 = true;
+                                                }
+                                              }
+                                            }
+                                          } else {
+                                            await _0x4f9b53.func();
+                                          }
+                                          await _0x259832.delay(0.5);
+                                        }
+                                      } catch (_0xdd6f2c) {
+                                        console.log("任务 " + _0x4f9b53.label + " 失败 (可能已完成):", _0xdd6f2c);
+                                      }
                                     }
-                                    await _0x37bc18.delay(0.1);
                                   }
-                                  console.log("竞技场战斗完成: 总3轮, 成功" + _0x54ea6b + "轮");
-                                  _0x2cab9e();
-                                });
-                              },
-                              label: "进行3次竞技场战斗"
-                            },
-                            "daily-task-buy-bronze-box": {
-                              func: () => _0x37bc18.sendCommand("store_buy", _0x509643),
-                              label: "购买青铜宝箱"
-                            }
-                          };
-                          let _0x5a73ce = [];
-                          if (_0x595511 === "one-key-100") {
-                            _0x5a73ce = _0xe9b7f2.filter(_0x3cb6e7 => _0x3cb6e7.task !== "daily-task-quiz").map(_0x430de9 => _0x590d9f[_0x430de9.task]);
-                          } else {
-                            const _0x26c9a0 = _0x595511.startsWith("daily-task-") ? _0x595511 : null;
-                            if (_0x26c9a0) {
-                              if (_0x590d9f[_0x26c9a0]) {
-                                _0x5a73ce.push(_0x590d9f[_0x26c9a0]);
-                              }
-                            } else {
-                              _0x4090b4.querySelectorAll("input[type=\"checkbox\"]:checked").forEach(_0x54bcbf => {
-                                const _0x39e28a = _0x54bcbf.dataset.taskName;
-                                if (_0x590d9f[_0x39e28a]) {
-                                  _0x5a73ce.push(_0x590d9f[_0x39e28a]);
                                 }
-                              });
+                              }
+                              _0x25ba06.textContent = "✅ " + (_0x302099 === "one-key-100" ? "100活跃度任务" : "任务") + "执行完毕";
                             }
                           }
-                          if (_0x5a73ce.length === 0) {
-                            _0x2be9b9.textContent = "ℹ️ 没有可执行任务";
-                            return;
-                          }
-                          _0x595511.startsWith("daily-task-") && (_0x11f885 = false);
-                          if (_0x595511 === "one-key-100") {
-                            const _0x1c6875 = _0x5a73ce.filter(_0x5e6578 => _0x5e6578.label !== "收菜5次、加钟");
-                            for (let _0x1d5462 = 0; _0x1d5462 < _0x1c6875.length; _0x1d5462++) {
-                              const _0x506002 = _0x1c6875[_0x1d5462];
-                              _0x2be9b9.textContent = "🔄 (" + (_0x1d5462 + 1) + "/" + _0x1c6875.length + ") " + _0x506002.label + "...";
-                              try {
-                                await _0x506002.func();
-                                await _0x37bc18.delay(0.5);
-                              } catch (_0x32ef0b) {
-                                console.log("任务 " + _0x506002.label + " 失败:", _0x32ef0b);
-                              }
-                            }
-                            _0x2be9b9.textContent = "🎣 执行3次免费普通钓鱼...";
-                            try {
-                              for (let _0x29561b = 0; _0x29561b < 3; _0x29561b++) {
-                                const _0x18c712 = {
-                                  lotteryNumber: 1,
-                                  newFree: true,
-                                  type: 1
-                                };
-                                await _0x2befd1.ArtifactService.lottery(_0x18c712);
-                                _0x2be9b9.textContent = "🎣 免费钓鱼 (" + (_0x29561b + 1) + "/3)";
-                                await _0x37bc18.delay(0.2);
-                              }
-                            } catch (_0x367b5f) {
-                              console.log("免费钓鱼失败:", _0x367b5f);
-                            }
-                            const _0x5b9a61 = {
-                              func: () => _0x2befd1.SystemService.claimHangUpReward({}),
-                              label: "单次收菜"
-                            };
-                            for (let _0x59a7ab = 0; _0x59a7ab < 5; _0x59a7ab++) {
-                              _0x2be9b9.textContent = "🥬 收菜 (" + (_0x59a7ab + 1) + "/5)，等待1s...";
-                              await _0x5b9a61.func();
-                              if (_0x59a7ab < 4) {
-                                await _0x37bc18.delay(1);
-                              }
-                            }
-                            _0x2be9b9.textContent = "🔄 正在加钟...";
-                            for (let _0x4f96cb = 0; _0x4f96cb < 4; _0x4f96cb++) {
-                              const _0x1a409f = {
-                                isSkipShareCard: true,
-                                type: 2
-                              };
-                              await _0x2befd1.SystemService.myShareCallback(_0x1a409f);
-                              await _0x37bc18.delay(0.2);
-                            }
-                            _0x2be9b9.textContent = "🎁 领取活跃奖励...";
-                            await _0x4ea6c1("claim-activity", _0x5db38c);
-                          } else {
-                            for (let _0x1069f7 = 0; _0x1069f7 < _0x5a73ce.length; _0x1069f7++) {
-                              const _0x35cd0a = _0x5a73ce[_0x1069f7];
-                              if (_0x35cd0a.label === "灯神扫荡" && _0x11f885) {
-                                continue;
-                              }
-                              _0x2be9b9.textContent = "🔄 (" + (_0x1069f7 + 1) + "/" + _0x5a73ce.length + ") " + _0x35cd0a.label + "...";
-                              try {
-                                _0x35cd0a.label === "灯神扫荡" ? (await _0x35cd0a.func(_0x2be9b9), _0x5a73ce.length > 1 && (_0x11f885 = true)) : await _0x35cd0a.func();
-                                await _0x37bc18.delay(0.5);
-                              } catch (_0xe9dc3b) {
-                                console.log("任务 " + _0x35cd0a.label + " 失败 (可能已完成):", _0xe9dc3b);
-                              }
-                            }
-                          }
-                          _0x2be9b9.textContent = "✅ " + (_0x595511 === "one-key-100" ? "100活跃度任务" : "任务") + "执行完毕";
                         }
                       }
                     }
@@ -3785,97 +2477,45 @@
           }
         }
       }
-    } catch (_0x3dd3a7) {
-      console.error("任务执行错误:", _0x3dd3a7);
-      _0x2be9b9.textContent = "❌ 执行出错!";
+    } catch (_0x550d49) {
+      console.error("任务执行错误:", _0x550d49);
+      _0x25ba06.textContent = "❌ 执行出错!";
     } finally {
-      (_0x595511 === "execute-daily-checked" || _0x595511 === "one-key-100") && (_0x19ad01 = false, _0x3d2bde.forEach(_0x511222 => _0x511222.disabled = false));
-      _0x5db38c.disabled = false;
-      _0x5db38c.textContent = _0x4c5901;
+      {
+        (_0x302099 === "execute-daily-checked" || _0x302099 === "one-key-100") && (_0x20c033 = false, _0x29b7ed.forEach(_0x3beca1 => _0x3beca1.disabled = false));
+        _0x121acb.disabled = false;
+        _0x121acb.textContent = _0x28b9d5;
+      }
     }
   }
-  function _0x90781b(_0x550054, _0x581a43) {
-    if (_0x550054 === "collectionUpgrade") {
-      const _0x173c4e = _0x581a43.textContent;
-      _0x581a43.disabled = true;
-      _0x581a43.textContent = "处理中...";
-      _0x512e0a(_0x581a43).catch(_0x3c8161 => {
-        console.error("藏品图鉴升级错误:", _0x3c8161);
-        _0x581a43.textContent = "❌ 执行出错!";
+  function _0x1c11e5(_0x196fdf, _0x294eef) {
+    if (_0x196fdf === "collectionUpgrade") {
+      const _0x34ced2 = _0x294eef.textContent;
+      _0x294eef.disabled = true;
+      _0x294eef.textContent = "处理中...";
+      _0x2fb58c(_0x294eef).catch(_0x531176 => {
+        console.error("藏品图鉴升级错误:", _0x531176);
+        _0x294eef.textContent = "❌ 执行出错!";
       }).finally(() => {
         setTimeout(() => {
-          _0x581a43.disabled = false;
-          _0x581a43.textContent = _0x173c4e;
+          _0x294eef.disabled = false;
+          _0x294eef.textContent = _0x34ced2;
         }, 1000);
       });
       return true;
     }
     return false;
   }
-  function _0x4d34ac(_0x2c6904) {
-    if (_0x2c6904 === "treasure-assist") {
-      _0x5c6fd0.handleMainButtonClick();
-      return true;
-    }
-    return false;
-  }
-  function _0x40da56(_0x464ffe) {
-    if (_0x464ffe === "arena-winrate") {
-      _0x5b020c.handleMainButtonClick();
-      return true;
-    }
-    return false;
-  }
-  function _0x5284cf() {
-    const _0x50c10d = localStorage.getItem("dailyTaskCheckboxes");
-    if (_0x50c10d) {
-      try {
-        const _0x5d618e = JSON.parse(_0x50c10d);
-        const _0x4b2ab7 = document.querySelector(".daily-task-list");
-        _0x4b2ab7 && _0x4b2ab7.querySelectorAll("input[type=\"checkbox\"]").forEach(_0x1be190 => {
-          _0x5d618e[_0x1be190.dataset.taskName] !== undefined && (_0x1be190.checked = _0x5d618e[_0x1be190.dataset.taskName]);
-        });
-      } catch (_0x41ee0a) {
-        console.log("加载日常任务勾选状态失败:", _0x41ee0a);
+  _0x4e3ca8.addEventListener("click", _0x388347 => {
+    {
+      const _0x155084 = _0x388347.target.closest(".task-btn");
+      if (_0x155084?.["dataset"]["task"]) {
+        if (_0x1c11e5(_0x155084.dataset.task, _0x155084)) {
+          return;
+        }
+        _0x385d20(_0x155084.dataset.task, _0x155084);
       }
-    }
-  }
-  function _0x3cb1bf() {
-    const _0x7b2206 = {};
-    const _0x4f213f = document.querySelector(".daily-task-list");
-    _0x4f213f && (_0x4f213f.querySelectorAll("input[type=\"checkbox\"]").forEach(_0xae1de0 => {
-      _0x7b2206[_0xae1de0.dataset.taskName] = _0xae1de0.checked;
-    }), localStorage.setItem("dailyTaskCheckboxes", JSON.stringify(_0x7b2206)));
-  }
-  _0x347846.addEventListener("click", _0x5444d9 => {
-    const _0x2f9eb6 = _0x5444d9.target.closest(".task-btn");
-    if (_0x2f9eb6?.["dataset"]["task"]) {
-      if (_0x90781b(_0x2f9eb6.dataset.task, _0x2f9eb6)) {
-        return;
-      }
-      if (_0x4d34ac(_0x2f9eb6.dataset.task)) {
-        return;
-      }
-      if (_0x40da56(_0x2f9eb6.dataset.task)) {
-        return;
-      }
-      _0x4ea6c1(_0x2f9eb6.dataset.task, _0x2f9eb6);
     }
   });
-  _0x347846.addEventListener("change", _0x45adfc => {
-    _0x45adfc.target.type === "checkbox" && _0x45adfc.target.dataset.taskName && _0x3cb1bf();
-  });
-  const _0x5c6fd0 = {
-    init() {},
-    handleMainButtonClick() {
-      showToast("宝库助战功能已暂时禁用", "info");
-    }
-  };
-  setTimeout(() => {
-    _0x5c6fd0.init();
-    _0x5b020c.init();
-    _0x2e4691.init();
-    _0x5284cf();
-  }, 1000);
-  console.log("🎮 鲸鱼助手 (v" + _0x28f203 + ") 加载完成！");
+  console.log("☠️ 骨头助手 (v" + _0x4ceeb + ") 加载完成！");
 })();
